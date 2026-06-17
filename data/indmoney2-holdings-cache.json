@@ -1,0 +1,103 @@
+{
+  "payload": {
+    "holdings": [
+      {
+        "investment_code": "120138",
+        "investment": "Broadcom Inc. Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 120748.71084241307,
+        "market_value": 107111.65819360058,
+        "holding_percent": 9.432530101345186,
+        "total_pnl": -13637.052648812489,
+        "pnl_per": -11.293745956931959,
+        "xirr": 0,
+        "total_units": 3.005015021,
+        "unit_price": 35644.300426144386,
+        "broker": "2",
+        "market_cap": "Large Cap"
+      },
+      {
+        "investment_code": "203532",
+        "investment": "Space Exploration Technologies Corp. Class A Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 111575.30185999196,
+        "market_value": 115490.67785159648,
+        "holding_percent": 10.17040827890972,
+        "total_pnl": 3915.3759916045237,
+        "pnl_per": 3.5091780406004682,
+        "xirr": 0,
+        "total_units": 6.048432044,
+        "unit_price": 19094.316843017587,
+        "broker": "2",
+        "market_cap": ""
+      },
+      {
+        "investment_code": "112778",
+        "investment": "Alphabet Inc. Class A Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 283951.6006862648,
+        "market_value": 274242.2863354379,
+        "holding_percent": 24.15048617999355,
+        "total_pnl": -9709.314350826899,
+        "pnl_per": -3.419355385692867,
+        "xirr": 0,
+        "total_units": 7.765182162,
+        "unit_price": 35316.91602516174,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      },
+      {
+        "investment_code": "115382",
+        "investment": "NVIDIA Corporation Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 341790.451570222,
+        "market_value": 321921.4241601727,
+        "holding_percent": 28.349234573236764,
+        "total_pnl": -19869.027410049282,
+        "pnl_per": -5.813218982206449,
+        "xirr": 0,
+        "total_units": 16.403526511,
+        "unit_price": 19625.13511617738,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      },
+      {
+        "investment_code": "114846",
+        "investment": "Micron Technology, Inc. Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 153607.02364942772,
+        "market_value": 211786.78828819914,
+        "holding_percent": 18.650493226282727,
+        "total_pnl": 58179.76463877142,
+        "pnl_per": 37.875718998079925,
+        "xirr": 0,
+        "total_units": 2.192765859,
+        "unit_price": 96584.31492762454,
+        "broker": "2",
+        "market_cap": "Large Cap"
+      },
+      {
+        "investment_code": "120723",
+        "investment": "Amazon.com, Inc. Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 112393.99159327647,
+        "market_value": 105003.12993091748,
+        "holding_percent": 9.246847640232062,
+        "total_pnl": -7390.861662358991,
+        "pnl_per": -6.575851215520956,
+        "xirr": 0,
+        "total_units": 4.511117937,
+        "unit_price": 23276.52067565918,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      }
+    ]
+  },
+  "fetchedAt": 1781674607060
+}

@@ -1,0 +1,329 @@
+{
+  "asOfDate": "2026-06-14",
+  "audience": "pm_or_investment_team",
+  "estimateSet": "estimate timestamp not provided",
+  "sourcePosture": "Official company investor relations materials reviewed where available; portfolio weights come from data/latest-portfolio.json, the app's freshest reference portfolio snapshot.",
+  "limitations": [
+    "Consensus estimate timestamps were not loaded, so this product focuses on reported results, company guidance, and PM judgment rather than beat-versus-consensus math.",
+    "Full transcript/Q&A mapping is only loaded where directly reviewed; other holdings rely on earnings releases and official result pages.",
+    "Portfolio prices, position sizes, and P/L use data/latest-portfolio.json, which the app refreshes from the freshest available portfolio payload."
+  ],
+  "portfolioView": {
+    "verdict": "Recent post-print evidence still favors your AI infrastructure cluster, but the real portfolio risk is concentration and clean-EPS quality in the cloud platform names rather than an obvious thesis break.",
+    "thesisChange": "strengthened_but_more_concentrated",
+    "action": "Hold the core AI infrastructure winners, treat MU on 2026-06-24 as the next hard catalyst, and re-underwrite GOOGL and AMZN on operating income rather than headline EPS."
+  },
+  "holdings": {
+    "NVDA": {
+      "theme": "AI infrastructure",
+      "reportedPeriod": "Q1 FY2027",
+      "reportedAt": "2026-05-20",
+      "thesisChange": "strengthened",
+      "action": "hold",
+      "verdict": "Cleanest large-weight print in the book. The quarter reinforced the AI infrastructure leadership thesis and did not rely on an obvious below-the-line EPS distortion.",
+      "epsQuality": {
+        "status": "no_material_trigger_identified",
+        "note": "GAAP and non-GAAP EPS diverge, but the release also showed strong revenue, gross margin, and data center growth, so the headline result looks directionally supported by operating performance."
+      },
+      "highlights": [
+        "Revenue was $81.6 billion, up 85% year over year.",
+        "Data Center revenue was $75.2 billion, up 92% year over year.",
+        "GAAP diluted EPS was $2.39 and non-GAAP diluted EPS was $1.87."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "prepared_commentary",
+          "summary": "Management framed the quarter around accelerating AI factory buildouts and agentic AI demand rather than a one-off product cycle."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Next earnings date",
+        "status": "not_announced_on_ir_page_reviewed",
+        "note": "The official investor relations event pages reviewed on 2026-06-14 did not yet show the next earnings date."
+      },
+      "sources": [
+        {
+          "label": "Q1 FY2027 earnings release",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx",
+          "date": "2026-05-20"
+        },
+        {
+          "label": "IR events page",
+          "url": "https://investor.nvidia.com/events-and-presentations/events-and-presentations/default.aspx",
+          "date": "2026-06-14"
+        }
+      ]
+    },
+    "GOOGL": {
+      "theme": "AI platform and cloud",
+      "reportedPeriod": "Q1 2026",
+      "reportedAt": "2026-04-29",
+      "thesisChange": "mixed_positive",
+      "action": "hold_but_re_underwrite_clean_eps",
+      "verdict": "Operating momentum was strong, especially in Search and Cloud, but headline EPS was flattered by a large other-income gain, so this print should be judged on revenue, margin, and cloud backlog rather than net income alone.",
+      "epsQuality": {
+        "status": "trigger_identified",
+        "note": "Other income included a $37.7 billion net gain, primarily unrealized gains on non-marketable equity securities, which materially inflates net income and EPS."
+      },
+      "highlights": [
+        "Revenue was $109.9 billion, up 22% year over year, or 19% in constant currency.",
+        "Google Cloud revenue was $20.0 billion, up 63% year over year.",
+        "Operating margin expanded to 36.1%."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "transcript",
+          "summary": "On the earnings call, management said AI is driving Search usage, Cloud backlog nearly doubled quarter over quarter to more than $460 billion, and Gemini Enterprise paid monthly active users grew 40% quarter over quarter."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Next earnings date",
+        "status": "not_announced_on_ir_page_reviewed",
+        "note": "No later earnings date was visible on the official pages reviewed on 2026-06-14."
+      },
+      "sources": [
+        {
+          "label": "Q1 2026 earnings release PDF",
+          "url": "https://s206.q4cdn.com/479360582/files/doc_news/2026/Apr/29/attachments/2026q1-alphabet-earnings-release.pdf",
+          "date": "2026-04-29"
+        },
+        {
+          "label": "Q1 2026 earnings call transcript",
+          "url": "https://abc.xyz/investor/events/event-details/2026/2026-Q1-Earnings-Call-2026-nW8kCrBAKS/default.aspx",
+          "date": "2026-04-29"
+        }
+      ]
+    },
+    "MU": {
+      "theme": "AI memory",
+      "reportedPeriod": "Q2 FY2026",
+      "reportedAt": "2026-03-18",
+      "thesisChange": "strengthened",
+      "action": "watch_next_print",
+      "verdict": "This remains one of the best operating-leverage names in the portfolio, but it is also the next real catalyst, so the current setup is less about re-rating past results and more about whether June 24 confirms another step-up.",
+      "epsQuality": {
+        "status": "no_material_trigger_identified",
+        "note": "The available official release materials point to operating and cash-flow strength rather than a below-the-line driven EPS beat."
+      },
+      "highlights": [
+        "Fiscal Q2 2026 revenue was $23.86 billion versus $13.64 billion in the prior quarter and $8.05 billion in the year-ago period.",
+        "Adjusted free cash flow was $6.9 billion.",
+        "Management said it expected exceptional records across revenue, gross margin, EPS, and free cash flow in fiscal Q3."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "prepared_commentary",
+          "summary": "Management framed memory as a strategic AI bottleneck and guided to stronger fiscal Q3 performance."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Fiscal Q3 2026 results",
+        "date": "2026-06-24",
+        "status": "scheduled",
+        "note": "Official IR notice set the fiscal third-quarter earnings call for June 24, 2026."
+      },
+      "sources": [
+        {
+          "label": "Q2 FY2026 earnings release",
+          "url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-second-quarter-fiscal-2026",
+          "date": "2026-03-18"
+        },
+        {
+          "label": "Q3 FY2026 earnings date announcement",
+          "url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-report-fiscal-third-quarter-results-june-24",
+          "date": "2026-05-27"
+        }
+      ]
+    },
+    "AVGO": {
+      "theme": "AI networking and custom silicon",
+      "reportedPeriod": "Q2 FY2026",
+      "reportedAt": "2026-06-03",
+      "thesisChange": "strengthened",
+      "action": "hold",
+      "verdict": "Broadcom is giving you one of the clearest source-backed AI follow-through signals in the portfolio, with accelerating AI semiconductor revenue and explicit forward commentary into Q3.",
+      "epsQuality": {
+        "status": "no_material_trigger_identified",
+        "note": "The release emphasis was revenue, adjusted EBITDA, and AI semiconductor revenue growth rather than a one-off below-the-line EPS driver."
+      },
+      "highlights": [
+        "Q2 FY2026 revenue was $22.187 billion, up 48% year over year.",
+        "Q2 AI semiconductor revenue was $10.8 billion, up 143% year over year.",
+        "Adjusted EBITDA was 69% of revenue."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "prepared_commentary",
+          "summary": "Management said the momentum continues and expects AI semiconductor revenue to reach $16.0 billion in Q3, up more than 200% year over year."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Next earnings date",
+        "status": "not_announced_on_ir_page_reviewed",
+        "note": "The official Broadcom pages reviewed on 2026-06-14 did not yet list the next earnings date after the June 3, 2026 call."
+      },
+      "sources": [
+        {
+          "label": "Q2 FY2026 earnings release",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+          "date": "2026-06-03"
+        },
+        {
+          "label": "Past events page",
+          "url": "https://investors.broadcom.com/company-information/past-events",
+          "date": "2026-06-14"
+        }
+      ]
+    },
+    "AMZN": {
+      "theme": "AI platform and cloud",
+      "reportedPeriod": "Q1 2026",
+      "reportedAt": "2026-04-29",
+      "thesisChange": "mixed_positive",
+      "action": "hold_but_re_underwrite_clean_eps",
+      "verdict": "AWS and operating income were strong, but the headline net income number materially benefited from Anthropic-related gains, so this is another position where the operating read matters more than reported EPS.",
+      "epsQuality": {
+        "status": "trigger_identified",
+        "note": "First-quarter 2026 net income included $16.8 billion of pre-tax gains in non-operating income from Amazon's investments in Anthropic."
+      },
+      "highlights": [
+        "Q1 2026 net sales were $181.5 billion, up 17% year over year.",
+        "AWS sales were $37.6 billion, up 28% year over year.",
+        "Operating income was $23.9 billion versus $18.4 billion in Q1 2025."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "prepared_commentary",
+          "summary": "Management highlighted AWS as the fastest growth in 15 quarters and said the custom chips business topped a $20 billion annual revenue run rate."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Q2 2026 company guide",
+        "status": "guided",
+        "note": "Amazon guided Q2 2026 net sales to $194.0 billion to $199.0 billion, or 16% to 19% growth year over year."
+      },
+      "sources": [
+        {
+          "label": "Q1 2026 earnings release",
+          "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx",
+          "date": "2026-04-29"
+        },
+        {
+          "label": "Q1 2026 earnings conference page",
+          "url": "https://ir.aboutamazon.com/events/event-details/2026/Q1-2026-Amazoncom-Inc-Earnings-Conference-Call-/default.aspx",
+          "date": "2026-04-29"
+        }
+      ]
+    },
+    "TSM": {
+      "theme": "AI foundry",
+      "reportedPeriod": "1Q26",
+      "reportedAt": "2026-04-16",
+      "thesisChange": "strengthened",
+      "action": "hold",
+      "verdict": "TSMC remains the cleaner foundry confirmation of continued AI demand, with strong first-quarter margins and a higher second-quarter revenue guide.",
+      "epsQuality": {
+        "status": "no_material_trigger_identified",
+        "note": "The official quarterly result page emphasized revenue and margin guidance rather than unusual below-the-line items."
+      },
+      "highlights": [
+        "1Q26 net revenue was $35.90 billion.",
+        "1Q26 gross margin was 66.2% and operating margin was 58.1%.",
+        "2Q26 revenue guidance was $39.0 billion to $40.2 billion."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "result_page",
+          "summary": "The official quarterly results page showed a clean step-up in Q2 guidance for revenue and margins."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Next earnings date",
+        "status": "not_found_in_sources_loaded",
+        "note": "The source pack used here included the 1Q26 results page and financial calendar references, but no explicit next earnings date was captured."
+      },
+      "sources": [
+        {
+          "label": "1Q26 quarterly results",
+          "url": "https://investor.tsmc.com/english/quarterly-results/2026/q1",
+          "date": "2026-04-16"
+        },
+        {
+          "label": "Financial calendar",
+          "url": "https://investor.tsmc.com/english/financial-calendar",
+          "date": "2026-06-14"
+        }
+      ]
+    },
+    "AMD": {
+      "theme": "AI infrastructure",
+      "reportedPeriod": "Q1 2026",
+      "reportedAt": "2026-05-05",
+      "thesisChange": "strengthened",
+      "action": "hold_small",
+      "verdict": "The position is small, but the print was directionally supportive: Data Center is now the main growth engine and Q2 guidance still points higher.",
+      "epsQuality": {
+        "status": "no_material_trigger_identified",
+        "note": "The release aligned revenue, operating income, and EPS improvement without an obvious below-the-line distortion."
+      },
+      "highlights": [
+        "Q1 2026 revenue was $10.3 billion, up 38% year over year.",
+        "Operating income was $1.5 billion and GAAP diluted EPS was $0.84.",
+        "Q2 2026 revenue guidance was approximately $11.2 billion, plus or minus $300 million."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "prepared_commentary",
+          "summary": "Management said AI infrastructure demand accelerated and that server growth should accelerate meaningfully as supply scales."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Q2 2026 company guide",
+        "status": "guided",
+        "note": "Management guided Q2 2026 revenue to about $11.2 billion, plus or minus $300 million, with non-GAAP gross margin around 56%."
+      },
+      "sources": [
+        {
+          "label": "Q1 2026 earnings release",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1284/amd-reports-first-quarter-2026-financial-results",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    "SMCI": {
+      "theme": "AI infrastructure",
+      "reportedPeriod": "Q3 FY2026",
+      "reportedAt": "2026-05-05",
+      "thesisChange": "mixed_positive",
+      "action": "watch",
+      "verdict": "The latest quarter repaired margin and year-over-year revenue growth, but the name still carries execution and working-capital risk that is less attractive than your higher-quality AI infrastructure positions.",
+      "epsQuality": {
+        "status": "no_material_trigger_identified",
+        "note": "The result page showed gross-margin recovery and guided revenue, but also showed cash flow used in operations, which matters more than headline EPS here."
+      },
+      "highlights": [
+        "Q3 FY2026 net sales were $10.2 billion versus $12.7 billion in Q2 FY2026 and $4.6 billion in Q3 FY2025.",
+        "Gross margin improved to 9.9% from 6.3% in Q2 FY2026.",
+        "Q4 FY2026 revenue guidance was $11.0 billion to $12.5 billion."
+      ],
+      "managementEvidence": [
+        {
+          "kind": "prepared_commentary",
+          "summary": "Management said the transformation into a total datacenter infrastructure provider is accelerating and linked the margin recovery to DCBBS growth."
+        }
+      ],
+      "nextCatalyst": {
+        "label": "Q4 FY2026 guide",
+        "status": "guided",
+        "note": "The company guided Q4 FY2026 GAAP diluted EPS to $0.53 to $0.67 and non-GAAP diluted EPS to $0.65 to $0.79."
+      },
+      "sources": [
+        {
+          "label": "Q3 FY2026 earnings release",
+          "url": "https://ir.supermicro.com/news/news-details/2026/Supermicro-Announces-Third-Quarter-Fiscal-Year-2026-Financial-Results/default.aspx",
+          "date": "2026-05-05"
+        }
+      ]
+    }
+  }
+}

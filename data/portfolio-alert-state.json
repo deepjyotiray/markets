@@ -1,0 +1,1085 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-11T11:28:00.361Z",
+  "currentDayKey": "2026-06-11",
+  "cooldowns": {
+    "HOLDING:SMCI:TRIM": {
+      "expiresAt": 1781167829554
+    },
+    "HOLDING:SMCI:HOLD_BUT_WATCH": {
+      "expiresAt": 1781175296602
+    },
+    "WATCHLIST:ANET:WAIT_FOR_PULLBACK": {
+      "expiresAt": 1781178235411
+    },
+    "WATCHLIST:MRVL:WAIT_FOR_PULLBACK": {
+      "expiresAt": 1781178235425
+    },
+    "WATCHLIST:VRT:WAIT_FOR_PULLBACK": {
+      "expiresAt": 1781178235435
+    },
+    "HOLDING:MU:HOLD": {
+      "expiresAt": 1781176406217
+    },
+    "MU:L1": {
+      "expiresAt": 1781178206217
+    },
+    "HOLDING:AMD:HOLD": {
+      "expiresAt": 1781177415564
+    },
+    "AMD:L1": {
+      "expiresAt": 1781179215564
+    }
+  },
+  "openTriggers": {
+    "PORTFOLIO:profit-below-600": {
+      "firstSeenAt": 1781165102549,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L3",
+        "action": "THINK",
+        "ticker": null,
+        "title": "Portfolio Protection Mode",
+        "triggerId": "PORTFOLIO:profit-below-600",
+        "trigger": "Portfolio unrealized profit fell below $600.00",
+        "suggestedAction": "Risk warning. Review weak positions early.",
+        "reason": "The target path is narrowing and protecting current gains matters more.",
+        "invalidation": "Profit rebuilds above the next band.",
+        "confirmationMinutes": 0,
+        "immediate": true,
+        "threadId": "portfolio:risk",
+        "price": null,
+        "portfolioImpact": "Current unrealized profit $-191.18",
+        "worseningValue": 791.1800000000001,
+        "createdAt": "2026-06-11T11:28:00.360Z"
+      }
+    },
+    "HOLDING:NVDA:PROTECT_PROFIT": {
+      "firstSeenAt": 1781165102549,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L3",
+        "action": "PROTECT_PROFIT",
+        "ticker": "NVDA",
+        "title": "PROTECT PROFIT",
+        "triggerId": "HOLDING:NVDA:PROTECT_PROFIT",
+        "trigger": "AI thesis 72, opportunity 46, exit pressure 28",
+        "suggestedAction": "Protect profit; avoid adding and trim only if dynamic trim level fails. Dynamic trim $198.34, stop $196.14.",
+        "reason": "NVDA is classified as ai compute leader. INDmoney fundamentals supportive | rev 85.23% YoY | quarterly rev 85.23% YoY | op margin 65.6% | PE 34.36 Calculated from support near $199.34, resistance near $206.60, ATR proxy $4.65, mixed.",
+        "invalidation": "Reclaim above $206.60 with improved relative strength.",
+        "confirmationMinutes": 15,
+        "immediate": false,
+        "threadId": "ticker:NVDA",
+        "price": 201.95,
+        "portfolioImpact": "Position weight 28.87% | Cash DEPLOY_0",
+        "worseningValue": 46,
+        "metadata": {
+          "sectorContext": "AI infra avg move +1.49% with 100% breadth (strong).",
+          "technicalContext": "RSI 41.09 neutral | 20D range 7.05% | vs QQQ -0.51%, vs SMH -1.31%",
+          "fundamentalContext": "INDmoney fundamentals supportive | rev 85.23% YoY | quarterly rev 85.23% YoY | op margin 65.6% | PE 34.36",
+          "latestHeadline": "A Robinhood Insider Just Bought a Boatload of Shares of the Beaten-Down Stock. Should Investors Follow Suit?",
+          "aiThesisScore": 72,
+          "opportunityScore": 46,
+          "exitPressureScore": 28,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 78,
+            "support": 199.34,
+            "resistance": 206.6,
+            "trimLevel": 198.34,
+            "stopLevel": 196.14,
+            "invalidationLevel": 196.14,
+            "addReclaimLevel": 206.6,
+            "target1": 206.6,
+            "target2": 211.25,
+            "riskReward": 0.8,
+            "entryType": "Pullback-to-support entry",
+            "reasoning": "Calculated from support near $199.34, resistance near $206.60, ATR proxy $4.65, mixed."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "NVDA is classified as ai compute leader. INDmoney fundamentals supportive | rev 85.23% YoY | quarterly rev 85.23% YoY | op margin 65.6% | PE 34.36 Calculated from support near $199.34, resistance near $206.60, ATR proxy $4.65, mixed."
+        },
+        "createdAt": "2026-06-11T11:28:00.361Z"
+      }
+    },
+    "HOLDING:AVGO:PROTECT_PROFIT": {
+      "firstSeenAt": 1781174277422,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L3",
+        "action": "PROTECT_PROFIT",
+        "ticker": "AVGO",
+        "title": "PROTECT PROFIT",
+        "triggerId": "HOLDING:AVGO:PROTECT_PROFIT",
+        "trigger": "AI thesis 65, opportunity 66, exit pressure 20",
+        "suggestedAction": "Protect profit; avoid adding and trim only if dynamic trim level fails. Dynamic trim $368.48, stop $354.60.",
+        "reason": "AVGO is classified as ai custom silicon networking. INDmoney fundamentals supportive | rev 29.46% YoY | quarterly rev 29.46% YoY | op margin 44.95% | PE 86.92 Calculated from support near $370.33, resistance near $389.65, ATR proxy $15.58, mixed.",
+        "invalidation": "Reclaim above $389.65 with improved relative strength.",
+        "confirmationMinutes": 15,
+        "immediate": false,
+        "threadId": "ticker:AVGO",
+        "price": 374.0715,
+        "portfolioImpact": "Position weight 9.96% | Cash DEPLOY_0",
+        "worseningValue": 66,
+        "metadata": {
+          "sectorContext": "AI infra avg move +1.49% with 100% breadth (strong).",
+          "technicalContext": "RSI 37.91 neutral | 20D range 3.34% | vs QQQ -0.64%, vs SMH -1.43%",
+          "fundamentalContext": "INDmoney fundamentals supportive | rev 29.46% YoY | quarterly rev 29.46% YoY | op margin 44.95% | PE 86.92",
+          "latestHeadline": "Broadcom's Post-Earnings Dip Is a Compelling Buying Opportunity",
+          "aiThesisScore": 65,
+          "opportunityScore": 66,
+          "exitPressureScore": 20,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 78,
+            "support": 370.33,
+            "resistance": 389.65,
+            "trimLevel": 368.48,
+            "stopLevel": 354.6,
+            "invalidationLevel": 354.6,
+            "addReclaimLevel": 389.65,
+            "target1": 389.65,
+            "target2": 405.23,
+            "riskReward": 0.8,
+            "entryType": "Pullback-to-support entry",
+            "reasoning": "Calculated from support near $370.33, resistance near $389.65, ATR proxy $15.58, mixed."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "AVGO is classified as ai custom silicon networking. INDmoney fundamentals supportive | rev 29.46% YoY | quarterly rev 29.46% YoY | op margin 44.95% | PE 86.92 Calculated from support near $370.33, resistance near $389.65, ATR proxy $15.58, mixed."
+        },
+        "createdAt": "2026-06-11T11:28:00.360Z"
+      }
+    },
+    "HOLDING:MU:HOLD": {
+      "firstSeenAt": 1781174812349,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L1",
+        "action": "HOLD",
+        "ticker": "MU",
+        "title": "HOLD",
+        "triggerId": "HOLDING:MU:HOLD",
+        "trigger": "AI thesis 60, opportunity 65, exit pressure 10",
+        "suggestedAction": "No new capital; keep monitoring until score and price action improve.",
+        "reason": "MU is classified as ai memory hbm. fundamentals mixed AI revenue is not directly measurable, so the exposure score is capped. Calculated from support near $873.24, resistance near $935.89, ATR proxy $54.63, mixed.",
+        "invalidation": "Cancel if price loses $849.59 or opportunity score falls below threshold.",
+        "confirmationMinutes": 5,
+        "immediate": false,
+        "threadId": "ticker:MU",
+        "price": 917.88,
+        "portfolioImpact": "Position weight 17.35% | Cash DEPLOY_0",
+        "worseningValue": 65,
+        "metadata": {
+          "sectorContext": "AI infra avg move +1.49% with 100% breadth (strong).",
+          "technicalContext": "RSI 57.27 neutral | 20D range 61.02% | vs QQQ +1.75%, vs SMH +0.96%",
+          "fundamentalContext": "fundamentals mixed",
+          "latestHeadline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
+          "aiThesisScore": 60,
+          "opportunityScore": 65,
+          "exitPressureScore": 10,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 78,
+            "support": 873.24,
+            "resistance": 935.89,
+            "trimLevel": 874.18,
+            "stopLevel": 849.59,
+            "invalidationLevel": 849.59,
+            "addReclaimLevel": 935.89,
+            "target1": 972.51,
+            "target2": 1027.14,
+            "riskReward": 0.8,
+            "entryType": "Relative strength reclaim",
+            "reasoning": "Calculated from support near $873.24, resistance near $935.89, ATR proxy $54.63, mixed."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "MU is classified as ai memory hbm. fundamentals mixed AI revenue is not directly measurable, so the exposure score is capped. Calculated from support near $873.24, resistance near $935.89, ATR proxy $54.63, mixed."
+        },
+        "createdAt": "2026-06-11T11:28:00.361Z"
+      }
+    },
+    "HOLDING:SMCI:HOLD_BUT_WATCH": {
+      "firstSeenAt": 1781176185338,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L2",
+        "action": "WATCH",
+        "ticker": "SMCI",
+        "title": "HOLD BUT WATCH",
+        "triggerId": "HOLDING:SMCI:HOLD_BUT_WATCH",
+        "trigger": "AI thesis 35, opportunity 48, exit pressure 51",
+        "suggestedAction": "Hold but watch for confirmation of weakness. Dynamic trim $28.99, stop $25.71.",
+        "reason": "SMCI is classified as ai servers. fundamentals mixed AI revenue is not directly measurable, so the exposure score is capped. Calculated from support near $29.14, resistance near $31.96, ATR proxy $2.78, mixed.",
+        "invalidation": "Reclaim above $31.96 with improved relative strength.",
+        "confirmationMinutes": 5,
+        "immediate": false,
+        "threadId": "ticker:SMCI",
+        "price": 29.18,
+        "portfolioImpact": "Position weight 3.21% | Cash DEPLOY_0",
+        "worseningValue": 51,
+        "metadata": {
+          "sectorContext": "AI infra avg move +1.49% with 100% breadth (strong).",
+          "technicalContext": "RSI 40.23 neutral | 20D range 1.35% | vs QQQ -0.7%, vs SMH -1.49%",
+          "fundamentalContext": "fundamentals mixed",
+          "latestHeadline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
+          "aiThesisScore": 35,
+          "opportunityScore": 48,
+          "exitPressureScore": 51,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 78,
+            "support": 29.14,
+            "resistance": 31.96,
+            "trimLevel": 28.99,
+            "stopLevel": 25.71,
+            "invalidationLevel": 25.71,
+            "addReclaimLevel": 31.96,
+            "target1": 31.96,
+            "target2": 34.74,
+            "riskReward": 0.8,
+            "entryType": "Pullback-to-support entry",
+            "reasoning": "Calculated from support near $29.14, resistance near $31.96, ATR proxy $2.78, mixed."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "SMCI is classified as ai servers. fundamentals mixed AI revenue is not directly measurable, so the exposure score is capped. Calculated from support near $29.14, resistance near $31.96, ATR proxy $2.78, mixed."
+        },
+        "createdAt": "2026-06-11T11:28:00.361Z"
+      }
+    },
+    "WATCHLIST:ANET:WAIT_FOR_PULLBACK": {
+      "firstSeenAt": 1781176477092,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L2",
+        "action": "THINK",
+        "ticker": "ANET",
+        "title": "WAIT FOR PULLBACK",
+        "triggerId": "WATCHLIST:ANET:WAIT_FOR_PULLBACK",
+        "trigger": "AI thesis 71, opportunity 70, exit pressure 0",
+        "suggestedAction": "Wait for pullback or better risk/reward; support $149.74, target $157.42.",
+        "reason": "ANET is classified as ai custom silicon networking. INDmoney fundamentals supportive | rev 28.59% YoY | quarterly rev 35.18% YoY | op margin 42.71% | PE 58.86 Calculated from support near $149.74, resistance near $157.42, ATR proxy $3.84.",
+        "invalidation": "Cancel if price loses $147.49 or opportunity score falls below threshold.",
+        "confirmationMinutes": 5,
+        "immediate": false,
+        "threadId": "ticker:ANET",
+        "price": 153.58,
+        "portfolioImpact": "Suggested size $0.00 | Cash DEPLOY_0",
+        "worseningValue": 70,
+        "metadata": {
+          "sectorContext": null,
+          "technicalContext": null,
+          "fundamentalContext": "INDmoney fundamentals supportive | rev 28.59% YoY | quarterly rev 35.18% YoY | op margin 42.71% | PE 58.86",
+          "latestHeadline": null,
+          "aiThesisScore": 71,
+          "opportunityScore": 70,
+          "exitPressureScore": 0,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 35,
+            "support": 149.74,
+            "resistance": 157.42,
+            "trimLevel": 150.51,
+            "stopLevel": 147.49,
+            "invalidationLevel": 147.49,
+            "addReclaimLevel": 157.42,
+            "target1": 157.42,
+            "target2": 161.26,
+            "riskReward": 0.63,
+            "entryType": "Breakout-retest entry",
+            "reasoning": "Calculated from support near $149.74, resistance near $157.42, ATR proxy $3.84."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "ANET is classified as ai custom silicon networking. INDmoney fundamentals supportive | rev 28.59% YoY | quarterly rev 35.18% YoY | op margin 42.71% | PE 58.86 Calculated from support near $149.74, resistance near $157.42, ATR proxy $3.84."
+        },
+        "createdAt": "2026-06-11T11:28:00.361Z"
+      }
+    },
+    "WATCHLIST:MRVL:WAIT_FOR_PULLBACK": {
+      "firstSeenAt": 1781176477092,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L2",
+        "action": "THINK",
+        "ticker": "MRVL",
+        "title": "WAIT FOR PULLBACK",
+        "triggerId": "WATCHLIST:MRVL:WAIT_FOR_PULLBACK",
+        "trigger": "AI thesis 66, opportunity 66, exit pressure 0",
+        "suggestedAction": "Wait for pullback or better risk/reward; support $254.37, target $267.41.",
+        "reason": "MRVL is classified as ai custom silicon networking. INDmoney fundamentals supportive | rev 42.26% YoY | quarterly rev 27.55% YoY | op margin 14.48% | PE 75.15 Calculated from support near $254.37, resistance near $267.41, ATR proxy $6.52.",
+        "invalidation": "Cancel if price loses $250.55 or opportunity score falls below threshold.",
+        "confirmationMinutes": 5,
+        "immediate": false,
+        "threadId": "ticker:MRVL",
+        "price": 260.89,
+        "portfolioImpact": "Suggested size $0.00 | Cash DEPLOY_0",
+        "worseningValue": 66,
+        "metadata": {
+          "sectorContext": null,
+          "technicalContext": null,
+          "fundamentalContext": "INDmoney fundamentals supportive | rev 42.26% YoY | quarterly rev 27.55% YoY | op margin 14.48% | PE 75.15",
+          "latestHeadline": null,
+          "aiThesisScore": 66,
+          "opportunityScore": 66,
+          "exitPressureScore": 0,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 35,
+            "support": 254.37,
+            "resistance": 267.41,
+            "trimLevel": 255.67,
+            "stopLevel": 250.55,
+            "invalidationLevel": 250.55,
+            "addReclaimLevel": 267.41,
+            "target1": 267.41,
+            "target2": 273.93,
+            "riskReward": 0.63,
+            "entryType": "Breakout-retest entry",
+            "reasoning": "Calculated from support near $254.37, resistance near $267.41, ATR proxy $6.52."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "MRVL is classified as ai custom silicon networking. INDmoney fundamentals supportive | rev 42.26% YoY | quarterly rev 27.55% YoY | op margin 14.48% | PE 75.15 Calculated from support near $254.37, resistance near $267.41, ATR proxy $6.52."
+        },
+        "createdAt": "2026-06-11T11:28:00.361Z"
+      }
+    },
+    "WATCHLIST:VRT:WAIT_FOR_PULLBACK": {
+      "firstSeenAt": 1781176477092,
+      "latestSeenAt": 1781177280361,
+      "candidate": {
+        "severity": "L2",
+        "action": "THINK",
+        "ticker": "VRT",
+        "title": "WAIT FOR PULLBACK",
+        "triggerId": "WATCHLIST:VRT:WAIT_FOR_PULLBACK",
+        "trigger": "AI thesis 66, opportunity 72, exit pressure 0",
+        "suggestedAction": "Wait for pullback or better risk/reward; support $275.38, target $301.56.",
+        "reason": "VRT is classified as ai power cooling datacenter. INDmoney fundamentals supportive | rev 27.69% YoY | quarterly rev 30.11% YoY | op margin 16.61% | PE 81.25 Calculated from support near $275.38, resistance near $301.56, ATR proxy $13.09, mixed.",
+        "invalidation": "Cancel if price loses $271.25 or opportunity score falls below threshold.",
+        "confirmationMinutes": 5,
+        "immediate": false,
+        "threadId": "ticker:VRT",
+        "price": 288.47,
+        "portfolioImpact": "Suggested size $0.00 | Cash DEPLOY_0",
+        "worseningValue": 72,
+        "metadata": {
+          "sectorContext": "AI infra avg move +1.49% with 100% breadth (strong).",
+          "technicalContext": "RSI 37.41 neutral | 20D range 12.91% | vs QQQ +1.44%, vs SMH +0.65%",
+          "fundamentalContext": "INDmoney fundamentals supportive | rev 27.69% YoY | quarterly rev 30.11% YoY | op margin 16.61% | PE 81.25",
+          "latestHeadline": "Bernstein Initiates Coverage of Vertiv Holdings (VRT) with Outperform Recommendation",
+          "aiThesisScore": 66,
+          "opportunityScore": 72,
+          "exitPressureScore": 0,
+          "cashDecision": "DEPLOY_0",
+          "marketRegime": "risk_on",
+          "dynamicLevels": {
+            "basis": "dynamic_best_available",
+            "confidence": 71,
+            "support": 275.38,
+            "resistance": 301.56,
+            "trimLevel": 278,
+            "stopLevel": 271.25,
+            "invalidationLevel": 271.25,
+            "addReclaimLevel": 301.56,
+            "target1": 301.56,
+            "target2": 314.65,
+            "riskReward": 0.76,
+            "entryType": "Relative strength reclaim",
+            "reasoning": "Calculated from support near $275.38, resistance near $301.56, ATR proxy $13.09, mixed."
+          },
+          "blockingReasons": [
+            "Portfolio is in profit-protection mode.",
+            "Risk/reward is below 1:1."
+          ],
+          "explanation": "VRT is classified as ai power cooling datacenter. INDmoney fundamentals supportive | rev 27.69% YoY | quarterly rev 30.11% YoY | op margin 16.61% | PE 81.25 Calculated from support near $275.38, resistance near $301.56, ATR proxy $13.09, mixed."
+        },
+        "createdAt": "2026-06-11T11:28:00.361Z"
+      }
+    }
+  },
+  "tickerSessionCounts": {
+    "2026-06-11:SMCI:L2": 2,
+    "2026-06-11:ANET:L2": 2,
+    "2026-06-11:MRVL:L2": 2,
+    "2026-06-11:VRT:L2": 2
+  },
+  "lastAlertByKey": {
+    "AVGO:earnings-within-48h": {
+      "deliveredAt": "2026-06-02T18:11:31.564Z",
+      "ticker": "AVGO",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 42.192096666666664,
+      "deliveryRef": null
+    },
+    "NVDA:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.579Z",
+      "ticker": "NVDA",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "MU:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.580Z",
+      "ticker": "MU",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "GOOGL:stale-data": {
+      "deliveredAt": "2026-06-03T13:36:22.421Z",
+      "ticker": "GOOGL",
+      "severity": "L2",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 1,
+      "deliveryRef": {
+        "id": "3EB0F16032A8BB342408FC",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "AMD:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.581Z",
+      "ticker": "AMD",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "SMCI:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.582Z",
+      "ticker": "SMCI",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "AVGO:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.582Z",
+      "ticker": "AVGO",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "AMZN:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.582Z",
+      "ticker": "AMZN",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "TSM:stale-data": {
+      "deliveredAt": "2026-06-03T03:20:10.582Z",
+      "ticker": "TSM",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": null
+    },
+    "PLTR:stale-data": {
+      "deliveredAt": "2026-06-03T03:23:59.275Z",
+      "ticker": "PLTR",
+      "severity": "L2",
+      "marketDayKey": "2026-06-02",
+      "worseningValue": 1,
+      "deliveryRef": {
+        "id": "3EB026055D41D29FDBAAB6",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "NVDA:below-223": {
+      "deliveredAt": "2026-06-03T13:14:51.054Z",
+      "ticker": "NVDA",
+      "severity": "L2",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 0.4870999999999981,
+      "deliveryRef": {
+        "id": "3EB0B8B48CD4C6C5E0D4DA",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "SMCI:weak-vs-sector": {
+      "deliveredAt": "2026-06-03T13:14:51.062Z",
+      "ticker": "SMCI",
+      "severity": "L2",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 3.38,
+      "deliveryRef": {
+        "id": "3EB038A34F165CB47A032E",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "AVGO:optional-trim-near-490": {
+      "deliveredAt": "2026-06-03T13:14:51.069Z",
+      "ticker": "AVGO",
+      "severity": "L2",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 1.6999999999999886,
+      "deliveryRef": {
+        "id": "3EB003C1D23A916BBF4573",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "GOOGL:below-360": {
+      "deliveredAt": "2026-06-03T12:49:54.517Z",
+      "ticker": "GOOGL",
+      "severity": "L3",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 6.800000000000011,
+      "deliveryRef": {
+        "id": "3EB005BBA39DBFD93E6F7F",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ROTATE:PLTR:ARM": {
+      "deliveredAt": "2026-06-03T13:24:51.306Z",
+      "ticker": "PLTR",
+      "severity": "L3",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 12,
+      "deliveryRef": {
+        "id": "3EB0019853D4F9CF54A1EF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "GOOGL:below-365": {
+      "deliveredAt": "2026-06-03T13:29:51.277Z",
+      "ticker": "GOOGL",
+      "severity": "L1",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 2.8500000000000227,
+      "deliveryRef": {
+        "id": "3EB0AD5B044BFBE823CEBE",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "PORTFOLIO:giveback-25": {
+      "deliveredAt": "2026-06-03T14:25:25.344Z",
+      "ticker": null,
+      "severity": "L2",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 217.32,
+      "deliveryRef": {
+        "id": "3EB04656D64665D130A1EE",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "SMCI:below-48": {
+      "deliveredAt": "2026-06-03T14:00:19.832Z",
+      "ticker": "SMCI",
+      "severity": "L1",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 0.7800000000000011,
+      "deliveryRef": {
+        "id": "3EB00964C5F840526398FF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "PORTFOLIO:profit-below-600": {
+      "deliveredAt": "2026-06-09T08:59:46.953Z",
+      "ticker": null,
+      "severity": "L3",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 999.37,
+      "deliveryRef": {
+        "id": "3EB0FFA7D2B7521CCB6B86",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "NVDA:below-220": {
+      "deliveredAt": "2026-06-03T14:25:25.314Z",
+      "ticker": "NVDA",
+      "severity": "L3",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 7.310000000000002,
+      "deliveryRef": {
+        "id": "3EB0137142D887EDC8BC9E",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "PLTR:below-149": {
+      "deliveredAt": "2026-06-03T14:25:25.329Z",
+      "ticker": "PLTR",
+      "severity": "L3",
+      "marketDayKey": "2026-06-03",
+      "worseningValue": 3.6500000000000057,
+      "deliveryRef": {
+        "id": "3EB0CCDA2014B34E89C187",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:TSM:ADD_ONLY_IF_CONFIRMED": {
+      "deliveredAt": "2026-06-04T18:32:17.888Z",
+      "ticker": "TSM",
+      "severity": "L2",
+      "marketDayKey": "2026-06-04",
+      "worseningValue": 77,
+      "deliveryRef": {
+        "id": "3EB0759C3A04F4DDB15411",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "CASH:DEPLOY_25_35": {
+      "deliveredAt": "2026-06-04T18:32:17.902Z",
+      "ticker": null,
+      "severity": "L2",
+      "marketDayKey": "2026-06-04",
+      "worseningValue": 77,
+      "deliveryRef": {
+        "id": "3EB06C21012668B88E9559",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:NVDA:PROTECT_PROFIT": {
+      "deliveredAt": "2026-06-04T19:27:29.053Z",
+      "ticker": "NVDA",
+      "severity": "L3",
+      "marketDayKey": "2026-06-04",
+      "worseningValue": 54,
+      "deliveryRef": {
+        "id": "3EB076DEAC14154377DE1D",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:TSM:PROTECT_PROFIT": {
+      "deliveredAt": "2026-06-08T09:41:46.430Z",
+      "ticker": "TSM",
+      "severity": "L3",
+      "marketDayKey": "2026-06-08",
+      "worseningValue": 79,
+      "deliveryRef": {
+        "id": "3EB0EC40901E0CD20260DA",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:MU:PROTECT_PROFIT": {
+      "deliveredAt": "2026-06-09T13:03:08.315Z",
+      "ticker": "MU",
+      "severity": "L3",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 80,
+      "deliveryRef": {
+        "id": "3EB05A26543085A3013667",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:GOOGL:PROTECT_PROFIT": {
+      "deliveredAt": "2026-06-09T14:23:50.936Z",
+      "ticker": "GOOGL",
+      "severity": "L3",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 46,
+      "deliveryRef": {
+        "id": "3EB07E15C7A540486030B8",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:AMD:PROTECT_PROFIT": {
+      "deliveredAt": "2026-06-09T13:26:33.469Z",
+      "ticker": "AMD",
+      "severity": "L3",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 80,
+      "deliveryRef": {
+        "id": "3EB0A6558DECC8A8EC51E6",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:AVGO:PROTECT_PROFIT": {
+      "deliveredAt": "2026-06-09T13:03:08.321Z",
+      "ticker": "AVGO",
+      "severity": "L3",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 77,
+      "deliveryRef": {
+        "id": "3EB06917C94DE4E9CD152C",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:SMCI:HOLD_BUT_WATCH": {
+      "deliveredAt": "2026-06-11T10:24:56.602Z",
+      "ticker": "SMCI",
+      "severity": "L2",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 51,
+      "deliveryRef": {
+        "id": "3EB002B48A6B9C9625352E",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "PORTFOLIO:giveback-35": {
+      "deliveredAt": "2026-06-05T19:16:52.413Z",
+      "ticker": null,
+      "severity": "L3",
+      "marketDayKey": "2026-06-05",
+      "worseningValue": 818.07,
+      "deliveryRef": {
+        "id": "3EB00854F2B7E92FED58A9",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "portfolio:stale-data": {
+      "deliveredAt": "2026-06-08T16:41:52.379Z",
+      "ticker": null,
+      "severity": "L4",
+      "marketDayKey": "2026-06-08",
+      "worseningValue": 5589.8,
+      "deliveryRef": {
+        "id": "3EB08B36753D730B1D0CDB",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "WATCHLIST:ANET:WAIT_FOR_PULLBACK": {
+      "deliveredAt": "2026-06-11T11:13:55.411Z",
+      "ticker": "ANET",
+      "severity": "L2",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 70,
+      "deliveryRef": {
+        "id": "3EB05C2500145860AF84CF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "WATCHLIST:MRVL:WAIT_FOR_PULLBACK": {
+      "deliveredAt": "2026-06-11T11:13:55.425Z",
+      "ticker": "MRVL",
+      "severity": "L2",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 66,
+      "deliveryRef": {
+        "id": "3EB0BEB30DEA12F8D0BFAF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "WATCHLIST:CEG:WAIT_FOR_PULLBACK": {
+      "deliveredAt": "2026-06-09T13:23:02.874Z",
+      "ticker": "CEG",
+      "severity": "L2",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 69,
+      "deliveryRef": {
+        "id": "3EB03C0EE543AF02117372",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:AVGO:HOLD": {
+      "deliveredAt": "2026-06-08T09:46:45.622Z",
+      "ticker": "AVGO",
+      "severity": "L1",
+      "marketDayKey": "2026-06-08",
+      "worseningValue": 65,
+      "deliveryRef": {
+        "id": "3EB0FE96EF6A8B56802DAD",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:TSM:HOLD": {
+      "deliveredAt": "2026-06-08T08:57:49.079Z",
+      "ticker": "TSM",
+      "severity": "L1",
+      "marketDayKey": "2026-06-08",
+      "worseningValue": 70,
+      "deliveryRef": {
+        "id": "3EB07D7145ADBD229CFD25",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "WATCHLIST:FIX:WAIT_FOR_PULLBACK": {
+      "deliveredAt": "2026-06-09T13:52:10.037Z",
+      "ticker": "FIX",
+      "severity": "L2",
+      "marketDayKey": "2026-06-09",
+      "worseningValue": 65,
+      "deliveryRef": {
+        "id": "3EB0FCC4797CB1EB59BFB6",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:AMZN:HOLD_BUT_WATCH": {
+      "deliveredAt": "2026-06-08T13:06:19.143Z",
+      "ticker": "AMZN",
+      "severity": "L2",
+      "marketDayKey": "2026-06-08",
+      "worseningValue": 55,
+      "deliveryRef": {
+        "id": "3EB0907C710720A64E6B05",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:SMCI:TRIM": {
+      "deliveredAt": "2026-06-11T08:20:29.554Z",
+      "ticker": "SMCI",
+      "severity": "L3",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 66,
+      "deliveryRef": {
+        "id": "3EB01C4689F645043ED967",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "WATCHLIST:VRT:WAIT_FOR_PULLBACK": {
+      "deliveredAt": "2026-06-11T11:13:55.435Z",
+      "ticker": "VRT",
+      "severity": "L2",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 72,
+      "deliveryRef": {
+        "id": "3EB00A50F9F2F67ECEB8EF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:MU:HOLD": {
+      "deliveredAt": "2026-06-11T10:43:26.217Z",
+      "ticker": "MU",
+      "severity": "L1",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 67,
+      "deliveryRef": {
+        "id": "3EB0C71205FCE02FB34017",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "HOLDING:AMD:HOLD": {
+      "deliveredAt": "2026-06-11T11:00:15.564Z",
+      "ticker": "AMD",
+      "severity": "L1",
+      "marketDayKey": "2026-06-11",
+      "worseningValue": 65,
+      "deliveryRef": {
+        "id": "3EB054A614457B0EB4398F",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    }
+  },
+  "threadRefs": {
+    "ticker:PLTR": {
+      "updatedAt": "2026-06-03T14:25:25.330Z",
+      "messageRef": {
+        "id": "3EB0CCDA2014B34E89C187",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:NVDA": {
+      "updatedAt": "2026-06-04T19:27:29.053Z",
+      "messageRef": {
+        "id": "3EB076DEAC14154377DE1D",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:SMCI": {
+      "updatedAt": "2026-06-11T10:24:56.602Z",
+      "messageRef": {
+        "id": "3EB002B48A6B9C9625352E",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:AVGO": {
+      "updatedAt": "2026-06-09T13:03:08.321Z",
+      "messageRef": {
+        "id": "3EB06917C94DE4E9CD152C",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:GOOGL": {
+      "updatedAt": "2026-06-09T14:23:50.936Z",
+      "messageRef": {
+        "id": "3EB07E15C7A540486030B8",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "rotation:PLTR:ARM": {
+      "updatedAt": "2026-06-03T13:24:51.306Z",
+      "messageRef": {
+        "id": "3EB0019853D4F9CF54A1EF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "portfolio:risk": {
+      "updatedAt": "2026-06-09T08:59:46.953Z",
+      "messageRef": {
+        "id": "3EB0FFA7D2B7521CCB6B86",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "summary:daily": {
+      "updatedAt": "2026-06-10T02:57:54.361Z",
+      "messageRef": {
+        "id": "3EB0FCFD40D04F7D980573",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:TSM": {
+      "updatedAt": "2026-06-08T09:41:46.430Z",
+      "messageRef": {
+        "id": "3EB0EC40901E0CD20260DA",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "portfolio:cash": {
+      "updatedAt": "2026-06-04T18:32:17.902Z",
+      "messageRef": {
+        "id": "3EB06C21012668B88E9559",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:MU": {
+      "updatedAt": "2026-06-11T10:43:26.217Z",
+      "messageRef": {
+        "id": "3EB0C71205FCE02FB34017",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:AMD": {
+      "updatedAt": "2026-06-11T11:00:15.564Z",
+      "messageRef": {
+        "id": "3EB054A614457B0EB4398F",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "portfolio:data-quality": {
+      "updatedAt": "2026-06-08T16:41:52.379Z",
+      "messageRef": {
+        "id": "3EB08B36753D730B1D0CDB",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:ANET": {
+      "updatedAt": "2026-06-11T11:13:55.411Z",
+      "messageRef": {
+        "id": "3EB05C2500145860AF84CF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:MRVL": {
+      "updatedAt": "2026-06-11T11:13:55.425Z",
+      "messageRef": {
+        "id": "3EB0BEB30DEA12F8D0BFAF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:CEG": {
+      "updatedAt": "2026-06-09T13:23:02.874Z",
+      "messageRef": {
+        "id": "3EB03C0EE543AF02117372",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:FIX": {
+      "updatedAt": "2026-06-09T13:52:10.037Z",
+      "messageRef": {
+        "id": "3EB0FCC4797CB1EB59BFB6",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:AMZN": {
+      "updatedAt": "2026-06-08T13:06:19.143Z",
+      "messageRef": {
+        "id": "3EB0907C710720A64E6B05",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    },
+    "ticker:VRT": {
+      "updatedAt": "2026-06-11T11:13:55.435Z",
+      "messageRef": {
+        "id": "3EB00A50F9F2F67ECEB8EF",
+        "remoteJid": "919594614752@s.whatsapp.net",
+        "fromMe": true
+      }
+    }
+  },
+  "intraday": {
+    "highPortfolioValueUsd": 11823.2,
+    "lowPortfolioValueUsd": 11814.52,
+    "highestUnrealizedProfitUsd": -191.18,
+    "lowestUnrealizedProfitUsd": -191.35,
+    "dayMaxProfitUsd": -191.18
+  },
+  "dailySummary": {
+    "lastSentDayKey": null
+  }
+}

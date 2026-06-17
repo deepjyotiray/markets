@@ -1,0 +1,21 @@
+{
+  "name": "market-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "alerts:once": "node scripts/portfolio-alerts.mjs",
+    "alerts:live-once": "node scripts/portfolio-alerts.mjs --live",
+    "truthsocial:once": "node scripts/truth-social-alerts.mjs",
+    "truthsocial:live-once": "node scripts/truth-social-alerts.mjs --live",
+    "truthsocial:chrome-once": "TRUTH_SOCIAL_ALERT_SOURCE=chrome node scripts/truth-social-alerts.mjs",
+    "truthsocial:chrome-api-once": "TRUTH_SOCIAL_ALERT_SOURCE=chrome_api node scripts/truth-social-alerts.mjs",
+    "truthsocial:backfill": "TRUTH_SOCIAL_ALERT_SOURCE=chrome_api node scripts/truth-social-backfill.mjs",
+    "truthsocial:archive-backfill": "node scripts/truth-social-archive-backfill.mjs",
+    "truthsocial:train": "node scripts/truth-social-gold-train.mjs",
+    "indmoney:auth": "node scripts/indmoney-mcp-auth.mjs",
+    "indmoney:smoke": "node scripts/indmoney-mcp-smoke.mjs"
+  }
+}

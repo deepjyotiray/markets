@@ -1,0 +1,26 @@
+{
+  "horizons": {
+    "5m": {
+      "sampleCount": 1884,
+      "artifactPath": "/Users/deepjyotiray/Documents/Market/data/truth-social-gold-model-artifacts/truth-social-gold-5m.pkl",
+      "trainedAt": "2026-06-15T05:34:42.779939+00:00",
+      "accuracy": 0.6438,
+      "meanAbsError": 0.1614
+    },
+    "15m": {
+      "sampleCount": 1884,
+      "artifactPath": "/Users/deepjyotiray/Documents/Market/data/truth-social-gold-model-artifacts/truth-social-gold-15m.pkl",
+      "trainedAt": "2026-06-15T05:34:43.482898+00:00",
+      "accuracy": 0.7213,
+      "meanAbsError": 0.1861
+    },
+    "30m": {
+      "sampleCount": 1884,
+      "artifactPath": "/Users/deepjyotiray/Documents/Market/data/truth-social-gold-model-artifacts/truth-social-gold-30m.pkl",
+      "trainedAt": "2026-06-15T05:34:44.254287+00:00",
+      "accuracy": 0.6847,
+      "meanAbsError": 0.2085
+    }
+  },
+  "updatedAt": "2026-06-15T05:34:42.063196+00:00"
+}

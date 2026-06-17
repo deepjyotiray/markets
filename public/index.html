@@ -1,0 +1,2870 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Market Decision Dashboard</title>
+    <link rel="stylesheet" href="/app-shell.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg?page=%2F"
+    />
+    <link rel="shortcut icon" href="/favicon.svg?page=%2F" />
+    <script>
+      window.__APP_SHELL__ = {
+        currentPath: '/',
+        tabs: [['/', 'Market'], ['/swing-trades', 'Swing'], ['/portfolio-alerts', 'Alerts'], ['/watchlist-stocks', 'Watchlist'], ['/portfolio-earnings', 'Earnings'], ['/portfolios', 'Combined'], ['/portfolios/deep', 'Deep'], ['/portfolios/mom', 'Mom']],
+        actionSelectors: ['.hero-tools', '.summary .toolbar']
+      };
+    </script>
+    <script defer src="/app-shell.js"></script>
+    <style>
+      :root {
+        --bg: #f4efe3;
+        --bg-strong: #e9dfcb;
+        --panel: rgba(255, 251, 244, 0.9);
+        --panel-glass: rgba(255, 255, 255, 0.62);
+        --panel-glass-strong: rgba(255, 255, 255, 0.7);
+        --panel-glass-soft: rgba(255, 255, 255, 0.58);
+        --ink: #1f2423;
+        --muted: #5d645f;
+        --line: rgba(31, 36, 35, 0.1);
+        --risk: #16653e;
+        --off: #9f2d2d;
+        --neu: #8b6b2e;
+        --accent: #0b5966;
+        --accent-soft: rgba(11, 89, 102, 0.12);
+        --font-ui: "Avenir Next", "SF Pro Display", "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+        --font-numeric: "SF Pro Display", "Avenir Next", "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      :root[data-app-theme="dark"] {
+        --bg: #0d1415;
+        --bg-strong: #111a1c;
+        --panel: rgba(18, 27, 28, 0.92);
+        --panel-glass: rgba(22, 33, 34, 0.82);
+        --panel-glass-strong: rgba(25, 38, 39, 0.88);
+        --panel-glass-soft: rgba(27, 40, 41, 0.78);
+        --ink: #edf5f2;
+        --muted: #9aa8a3;
+        --line: rgba(214, 230, 225, 0.12);
+        --risk: #57c989;
+        --off: #ee7f7f;
+        --neu: #d8aa4f;
+        --accent: #6dccd8;
+        --accent-soft: rgba(109, 204, 216, 0.18);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-app-theme="light"]) {
+          --bg: #0d1415;
+          --bg-strong: #111a1c;
+          --panel: rgba(18, 27, 28, 0.92);
+          --panel-glass: rgba(22, 33, 34, 0.82);
+          --panel-glass-strong: rgba(25, 38, 39, 0.88);
+          --panel-glass-soft: rgba(27, 40, 41, 0.78);
+          --ink: #edf5f2;
+          --muted: #9aa8a3;
+          --line: rgba(214, 230, 225, 0.12);
+          --risk: #57c989;
+          --off: #ee7f7f;
+          --neu: #d8aa4f;
+          --accent: #6dccd8;
+          --accent-soft: rgba(109, 204, 216, 0.18);
+        }
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--app-font);
+        background:
+          radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 22%, transparent), transparent 28%),
+          radial-gradient(circle at top right, color-mix(in srgb, var(--off) 18%, transparent), transparent 24%),
+          linear-gradient(180deg, var(--bg), var(--bg-strong));
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 16px clamp(10px, 1.2vw, 24px) 32px;
+      }
+
+      .hero {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 8px 0 8px;
+        font-size: clamp(34px, 5vw, 62px);
+        line-height: 0.95;
+      }
+
+      .sub {
+        max-width: 980px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .toggle {
+        display: inline-flex;
+        padding: 6px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--panel-glass);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 18px 40px rgba(35, 40, 35, 0.08);
+      }
+
+      .toggle button {
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 16px;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .toggle button.active {
+        background: var(--accent);
+        color: white;
+      }
+
+      .toggle button,
+      .layout-tools button,
+      .toolbar button,
+      .collapse-btn,
+      .sort-btn,
+      .widget-grip {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .hero-tools {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .layout-tools {
+        display: inline-flex;
+        gap: 8px;
+      }
+
+      .layout-tools button {
+        border: 1px solid rgba(11, 89, 102, 0.24);
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: var(--panel-glass-strong);
+        color: var(--accent);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .layout-tools button.active {
+        background: var(--accent);
+        color: white;
+      }
+
+      .service-control {
+        display: grid;
+        gap: 10px;
+        padding: 12px 14px;
+        margin-top: 10px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel-glass-soft);
+      }
+
+      .service-control-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .service-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 84px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .service-pill.running {
+        background: color-mix(in srgb, var(--risk) 16%, transparent);
+        color: var(--risk);
+      }
+
+      .service-pill.stopped {
+        background: color-mix(in srgb, var(--off) 14%, transparent);
+        color: var(--off);
+      }
+
+      .service-control-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px 14px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .service-control-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .service-control-actions button {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 14px;
+        background: var(--panel-glass-strong);
+        color: var(--ink);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .service-control-actions button.primary {
+        border-color: transparent;
+        background: var(--accent);
+        color: white;
+      }
+
+      .service-control-actions button:disabled {
+        opacity: 0.55;
+        cursor: wait;
+      }
+
+      .service-control-note {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-auto-rows: 56px;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .card {
+        grid-column: span 12;
+        display: flex;
+        flex-direction: column;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 12px;
+        box-shadow: 0 18px 50px rgba(30, 35, 30, 0.08);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        position: relative;
+        transition: box-shadow 120ms ease, transform 120ms ease;
+      }
+
+      .layout-editing .card {
+        user-select: none;
+      }
+
+      .card.dragging,
+      .card.resizing {
+        box-shadow: 0 26px 60px rgba(11, 89, 102, 0.22);
+        z-index: 5;
+      }
+
+      .card.drop-target {
+        outline: 2px dashed rgba(11, 89, 102, 0.35);
+        outline-offset: 4px;
+      }
+
+      .loading-surface {
+        position: relative;
+        overflow: visible;
+        border-radius: 18px;
+      }
+
+      .loading-surface.loading::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(255, 255, 255, 0) 15%,
+          rgba(255, 255, 255, 0.45) 42%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: translateX(-120%);
+        animation: shimmer 1.15s infinite;
+        pointer-events: none;
+      }
+
+      .loading-surface.loading > * {
+        filter: blur(3px);
+        transition: filter 120ms ease;
+      }
+
+      .loading-surface.loading {
+        overflow: hidden;
+      }
+
+      .loading-inline.loading {
+        position: relative;
+        color: transparent !important;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .loading-inline.loading::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(255, 255, 255, 0) 15%,
+          rgba(255, 255, 255, 0.5) 42%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: translateX(-120%);
+        animation: shimmer 1.15s infinite;
+      }
+
+      @keyframes shimmer {
+        100% {
+          transform: translateX(120%);
+        }
+      }
+
+      .summary { grid-column: span 12; }
+      .report { grid-column: span 12; }
+      .portfolio { grid-column: span 12; overflow-x: auto; }
+      .macro { grid-column: span 7; }
+      .context { grid-column: span 5; }
+      .sectors { grid-column: span 5; }
+      .watchlist { grid-column: span 7; overflow-x: auto; }
+      .history { grid-column: span 12; overflow-x: auto; }
+
+      .label {
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .summary-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .card-header-tools {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .widget-grip {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        border: 1px dashed rgba(11, 89, 102, 0.3);
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--accent);
+        cursor: grab;
+        touch-action: none;
+        font-size: 16px;
+      }
+
+      .layout-editing .widget-grip {
+        display: inline-flex;
+      }
+
+      .layout-editing .widget-grip:active {
+        cursor: grabbing;
+      }
+
+      .card-header .label {
+        margin-bottom: 0;
+      }
+
+      .card-body {
+        display: block;
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .report .card-body {
+        display: flex;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      .card.collapsed .card-body {
+        display: none;
+      }
+
+      .collapse-btn {
+        border: 1px solid rgba(11, 89, 102, 0.18);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--accent);
+        font: inherit;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .resize-handle {
+        display: none;
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        width: 18px;
+        height: 18px;
+        border-radius: 6px;
+        background:
+          linear-gradient(135deg, transparent 0 45%, rgba(11, 89, 102, 0.55) 45% 55%, transparent 55% 100%),
+          linear-gradient(135deg, transparent 0 65%, rgba(11, 89, 102, 0.35) 65% 75%, transparent 75% 100%);
+        cursor: nwse-resize;
+        touch-action: none;
+      }
+
+      .layout-editing .resize-handle {
+        display: block;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .risk-on { background: rgba(22, 101, 62, 0.12); color: var(--risk); }
+      .risk-off { background: rgba(159, 45, 45, 0.12); color: var(--off); }
+      .neutral { background: rgba(139, 107, 46, 0.12); color: var(--neu); }
+
+      .decision {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+      }
+
+      .decision-block {
+        padding: 12px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.52);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+      }
+
+      .decision-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      .decision-value {
+        margin-top: 6px;
+        font-family: var(--font-numeric);
+        font-size: 24px;
+        line-height: 1.2;
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .toolbar button {
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: var(--accent);
+        color: white;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .toolbar button.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid rgba(11, 89, 102, 0.24);
+      }
+
+      .macro-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        padding: 12px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+      }
+
+      .metric-name {
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .metric-value {
+        margin-top: 6px;
+        font-family: var(--font-numeric);
+        font-size: 32px;
+        line-height: 1;
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      .metric-meta {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .pos { color: var(--risk); }
+      .neg { color: var(--off); }
+      .neu { color: var(--muted); }
+
+      .delta.pos { color: var(--risk); }
+      .delta.neg { color: var(--off); }
+      .delta.neu { color: var(--muted); }
+
+      .source-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(11, 89, 102, 0.18);
+        background: var(--accent-soft);
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .source-link:hover {
+        text-decoration: underline;
+      }
+
+      .usage-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .usage-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr) repeat(3, minmax(72px, 0.6fr)) minmax(72px, 0.7fr) minmax(0, 0.9fr);
+        gap: 10px;
+        align-items: center;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel-glass-soft);
+        font-size: 12px;
+      }
+
+      .usage-row strong,
+      .usage-row a {
+        display: block;
+        color: var(--ink);
+        text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .usage-row span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .usage-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 56px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .usage-chip.ok {
+        color: var(--risk);
+      }
+
+      .usage-chip.error {
+        color: var(--off);
+      }
+
+      .headline {
+        font-size: 20px;
+        line-height: 1.35;
+      }
+
+      .note-list,
+      .headline-list {
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      .note-list li,
+      .headline-list li {
+        margin: 0 0 7px;
+        color: var(--muted);
+      }
+
+      .headline-list a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .headline-list a:hover {
+        text-decoration: underline;
+      }
+
+      .sector-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .sector-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+        font-size: 14px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--font-numeric);
+        font-size: 15px;
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 10px 8px;
+        border-bottom: 1px solid var(--line);
+        white-space: nowrap;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .latest-row {
+        background: rgba(212, 160, 23, 0.12);
+      }
+
+      .latest-stamp {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 8px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(212, 160, 23, 0.16);
+        color: var(--accent-strong);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .muted { color: var(--muted); }
+
+      .stamp {
+        margin-top: 8px;
+        color: var(--muted);
+        font-family: var(--font-numeric);
+        font-size: 15px;
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      .empty {
+        color: var(--muted);
+        padding: 16px 0;
+      }
+
+      .report-text {
+        margin: 0;
+        padding: 12px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+        color: var(--ink);
+        white-space: pre-wrap;
+        font: 14px/1.55 "SFMono-Regular", "Menlo", "Consolas", monospace;
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: 0;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .portfolio-shell {
+        display: grid;
+        gap: 10px;
+      }
+
+      .portfolio-shell.hidden {
+        display: none;
+      }
+
+      .portfolio-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+      }
+
+      .portfolio-table {
+        width: 100%;
+        min-width: 1480px;
+        font-size: 15px;
+      }
+
+      .sort-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-weight: inherit;
+        cursor: pointer;
+      }
+
+      .sort-btn:hover {
+        opacity: 0.82;
+      }
+
+      .sort-indicator {
+        min-width: 12px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .sort-btn.active .sort-indicator {
+        color: var(--ink);
+      }
+
+      .portfolio-recommendations {
+        margin-top: 10px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .portfolio-growth {
+        display: grid;
+        gap: 10px;
+      }
+
+      .portfolio-growth-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .portfolio-growth-chart {
+        padding: 12px;
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(245, 249, 248, 0.64));
+        border: 1px solid rgba(31, 36, 35, 0.08);
+      }
+
+      .portfolio-growth svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .portfolio-growth-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+      }
+
+      .growth-legend {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .growth-swatch {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+      }
+
+      .growth-axis-labels {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        font-family: var(--font-numeric);
+      }
+
+      .recommendation-card {
+        padding: 12px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+      }
+
+      .recommendation-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .recommendation-grid {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+      }
+
+      .recommendation-metric {
+        padding: 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+        font-family: var(--font-numeric);
+        font-size: 16px;
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      .recommendation-metric .decision-title {
+        font-size: 11px;
+      }
+
+      .recommendation-notes,
+      .recommendation-flags {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+
+      .recommendation-catalysts {
+        margin-top: 10px;
+        padding: 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+      }
+
+      .recommendation-catalysts .decision-title {
+        margin-bottom: 8px;
+      }
+
+      .recommendation-catalysts .headline-list {
+        margin-top: 0;
+      }
+
+      .recommendation-flags li {
+        color: var(--off);
+      }
+
+      .portfolio-name {
+        font-weight: 700;
+      }
+
+      .portfolio-sub {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-family: var(--font-numeric);
+        font-size: 13px;
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      .mobile-table-card {
+        display: none;
+      }
+
+      .mobile-portfolio-card {
+        display: none;
+      }
+
+      .mobile-data-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mobile-data-item {
+        padding: 14px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(31, 36, 35, 0.08);
+      }
+
+      .mobile-data-title {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .mobile-data-grid {
+        display: grid;
+        gap: 8px;
+      }
+
+      .mobile-data-row {
+        display: grid;
+        gap: 2px;
+      }
+
+      .mobile-data-label {
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 1100px) {
+        .wrap {
+          padding: 12px 10px 24px;
+        }
+
+        h1 {
+          font-size: clamp(30px, 8vw, 48px);
+          line-height: 1;
+        }
+
+        .sub {
+          font-size: 16px;
+        }
+
+        .hero {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .hero-tools {
+          justify-content: flex-start;
+          width: 100%;
+        }
+
+        .toggle,
+        .layout-tools {
+          width: 100%;
+        }
+
+        .toggle {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .toggle button,
+        .layout-tools button {
+          width: 100%;
+        }
+
+        .layout-tools {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .macro,
+        .context,
+        .sectors,
+        .watchlist {
+          grid-column: span 12;
+        }
+
+        .grid > [data-widget-id="summary"] { order: 1; }
+        .grid > [data-widget-id="sectors"] { order: 2; }
+        .grid > [data-widget-id="watchlist"] { order: 3; }
+        .grid > [data-widget-id="macro"] { order: 4; }
+        .grid > [data-widget-id="truthSocialUsage"] { order: 5; }
+        .grid > [data-widget-id="context"] { order: 6; }
+        .grid > [data-widget-id="report"] { order: 7; }
+        .grid > [data-widget-id="history"] { order: 8; }
+
+        .grid {
+          gap: 10px;
+          grid-auto-rows: auto;
+        }
+
+        .card {
+          padding: 12px;
+          border-radius: 18px;
+        }
+
+        .card-body,
+        .report .card-body {
+          overflow-x: hidden;
+        }
+
+        .summary-head,
+        .card-header,
+        .recommendation-head,
+        .metric-meta,
+        .mobile-data-title {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .summary-head > *,
+        .recommendation-head > * {
+          width: 100%;
+          min-width: 0;
+        }
+
+        .decision,
+        .macro-grid,
+        .portfolio-summary,
+        .recommendation-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .usage-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .metric-value,
+        .decision-value {
+          font-size: 24px;
+        }
+
+        .toolbar {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .toolbar button,
+        .collapse-btn.ai-run-btn {
+          width: 100%;
+        }
+
+        .portfolio,
+        .watchlist,
+        .history {
+          overflow-x: visible;
+        }
+
+        .portfolio-table {
+          min-width: 0;
+          font-size: 13px;
+        }
+
+        .portfolio-table thead {
+          display: none;
+        }
+
+        .portfolio-table,
+        .portfolio-table tbody,
+        .portfolio-table tr,
+        .portfolio-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .portfolio-table tr {
+          padding: 14px 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .portfolio-table td {
+          padding: 7px 0;
+          border-bottom: 0;
+          white-space: normal;
+        }
+
+        .portfolio-table td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 4px;
+          color: var(--muted);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .recommendation-head .pill {
+          width: 100%;
+          justify-content: center;
+          text-align: center;
+          white-space: normal;
+        }
+
+        .recommendation-card,
+        .recommendation-catalysts,
+        .recommendation-metric,
+        .decision-block,
+        .metric,
+        .mobile-data-item,
+        .report-text,
+        .headline,
+        .headline-list li,
+        .note-list li,
+        .portfolio-table td,
+        .sector-tag {
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+
+        .report-text {
+          font-size: 13px;
+          line-height: 1.5;
+        }
+
+        .portfolio-table,
+        #watchlistSurface,
+        #historySurface {
+          display: none;
+        }
+
+        .mobile-portfolio-card,
+        .mobile-table-card {
+          display: grid;
+          gap: 10px;
+        }
+
+        .mobile-data-list {
+          display: grid;
+          gap: 10px;
+        }
+
+        .mobile-data-item {
+          padding: 14px;
+          border-radius: 16px;
+          background: rgba(255, 255, 255, 0.62);
+          border: 1px solid rgba(31, 36, 35, 0.08);
+        }
+
+        .mobile-data-grid {
+          display: grid;
+          gap: 8px;
+        }
+
+        .mobile-data-row {
+          display: grid;
+          gap: 2px;
+        }
+
+        .mobile-data-label {
+          color: var(--muted);
+          font-size: 11px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .layout-tools {
+          display: none;
+        }
+      }
+
+      :root[data-app-theme="dark"] .card,
+      :root[data-app-theme="dark"] .decision-block,
+      :root[data-app-theme="dark"] .metric,
+      :root[data-app-theme="dark"] .sector-tag,
+      :root[data-app-theme="dark"] .report-text,
+      :root[data-app-theme="dark"] .recommendation-card,
+      :root[data-app-theme="dark"] .recommendation-metric,
+      :root[data-app-theme="dark"] .recommendation-catalysts,
+      :root[data-app-theme="dark"] .mobile-data-item,
+      :root[data-app-theme="dark"] .portfolio-growth-chart,
+      :root[data-app-theme="dark"] .widget-grip,
+      :root[data-app-theme="dark"] .collapse-btn {
+        background: var(--panel-glass-soft);
+        border-color: var(--line);
+      }
+
+      :root[data-app-theme="dark"] .toggle,
+      :root[data-app-theme="dark"] .layout-tools button,
+      :root[data-app-theme="dark"] .toolbar button.secondary {
+        background: var(--panel-glass);
+        border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+      }
+
+      :root[data-app-theme="dark"] .portfolio-growth-chart {
+        background: linear-gradient(180deg, rgba(28, 40, 41, 0.92), rgba(19, 28, 29, 0.78));
+      }
+
+      :root[data-app-theme="dark"] .loading-surface.loading::after,
+      :root[data-app-theme="dark"] .loading-inline.loading::after {
+        background: linear-gradient(
+          100deg,
+          rgba(255, 255, 255, 0) 15%,
+          rgba(214, 230, 225, 0.18) 42%,
+          rgba(255, 255, 255, 0) 70%
+        );
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-app-theme="light"]) .card,
+        :root:not([data-app-theme="light"]) .decision-block,
+        :root:not([data-app-theme="light"]) .metric,
+        :root:not([data-app-theme="light"]) .sector-tag,
+        :root:not([data-app-theme="light"]) .report-text,
+        :root:not([data-app-theme="light"]) .recommendation-card,
+        :root:not([data-app-theme="light"]) .recommendation-metric,
+        :root:not([data-app-theme="light"]) .recommendation-catalysts,
+        :root:not([data-app-theme="light"]) .mobile-data-item,
+        :root:not([data-app-theme="light"]) .portfolio-growth-chart,
+        :root:not([data-app-theme="light"]) .widget-grip,
+        :root:not([data-app-theme="light"]) .collapse-btn {
+          background: var(--panel-glass-soft);
+          border-color: var(--line);
+        }
+
+        :root:not([data-app-theme="light"]) .toggle,
+        :root:not([data-app-theme="light"]) .layout-tools button,
+        :root:not([data-app-theme="light"]) .toolbar button.secondary {
+          background: var(--panel-glass);
+          border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+        }
+
+        :root:not([data-app-theme="light"]) .portfolio-growth-chart {
+          background: linear-gradient(180deg, rgba(28, 40, 41, 0.92), rgba(19, 28, 29, 0.78));
+        }
+
+        :root:not([data-app-theme="light"]) .loading-surface.loading::after,
+        :root:not([data-app-theme="light"]) .loading-inline.loading::after {
+          background: linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0) 15%,
+            rgba(214, 230, 225, 0.18) 42%,
+            rgba(255, 255, 255, 0) 70%
+          );
+        }
+      }
+
+      @media (max-width: 720px) {
+        .toggle,
+        .layout-tools {
+          grid-template-columns: 1fr;
+        }
+
+        .eyebrow {
+          font-size: 11px;
+        }
+
+        .hero-tools {
+          gap: 8px;
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Markets • Decision Support • Rules Based</div>
+          <h1>Cross-market regime and portfolio dashboard.</h1>
+          <div class="sub">
+            Built for capital preservation first, then staggered deployment. Toggle between India and U.S. views from the top right.
+          </div>
+        </div>
+        <div class="hero-tools">
+          <div class="toggle" role="tablist" aria-label="Market toggle">
+            <button id="toggleInd" class="active" data-market="IND">IND</button>
+            <button id="toggleUs" data-market="US">US</button>
+          </div>
+          <div class="layout-tools">
+            <button id="layoutModeBtn" type="button">Customize</button>
+            <button id="resetLayoutBtn" type="button">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card summary" data-collapsible-title="Dashboard Summary" data-widget-id="summary">
+          <div class="summary-head">
+            <div>
+              <div class="label">Global Decision</div>
+              <div id="regimeBadge" class="pill neutral">Loading</div>
+              <div id="timestamp" class="stamp"></div>
+              <div id="truthSocialRefresh" class="stamp muted"></div>
+            </div>
+            <div class="muted" id="historyCount"></div>
+          </div>
+
+          <div id="summaryBlocks" class="decision loading-surface"></div>
+
+          <div class="service-control">
+            <div class="service-control-head">
+              <div>
+                <div class="label">Truth Social Worker</div>
+                <div id="truthSocialServiceMessage" class="service-control-note">Checking worker status…</div>
+              </div>
+              <div id="truthSocialServicePill" class="service-pill stopped">Stopped</div>
+            </div>
+            <div class="service-control-meta">
+              <span id="truthSocialServicePid">PID: not available</span>
+              <span id="truthSocialServicePoll">Poll: not available</span>
+              <span id="truthSocialServiceLastRun">Last scrape: not available</span>
+            </div>
+            <div class="service-control-actions">
+              <button id="truthSocialStartBtn" class="primary" type="button">Start</button>
+              <button id="truthSocialStopBtn" type="button">Stop</button>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <button id="refreshBtn">Refresh</button>
+            <button id="collectBtn" class="secondary">Collect</button>
+            <button id="copyBtn" class="secondary">Copy</button>
+          </div>
+        </article>
+
+        <article class="card report" data-collapsible-title="Cross-Market Regime Engine" data-widget-id="report">
+          <div class="label">Cross-Market Regime Engine</div>
+          <pre id="reportText" class="report-text loading-surface">Loading latest engine report…</pre>
+        </article>
+
+        <article class="card macro" data-collapsible-title="Macro Table" data-widget-id="macro">
+          <div class="label">Macro Table</div>
+          <div id="macroGrid" class="macro-grid loading-surface"></div>
+        </article>
+
+        <article class="card" data-collapsible-title="Truth Social API Usage" data-widget-id="truthSocialUsage">
+          <div class="label">Truth Social API Usage</div>
+          <div id="truthSocialUsage" class="usage-list loading-surface">
+            <div class="empty">Loading Truth Social API usage…</div>
+          </div>
+        </article>
+
+        <aside class="card context" data-collapsible-title="Context" data-widget-id="context">
+          <div class="label">Context</div>
+          <div id="contextSurface" class="loading-surface">
+            <div id="headline" class="headline">Loading latest context…</div>
+            <ol id="headlineList" class="headline-list"></ol>
+            <ul id="notesList" class="note-list"></ul>
+          </div>
+        </aside>
+
+        <article class="card sectors" data-collapsible-title="Sector Leadership" data-widget-id="sectors">
+          <div class="label">Sector Leadership</div>
+          <div id="sectorSurface" class="loading-surface">
+            <div id="sectorStyle" class="headline"></div>
+            <ul id="sectorNotes" class="note-list"></ul>
+            <div id="sectorTags" class="sector-tags"></div>
+          </div>
+        </article>
+
+        <article class="card watchlist" data-collapsible-title="Watchlist Table" data-widget-id="watchlist">
+          <div class="label">Watchlist Table</div>
+          <table id="watchlistSurface" class="loading-surface">
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Move</th>
+                <th>Strength</th>
+                <th>Note</th>
+              </tr>
+            </thead>
+            <tbody id="watchlistBody"></tbody>
+          </table>
+          <div id="watchlistMobile" class="mobile-table-card loading-surface"></div>
+        </article>
+
+        <article class="card history" data-collapsible-title="Recent History" data-widget-id="history">
+          <div class="label">Recent History</div>
+          <table id="historySurface" class="loading-surface">
+            <thead id="historyHead"></thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+          <div id="historyMobile" class="mobile-table-card loading-surface"></div>
+        </article>
+      </section>
+    </div>
+
+    <script>
+      let activeMarket = 'IND';
+      let latestSnapshot = null;
+      let engineState = { ind: null, us: null, global: null };
+      let truthSocialStatus = null;
+      let truthSocialControlInFlight = false;
+      let truthSocialControlMessage = '';
+      let engineReport = '';
+      let marketAutoSyncTimer = null;
+      let marketRefreshTimer = null;
+      let engineLoadInFlight = null;
+      let historyState = [];
+      let lastHistoryFetchedAt = 0;
+      let watchlistAiState = null;
+      let lastWatchlistAiFetchedAt = 0;
+      let watchlistAiLoadInFlight = null;
+      let layoutSaveInFlight = null;
+      const DEFAULT_DOCUMENT_TITLE = document.title;
+      const MARKET_PREF_KEY = 'market-dashboard-active-market';
+      const WIDGET_LAYOUT_KEY = 'market-dashboard-widget-layout-v2';
+      const ENGINE_REFRESH_MS = 5 * 1000;
+      const ENGINE_BACKGROUND_REFRESH_MS = 15 * 1000;
+      const HISTORY_REFRESH_MS = 30 * 1000;
+      const WATCHLIST_AI_REFRESH_MS = 5 * 60 * 1000;
+      const GRID_COLUMNS = 12;
+      const GRID_ROW_HEIGHT = 56;
+      const GRID_GAP = 10;
+      const MIN_WIDGET_W = 3;
+      const MIN_WIDGET_H = 2;
+      const MOBILE_LAYOUT_QUERY = '(max-width: 1100px)';
+      const DEFAULT_WIDGET_LAYOUT = {
+        summary: { x: 1, y: 1, w: 12, h: 3 },
+        sectors: { x: 1, y: 4, w: 5, h: 4 },
+        watchlist: { x: 6, y: 4, w: 7, h: 4 },
+        macro: { x: 1, y: 8, w: 7, h: 4 },
+        context: { x: 8, y: 8, w: 5, h: 4 },
+        truthSocialUsage: { x: 1, y: 12, w: 5, h: 3 },
+        report: { x: 6, y: 12, w: 7, h: 4 },
+        history: { x: 1, y: 16, w: 12, h: 4 }
+      };
+      let widgetLayout = {};
+      let layoutEditMode = false;
+      let activeWidgetInteraction = null;
+
+      function isMobileLayout() {
+        return window.matchMedia(MOBILE_LAYOUT_QUERY).matches;
+      }
+
+      function getZonedTimeParts(timeZone) {
+        const formatter = new Intl.DateTimeFormat('en-CA', {
+          timeZone,
+          weekday: 'short',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        });
+        const parts = Object.fromEntries(formatter.formatToParts(new Date()).map((part) => [part.type, part.value]));
+        return {
+          weekday: parts.weekday,
+          hour: Number(parts.hour),
+          minute: Number(parts.minute),
+          second: Number(parts.second)
+        };
+      }
+
+      function isWeekday(weekday) {
+        return !['Sat', 'Sun'].includes(weekday);
+      }
+
+      function isIndiaSessionOpen() {
+        const { weekday, hour, minute } = getZonedTimeParts('Asia/Kolkata');
+        if (!isWeekday(weekday)) return false;
+        const totalMinutes = hour * 60 + minute;
+        return totalMinutes >= 9 * 60 && totalMinutes <= 15 * 60 + 30;
+      }
+
+      function isUsSessionOpen() {
+        const { weekday, hour, minute } = getZonedTimeParts('America/New_York');
+        if (!isWeekday(weekday)) return false;
+        const totalMinutes = hour * 60 + minute;
+        return totalMinutes >= 9 * 60 + 30 && totalMinutes <= 16 * 60;
+      }
+
+      function getAutoSelectedMarket() {
+        if (isIndiaSessionOpen()) {
+          return 'IND';
+        }
+        if (isUsSessionOpen()) {
+          return 'US';
+        }
+
+        const { weekday, hour, minute } = getZonedTimeParts('Asia/Kolkata');
+        const totalMinutes = hour * 60 + minute;
+        if (isWeekday(weekday) && totalMinutes < 9 * 60) {
+          return 'IND';
+        }
+        if (isWeekday(weekday) && totalMinutes > 15 * 60 + 30 && totalMinutes < 19 * 60) {
+          return 'US';
+        }
+        if (totalMinutes >= 19 * 60 || totalMinutes < 3 * 60) {
+          return 'US';
+        }
+        return 'IND';
+      }
+
+      function syncToggleButtons() {
+        document.getElementById('toggleInd').classList.toggle('active', activeMarket === 'IND');
+        document.getElementById('toggleUs').classList.toggle('active', activeMarket === 'US');
+      }
+
+      function getStoredMarketPreference() {
+        try {
+          const stored = window.localStorage.getItem(MARKET_PREF_KEY);
+          return stored === 'IND' || stored === 'US' ? stored : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function storeMarketPreference(market) {
+        try {
+          window.localStorage.setItem(MARKET_PREF_KEY, market);
+        } catch {
+          // Ignore storage failures and keep the in-memory selection.
+        }
+      }
+
+      function cloneLayout(layout) {
+        return Object.fromEntries(
+          Object.entries(layout).map(([key, value]) => [key, { ...value }])
+        );
+      }
+
+      async function getStoredWidgetLayout() {
+        try {
+          const response = await fetch('/api/layout', { cache: 'no-store' });
+          if (response.ok) {
+            const payload = await response.json();
+            if (payload?.layout && typeof payload.layout === 'object') {
+              const layout = normalizeStoredWidgetLayout(payload.layout);
+              try {
+                window.localStorage.setItem(WIDGET_LAYOUT_KEY, JSON.stringify(layout));
+              } catch {
+                // Ignore storage failures.
+              }
+              return layout;
+            }
+          }
+        } catch {
+          // Fall back to local storage below.
+        }
+
+        try {
+          const raw = window.localStorage.getItem(WIDGET_LAYOUT_KEY);
+          if (!raw) return compactLayout(cloneLayout(DEFAULT_WIDGET_LAYOUT));
+          const parsed = JSON.parse(raw);
+          return normalizeStoredWidgetLayout(parsed);
+        } catch {
+          return compactLayout(cloneLayout(DEFAULT_WIDGET_LAYOUT));
+        }
+      }
+
+      function storeWidgetLayout() {
+        try {
+          window.localStorage.setItem(WIDGET_LAYOUT_KEY, JSON.stringify(widgetLayout));
+        } catch {
+          // Ignore storage failures.
+        }
+
+        layoutSaveInFlight = fetch('/api/layout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ layout: widgetLayout }),
+        }).catch(() => null);
+      }
+
+      function normalizeWidgetRect(rect, fallback = { x: 1, y: 1, w: 4, h: 4 }) {
+        const w = Math.max(MIN_WIDGET_W, Math.min(GRID_COLUMNS, Number(rect?.w) || fallback.w));
+        const h = Math.max(MIN_WIDGET_H, Number(rect?.h) || fallback.h);
+        const x = Math.max(1, Math.min(GRID_COLUMNS - w + 1, Number(rect?.x) || fallback.x));
+        const y = Math.max(1, Number(rect?.y) || fallback.y);
+        return { x, y, w, h };
+      }
+
+      function normalizeLayoutMap(layout) {
+        const merged = {};
+        Object.entries(DEFAULT_WIDGET_LAYOUT).forEach(([id, rect]) => {
+          merged[id] = normalizeWidgetRect(layout?.[id], rect);
+        });
+        return merged;
+      }
+
+      function normalizeStoredWidgetLayout(layout) {
+        if (layout?.portfolio) {
+          return compactLayout(cloneLayout(DEFAULT_WIDGET_LAYOUT));
+        }
+        return compactLayout(layout);
+      }
+
+      function overlap(a, b) {
+        return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+      }
+
+      function canPlaceWidgetAt(candidate, placedRects) {
+        return placedRects.every((rect) => !overlap(candidate, rect));
+      }
+
+      function compactLayout(layout, pinnedId = null) {
+        const compacted = normalizeLayoutMap(layout);
+        const ids = Object.keys(compacted).sort((left, right) => {
+          if (left === pinnedId) return -1;
+          if (right === pinnedId) return 1;
+          const a = compacted[left];
+          const b = compacted[right];
+          return a.y - b.y || a.x - b.x;
+        });
+        const placed = [];
+
+        ids.forEach((id) => {
+          const rect = { ...compacted[id] };
+          if (id !== pinnedId) {
+            let targetY = 1;
+            while (targetY < rect.y) {
+              const candidate = { ...rect, y: targetY };
+              if (canPlaceWidgetAt(candidate, placed)) {
+                rect.y = targetY;
+                break;
+              }
+              targetY += 1;
+            }
+          }
+          compacted[id] = rect;
+          placed.push(rect);
+        });
+
+        return compacted;
+      }
+
+      function resolveLayoutCollisions(layout, pinnedId) {
+        const resolved = normalizeLayoutMap(layout);
+        const ids = Object.keys(resolved).sort((left, right) => {
+          if (left === pinnedId) return -1;
+          if (right === pinnedId) return 1;
+          const a = resolved[left];
+          const b = resolved[right];
+          return a.y - b.y || a.x - b.x;
+        });
+
+        for (let i = 0; i < ids.length; i += 1) {
+          const currentId = ids[i];
+          let current = resolved[currentId];
+          let changed = true;
+          while (changed) {
+            changed = false;
+            for (let j = 0; j < i; j += 1) {
+              const previous = resolved[ids[j]];
+              if (overlap(current, previous)) {
+                current = { ...current, y: previous.y + previous.h };
+                resolved[currentId] = current;
+                changed = true;
+              }
+            }
+          }
+        }
+
+        return compactLayout(resolved, pinnedId);
+      }
+
+      function applyWidgetLayout() {
+        const grid = document.querySelector('.grid');
+        const cards = Array.from(document.querySelectorAll('.grid > .card[data-widget-id]'));
+        let maxRow = 0;
+
+        if (isMobileLayout()) {
+          cards.forEach((card) => {
+            card.style.gridColumn = '1 / -1';
+            card.style.gridRow = 'auto';
+          });
+          grid.style.minHeight = '0';
+          return;
+        }
+
+        cards.forEach((card) => {
+          const widgetId = card.dataset.widgetId;
+          const rect = widgetLayout[widgetId] || DEFAULT_WIDGET_LAYOUT[widgetId];
+          const normalized = normalizeWidgetRect(rect, DEFAULT_WIDGET_LAYOUT[widgetId]);
+          widgetLayout[widgetId] = normalized;
+          card.style.gridColumn = `${normalized.x} / span ${normalized.w}`;
+          card.style.gridRow = `${normalized.y} / span ${normalized.h}`;
+          maxRow = Math.max(maxRow, normalized.y + normalized.h - 1);
+        });
+
+        grid.style.minHeight = `${maxRow * GRID_ROW_HEIGHT + Math.max(0, maxRow - 1) * GRID_GAP}px`;
+      }
+
+      function updateLayoutModeUI() {
+        if (isMobileLayout()) {
+          layoutEditMode = false;
+        }
+        document.body.classList.toggle('layout-editing', layoutEditMode);
+        const button = document.getElementById('layoutModeBtn');
+        button.textContent = layoutEditMode ? 'Done' : 'Customize';
+        button.classList.toggle('active', layoutEditMode);
+        button.disabled = isMobileLayout();
+      }
+
+      function initializeWidgetChrome() {
+        document.querySelectorAll('.grid > .card[data-widget-id]').forEach((card) => {
+          if (card.dataset.widgetChromeReady === 'true') {
+            return;
+          }
+
+          const header = card.querySelector('.card-header');
+          if (!header) {
+            return;
+          }
+
+          const tools = document.createElement('div');
+          tools.className = 'card-header-tools';
+
+          const grip = document.createElement('button');
+          grip.type = 'button';
+          grip.className = 'widget-grip';
+          grip.title = 'Drag widget';
+          grip.setAttribute('aria-label', 'Drag widget');
+          grip.textContent = '⋮⋮';
+          tools.appendChild(grip);
+
+          const collapseButton = header.querySelector('.collapse-btn');
+          if (collapseButton) {
+            header.removeChild(collapseButton);
+            tools.appendChild(collapseButton);
+          }
+
+          header.appendChild(tools);
+
+          const resizeHandle = document.createElement('div');
+          resizeHandle.className = 'resize-handle';
+          resizeHandle.title = 'Resize widget';
+          card.appendChild(resizeHandle);
+
+          grip.addEventListener('pointerdown', (event) => beginWidgetInteraction(event, card, 'drag'));
+          resizeHandle.addEventListener('pointerdown', (event) => beginWidgetInteraction(event, card, 'resize'));
+
+          card.dataset.widgetChromeReady = 'true';
+        });
+      }
+
+      function beginWidgetInteraction(event, card, type) {
+        if (!layoutEditMode || isMobileLayout()) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const grid = document.querySelector('.grid');
+        const widgetId = card.dataset.widgetId;
+        const startRect = { ...(widgetLayout[widgetId] || DEFAULT_WIDGET_LAYOUT[widgetId]) };
+        const gridBounds = grid.getBoundingClientRect();
+        const trackWidth = (gridBounds.width - GRID_GAP * (GRID_COLUMNS - 1)) / GRID_COLUMNS;
+
+        activeWidgetInteraction = {
+          type,
+          widgetId,
+          pointerId: event.pointerId,
+          startX: event.clientX,
+          startY: event.clientY,
+          startRect,
+          gridBounds,
+          trackWidth
+        };
+
+        card.classList.add(type === 'drag' ? 'dragging' : 'resizing');
+        card.setPointerCapture(event.pointerId);
+        document.addEventListener('pointermove', onWidgetPointerMove);
+        document.addEventListener('pointerup', endWidgetInteraction);
+        document.addEventListener('pointercancel', endWidgetInteraction);
+      }
+
+      function onWidgetPointerMove(event) {
+        if (!activeWidgetInteraction || event.pointerId !== activeWidgetInteraction.pointerId) {
+          return;
+        }
+
+        const { widgetId, type, startRect, startX, startY, trackWidth } = activeWidgetInteraction;
+        const dx = event.clientX - startX;
+        const dy = event.clientY - startY;
+        const colDelta = Math.round(dx / (trackWidth + GRID_GAP));
+        const rowDelta = Math.round(dy / (GRID_ROW_HEIGHT + GRID_GAP));
+        let nextRect = { ...startRect };
+
+        if (type === 'drag') {
+          nextRect.x = startRect.x + colDelta;
+          nextRect.y = startRect.y + rowDelta;
+        } else {
+          nextRect.w = startRect.w + colDelta;
+          nextRect.h = startRect.h + rowDelta;
+        }
+
+        nextRect = normalizeWidgetRect(nextRect, DEFAULT_WIDGET_LAYOUT[widgetId]);
+        widgetLayout = resolveLayoutCollisions({ ...widgetLayout, [widgetId]: nextRect }, widgetId);
+        applyWidgetLayout();
+      }
+
+      function endWidgetInteraction(event) {
+        if (!activeWidgetInteraction || event.pointerId !== activeWidgetInteraction.pointerId) {
+          return;
+        }
+
+        const { widgetId, pointerId } = activeWidgetInteraction;
+        const card = document.querySelector(`.grid > .card[data-widget-id="${widgetId}"]`);
+        if (card) {
+          card.classList.remove('dragging', 'resizing');
+          if (card.hasPointerCapture(pointerId)) {
+            card.releasePointerCapture(pointerId);
+          }
+        }
+
+        widgetLayout = compactLayout(widgetLayout);
+        applyWidgetLayout();
+        storeWidgetLayout();
+        activeWidgetInteraction = null;
+        document.removeEventListener('pointermove', onWidgetPointerMove);
+        document.removeEventListener('pointerup', endWidgetInteraction);
+        document.removeEventListener('pointercancel', endWidgetInteraction);
+      }
+
+      function toggleLayoutMode() {
+        if (isMobileLayout()) {
+          return;
+        }
+        layoutEditMode = !layoutEditMode;
+        updateLayoutModeUI();
+      }
+
+      function resetWidgetLayout() {
+        widgetLayout = compactLayout(cloneLayout(DEFAULT_WIDGET_LAYOUT));
+        storeWidgetLayout();
+        applyWidgetLayout();
+      }
+
+      function setCollectingState(isLoading) {
+        document.querySelectorAll('.loading-surface, .loading-inline').forEach((node) => {
+          node.classList.toggle('loading', isLoading);
+        });
+      }
+
+      function fmt(value, digits = 2, prefix = '', suffix = '') {
+        if (value === null || value === undefined || value === '') return 'not available';
+        const num = Number(value);
+        if (!Number.isFinite(num)) return String(value);
+        return prefix + num.toFixed(digits) + suffix;
+      }
+
+      function fmtSigned(value, digits = 2, suffix = '') {
+        if (value === null || value === undefined || value === '') return 'not available';
+        const num = Number(value);
+        if (!Number.isFinite(num)) return String(value);
+        const sign = num > 0 ? '+' : '';
+        return sign + num.toFixed(digits) + suffix;
+      }
+
+      function fmtMoneySigned(value, digits = 2) {
+        if (value === null || value === undefined || value === '') return 'not available';
+        const num = Number(value);
+        if (!Number.isFinite(num)) return String(value);
+        const sign = num > 0 ? '+' : num < 0 ? '-' : '';
+        return sign + '$' + Math.abs(num).toFixed(digits);
+      }
+
+      function fmtLocalTimestamp(value) {
+        if (!value) return 'not available';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return 'not available';
+        return date.toLocaleString();
+      }
+
+      function cls(value, reverse = false) {
+        if (value === null || value === undefined || value === '') return 'neu';
+        const n = Number(value);
+        if (!Number.isFinite(n) || n === 0) return 'neu';
+        const positive = reverse ? n < 0 : n > 0;
+        return positive ? 'pos' : 'neg';
+      }
+
+      function regimeClass(regime) {
+        if (String(regime || '').includes('RISK-ON')) return 'risk-on';
+        if (String(regime || '').includes('RISK-OFF') || regime === 'DEFENSIVE') return 'risk-off';
+        return 'neutral';
+      }
+
+      function shouldRefreshHistory(force = false) {
+        if (force || !historyState.length) {
+          return true;
+        }
+        return Date.now() - lastHistoryFetchedAt >= HISTORY_REFRESH_MS;
+      }
+
+      function getEngineRefreshIntervalMs() {
+        return document.hidden ? ENGINE_BACKGROUND_REFRESH_MS : ENGINE_REFRESH_MS;
+      }
+
+      function shouldRefreshWatchlistAi(force = false) {
+        if (force || !watchlistAiState) {
+          return true;
+        }
+        return Date.now() - lastWatchlistAiFetchedAt >= WATCHLIST_AI_REFRESH_MS;
+      }
+
+      function scheduleRefreshLoop() {
+        if (marketRefreshTimer) {
+          window.clearInterval(marketRefreshTimer);
+        }
+        marketRefreshTimer = window.setInterval(refreshEngineData, getEngineRefreshIntervalMs());
+      }
+
+      async function loadEngineData(options = {}) {
+        const { force = false, includeHistory = false } = options;
+        if (engineLoadInFlight) {
+          return engineLoadInFlight;
+        }
+
+        engineLoadInFlight = (async () => {
+          const refreshHistory = shouldRefreshHistory(force || includeHistory);
+          const requests = [
+            fetch('/api/engine', { cache: 'no-store' }),
+            fetch('/api/truth-social-alerts/status', { cache: 'no-store' }),
+          ];
+          if (refreshHistory) {
+            requests.push(fetch('/api/market-data?market=' + activeMarket, { cache: 'no-store' }));
+          }
+
+          const responses = await Promise.all(requests);
+          const enginePayload = await responses[0].json();
+          const truthSocialPayload = await responses[1].json();
+          if (refreshHistory) {
+            const historyPayload = await responses[2].json();
+            historyState = historyPayload.snapshots || [];
+            lastHistoryFetchedAt = Date.now();
+          }
+
+          engineState = {
+            ind: enginePayload.ind || null,
+            us: enginePayload.us ? { ...enginePayload.us, sectorIntelligence: enginePayload.sectorIntelligence || null } : null,
+            global: enginePayload.global || null,
+          };
+          truthSocialStatus = truthSocialPayload?.runtime || null;
+          if (engineState.us && watchlistAiState) {
+            engineState.us.watchlistAiCandidates = watchlistAiState.candidates || [];
+          }
+          engineReport = enginePayload.report || '';
+          const activeLatest = activeMarket === 'US' ? engineState.us : engineState.ind;
+          render(activeLatest, historyState);
+        })();
+
+        try {
+          await engineLoadInFlight;
+        } finally {
+          engineLoadInFlight = null;
+        }
+      }
+
+      async function loadWatchlistAiData(options = {}) {
+        const { force = false } = options;
+        if (watchlistAiLoadInFlight) {
+          return watchlistAiLoadInFlight;
+        }
+        if (!shouldRefreshWatchlistAi(force)) {
+          return watchlistAiState;
+        }
+        watchlistAiLoadInFlight = (async () => {
+          const response = await fetch('/api/watchlist-ai', { cache: 'no-store' });
+          const payload = await response.json();
+          if (payload && payload.ok) {
+            watchlistAiState = payload;
+            lastWatchlistAiFetchedAt = Date.now();
+            if (engineState.us) {
+              engineState.us.watchlistAiCandidates = payload.candidates || [];
+              if (activeMarket === 'US') {
+                render(engineState.us, historyState);
+              }
+            }
+          }
+          return payload;
+        })();
+        try {
+          return await watchlistAiLoadInFlight;
+        } finally {
+          watchlistAiLoadInFlight = null;
+        }
+      }
+
+      function render(latest, history) {
+        latestSnapshot = latest;
+        renderSummary(latest, history);
+        renderTruthSocialServiceControl();
+        renderReport();
+        renderMacro(latest);
+        renderTruthSocialUsage();
+        renderContext(latest);
+        renderSectors(latest);
+        renderWatchlist(latest);
+        renderHistory(history);
+      }
+
+      function renderReport() {
+        const reportText = document.getElementById('reportText');
+        reportText.textContent = engineReport || 'No engine report available yet.';
+      }
+
+      function updateDocumentTitle(summary) {
+        document.title = DEFAULT_DOCUMENT_TITLE;
+      }
+
+      function joinOrFallback(items) {
+        return Array.isArray(items) && items.length ? items.join(', ') : 'not available';
+      }
+
+      function buildUsShareText(latest) {
+        const macro = latest.macro || {};
+        const leadership = latest.sectorLeadership || {};
+        const watchlist = Array.isArray(latest.watchlist) ? latest.watchlist : [];
+        const watchRows = watchlist.length
+          ? watchlist.map((row) => `${row.ticker} | ${row.moveBasis === 'regular' ? 'Intraday' : row.moveBasis} ${fmtSigned(row.movePct, 2, '%')} | ${row.strength || 'not available'} | ${row.note || 'not available'}`).join('\n')
+          : 'not available';
+
+        return [
+          `Timestamp: ${latest.timestamp || 'not available'}`,
+          `Session: ${latest.session || 'not available'}`,
+          `Regime: ${latest.regime || 'not available'}`,
+          `Confidence: ${latest.confidence || 'not available'}`,
+          '',
+          'Macro Table:',
+          `- S&P futures (pts): ${fmt(macro.spFutures, 2)} (${fmtSigned(macro.spFuturesPct, 2, '%')})`,
+          `- Nasdaq futures (pts): ${fmt(macro.nasdaqFutures, 2)} (${fmtSigned(macro.nasdaqFuturesPct, 2, '%')})`,
+          `- Dow futures (pts): ${fmt(macro.dowFutures, 2)} (${fmtSigned(macro.dowFuturesPct, 2, '%')})`,
+          `- Russell 2000 (pts): ${fmt(macro.russell2000, 2)} (${fmtSigned(macro.russell2000Pct, 2, '%')})`,
+          `- VIX (index): ${fmt(macro.vix, 2)} (${macro.volatilityTrend || 'not available'})`,
+          `- US 10Y (%): ${macro.us10y === null || macro.us10y === undefined ? 'not available' : fmt(macro.us10y, 3) + '%'} (${fmtSigned(macro.us10yChangeBp, 1, ' bp')})`,
+          `- DXY (index): ${fmt(macro.dxy, 3)} (${fmtSigned(macro.dxyPct, 2, '%')})`,
+          `- Brent (USD/bbl): ${fmt(macro.brent, 2)} (${fmtSigned(macro.brentPct, 2, '%')})`,
+          `- WTI (USD/bbl): ${fmt(macro.wti, 2)} (${fmtSigned(macro.wtiPct, 2, '%')})`,
+          `- Gold (USD/oz): ${fmt(macro.gold, 2)} (${fmtSigned(macro.goldPct, 2, '%')})`,
+          '',
+          'Sector Leadership:',
+          `- Leaders: ${joinOrFallback(leadership.leaders)}`,
+          `- Laggards: ${joinOrFallback(leadership.laggards)}`,
+          `- Leadership style: ${leadership.leadershipStyle || 'not available'}`,
+          '',
+          'Watchlist Table:',
+          'Ticker | Move | Strength | Note',
+          watchRows,
+          '',
+          'Decision:',
+          `- ${latest.decision || 'not available'}`,
+          '',
+          'Action Plan:',
+          `- ${latest.actionPlan || 'not available'}`,
+          '',
+          `${latest.nextThirtyMinutes || 'Next 30 minutes: not available'}`
+        ].join('\n');
+      }
+
+      function buildIndShareText(latest) {
+        return [
+          'IND Block:',
+          `- Timestamp IST: ${latest.timestamp || 'not available'}`,
+          `- IND Regime: ${latest.regime || 'not available'}`,
+          `- IND Score: ${latest.score === null || latest.score === undefined ? 'not available' : latest.score}`,
+          `- GiftNifty, Nifty, BankNifty, Mid/Smallcap: ${fmt(latest.giftNifty, 2)} (${fmtSigned(latest.giftNiftyPct, 2, '%')}), Nifty prev close ${fmt(latest.niftySpotPrevClose, 2)}, Bank ${fmt(latest.indices?.bankNifty, 2)} (${fmtSigned(latest.indices?.bankNiftyPct, 2, '%')}), Mid ${fmtSigned(latest.indices?.midcapPct, 2, '%')}, Small ${fmtSigned(latest.indices?.smallcapPct, 2, '%')}`,
+          `- IndiaVIX: ${fmt(latest.indiaVix, 2)} (${latest.indiaVixDirection || 'not available'})`,
+          `- A/D, FII Cr, DII Cr, MCAP Change Cr: ${fmt(latest.advanceDecline, 2)}, ${fmt(latest.fiiNet, 2)}, ${fmt(latest.diiNet, 2)}, ${fmt(latest.marketCapChangeCr, 2)}`,
+          `- F&O Turnover Cr, PCRs, OI, Max Pain: ${fmt(latest.fnoTurnoverCr, 2)}, Nifty PCR ${fmt(latest.niftyPcr, 2)}, Bank PCR ${fmt(latest.bankNiftyPcr, 2)}, Nifty OI ${fmt(latest.niftyOiCr, 2)}, Bank OI ${fmt(latest.bankNiftyOiCr, 2)}, Nifty Max Pain ${fmt(latest.niftyMaxPain, 0)}, Bank Max Pain ${fmt(latest.bankNiftyMaxPain, 0)}`,
+          `- USDINR, Brent, Gold INR, India 10Y: ${fmt(latest.usdInr, 2)}, ${fmt(latest.brent, 2)} (${fmtSigned(latest.brentPct, 2, '%')}), ${fmt(latest.goldInr10g, 2)} (${fmtSigned(latest.goldInrPct, 2, '%')}), ${latest.india10Y === null || latest.india10Y === undefined ? 'not available' : fmt(latest.india10Y, 2) + '%'} (${fmtSigned(latest.india10YBpChange, 1, ' bp')})`,
+          `- Sector leadership: ${latest.sectorLeadershipStyle || 'not available'}`,
+          `- India events: ${joinOrFallback(latest.indiaEvents)}`,
+          `- India summary (1 line): ${latest.indiaSummary || 'not available'}`,
+        ].join('\n');
+      }
+
+      function updateCopyButtonLabel() {
+        const button = document.getElementById('copyBtn');
+        button.textContent = 'Copy';
+      }
+
+      function buildShareText() {
+        if (engineReport) {
+          return engineReport;
+        }
+        if (!latestSnapshot && !engineState.ind && !engineState.us) {
+          return 'No snapshot available yet.';
+        }
+        return activeMarket === 'US'
+          ? buildUsShareText(latestSnapshot || engineState.us || {})
+          : buildIndShareText(latestSnapshot || engineState.ind || {});
+      }
+
+      async function copyTextWithButton(button, text) {
+        const original = button.textContent;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.style.position = 'absolute';
+            area.style.left = '-9999px';
+            document.body.appendChild(area);
+            area.select();
+            document.execCommand('copy');
+            document.body.removeChild(area);
+          }
+          button.textContent = 'Copied';
+        } catch (error) {
+          button.textContent = 'Copy Failed';
+        } finally {
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        }
+      }
+
+      async function copySummary() {
+        const button = document.getElementById('copyBtn');
+        const text = buildShareText();
+        await copyTextWithButton(button, text);
+      }
+
+      function renderSummary(latest, history) {
+        const badge = document.getElementById('regimeBadge');
+        const timestamp = document.getElementById('timestamp');
+        const truthSocialRefresh = document.getElementById('truthSocialRefresh');
+        const historyCount = document.getElementById('historyCount');
+        const summaryBlocks = document.getElementById('summaryBlocks');
+
+        if (!latest) {
+          badge.textContent = 'No data yet';
+          badge.className = 'pill neutral';
+          timestamp.textContent = 'Waiting for first successful collection.';
+          if (truthSocialRefresh) {
+            truthSocialRefresh.textContent = truthSocialStatus?.lastRunAt
+              ? 'Truth Social last refresh: ' + fmtLocalTimestamp(truthSocialStatus.lastRunAt)
+              : 'Truth Social last refresh: not available';
+          }
+          historyCount.textContent = '';
+          summaryBlocks.innerHTML = '<div class="empty">No snapshot available yet.</div>';
+          return;
+        }
+
+        badge.textContent = engineState.global?.regime || latest.regime || 'NEUTRAL';
+        badge.className = 'pill ' + regimeClass(engineState.global?.regime || latest.regime);
+        timestamp.textContent = 'IND: ' + (engineState.ind?.regime || 'not available') + ' • US: ' + (engineState.us?.regime || 'not available') + ' • Global: ' + (engineState.global?.regime || 'not available');
+        if (truthSocialRefresh) {
+          truthSocialRefresh.textContent = truthSocialStatus?.lastRunAt
+            ? 'Truth Social last refresh: ' + fmtLocalTimestamp(truthSocialStatus.lastRunAt)
+            : 'Truth Social last refresh: not available';
+        }
+        historyCount.textContent = 'Snapshots stored: ' + history.length;
+        summaryBlocks.innerHTML = [
+          block('Global Regime', engineState.global?.regime || 'not available'),
+          block('Confidence', engineState.global?.confidence || 'not available'),
+          block('Stance', engineState.global?.recommendedStance || 'not available'),
+          block('IND Score', engineState.ind?.score === null || engineState.ind?.score === undefined ? 'not available' : String(engineState.ind.score)),
+          block('US Score', engineState.us?.score === null || engineState.us?.score === undefined ? 'not available' : String(engineState.us.score)),
+          block('Next 30 Minutes', engineState.global?.nextThirtyMinutes || 'not available')
+        ].join('');
+      }
+
+      function block(title, value) {
+        return `
+          <div class="decision-block">
+            <div class="decision-title">${title}</div>
+            <div class="decision-value">${value}</div>
+          </div>
+        `;
+      }
+
+      function renderMacro(latest) {
+        const macroGrid = document.getElementById('macroGrid');
+        if (!latest) {
+          macroGrid.innerHTML = '';
+          return;
+        }
+
+        if (activeMarket === 'US') {
+          const macro = latest.macro || {};
+          const sources = {
+            'S&P futures (pts)': 'https://www.google.com/finance/quote/ESW00:CME_EMINIS',
+            'Nasdaq futures (pts)': 'https://www.google.com/finance/quote/NQW00:CME_EMINIS',
+            'Dow futures (pts)': 'https://www.google.com/finance/quote/YMW00:CBOT',
+            'Russell 2000 (pts)': 'https://www.google.com/finance/quote/RTYW00:CME',
+            'VIX (index)': 'https://www.google.com/finance/quote/VIX:INDEXCBOE',
+            'US 10Y (%)': 'https://www.google.com/finance/quote/TNX:INDEXCBOE',
+            'DXY (index)': 'https://tradingeconomics.com/united-states/currency',
+            'Brent (USD/bbl)': 'https://tradingeconomics.com/commodity/brent-crude-oil',
+            'WTI (USD/bbl)': 'https://www.google.com/finance/quote/CLW00:NYMEX',
+            'Gold (USD/oz)': 'https://www.google.com/finance/quote/GCW00:COMEX'
+          };
+          const metrics = [
+            ['S&P futures (pts)', fmt(macro.spFutures, 2), macro.spFuturesPct, false, '%'],
+            ['Nasdaq futures (pts)', fmt(macro.nasdaqFutures, 2), macro.nasdaqFuturesPct, false, '%'],
+            ['Dow futures (pts)', fmt(macro.dowFutures, 2), macro.dowFuturesPct, false, '%'],
+            ['Russell 2000 (pts)', fmt(macro.russell2000, 2), macro.russell2000Pct, false, '%'],
+            ['VIX (index)', fmt(macro.vix, 2), macro.vixPct, true, '%'],
+            ['US 10Y (%)', macro.us10y === null || macro.us10y === undefined ? 'not available' : fmt(macro.us10y, 3) + '%', macro.us10yChangeBp, true, ' bp'],
+            ['DXY (index)', fmt(macro.dxy, 3), macro.dxyPct, true, '%'],
+            ['Brent (USD/bbl)', fmt(macro.brent, 2), macro.brentPct, true, '%'],
+            ['WTI (USD/bbl)', fmt(macro.wti, 2), macro.wtiPct, true, '%'],
+            ['Gold (USD/oz)', fmt(macro.gold, 2), macro.goldPct, false, '%']
+          ];
+          macroGrid.innerHTML = metrics.map(([name, value, delta, reverse, suffix]) => `
+            <div class="metric">
+              <div class="metric-name">${name}</div>
+              <div class="metric-value">${value}</div>
+              <div class="metric-meta">
+                <div class="delta ${cls(delta, reverse)}">${delta === null || delta === undefined ? 'not available' : fmtSigned(delta, suffix === ' bp' ? 1 : 2, suffix)}</div>
+                <a class="source-link" href="${sources[name]}" target="_blank" rel="noopener noreferrer">Source</a>
+              </div>
+            </div>
+          `).join('');
+          return;
+        }
+
+        const sources = {
+          'Gift Nifty (pts)': 'https://www.icicidirect.com/equity/index/gift-nifty',
+          'Brent (USD/bbl)': 'https://tradingeconomics.com/commodity/brent-crude-oil',
+          'USD/INR (INR)': 'https://open.er-api.com/v6/latest/USD',
+          'India VIX (index)': 'https://www.nseindia.com/api/allIndices',
+          'Advance/Decline (ratio)': 'https://www.nseindia.com/market-data/decline',
+          'FII Net (Rs cr)': 'https://www.moneycontrol.com/markets/fii-dii-data/cash/',
+          'DII Net (Rs cr)': 'https://www.moneycontrol.com/markets/fii-dii-data/cash/'
+        };
+        const metrics = [
+          ['Gift Nifty (pts)', fmt(latest.giftNifty, 2), latest.giftNiftyPct, false, '%'],
+          ['Brent (USD/bbl)', fmt(latest.brent, 2), latest.brentPct, true, '%'],
+          ['USD/INR (INR)', fmt(latest.usdInr, 2), latest.usdInrChange, true, ''],
+          ['India VIX (index)', fmt(latest.indiaVix, 2), latest.indiaVixChange, true, ''],
+          ['Advance/Decline (ratio)', fmt(latest.advanceDecline, 2), null, false, ''],
+          ['FII Net (Rs cr)', fmt(latest.fiiNet, 2), null, false, ''],
+          ['DII Net (Rs cr)', fmt(latest.diiNet, 2), null, false, '']
+        ];
+        macroGrid.innerHTML = metrics.map(([name, value, delta, reverse, suffix]) => `
+          <div class="metric">
+            <div class="metric-name">${name}</div>
+            <div class="metric-value">${value}</div>
+            <div class="metric-meta">
+              <div class="delta ${cls(delta, reverse)}">${delta === null || delta === undefined ? 'not available' : fmtSigned(delta, 2, suffix)}</div>
+              <a class="source-link" href="${sources[name]}" target="_blank" rel="noopener noreferrer">Source</a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function renderTruthSocialUsage() {
+        const usageSurface = document.getElementById('truthSocialUsage');
+        if (!usageSurface) return;
+        const rows = Array.isArray(truthSocialStatus?.recentUsage) ? truthSocialStatus.recentUsage : [];
+        if (!rows.length) {
+          usageSurface.innerHTML = '<div class="empty">No recent Truth Social OpenAI usage yet.</div>';
+          return;
+        }
+        usageSurface.innerHTML = rows.map((row) => {
+          const usage = row?.usage || {};
+          const status = String(row?.status || 'ok').toLowerCase() === 'error' ? 'error' : 'ok';
+          const label = row?.dedupeId || 'Unknown post';
+          const timestamp = fmtLocalTimestamp(row?.recordedAt || row?.requestedAt);
+          const postNode = row?.originalUrl
+            ? `<a href="${row.originalUrl}" target="_blank" rel="noopener noreferrer"><strong>${label}</strong><span>${timestamp}</span></a>`
+            : `<div><strong>${label}</strong><span>${timestamp}</span></div>`;
+          return `
+            <div class="usage-row">
+              <div>${postNode}</div>
+              <div><strong>${row?.model || 'n/a'}</strong><span>Model</span></div>
+              <div><strong>${fmt(usage.inputTokens, 0)}</strong><span>Input</span></div>
+              <div><strong>${fmt(usage.outputTokens, 0)}</strong><span>Output</span></div>
+              <div><strong>${fmt(usage.totalTokens, 0)}</strong><span>Total</span></div>
+              <div><strong>${fmt(row?.durationMs, 0)} ms</strong><span>Latency</span></div>
+              <div><span class="usage-chip ${status}">${status}</span><span>${row?.error || 'Recorded'}</span></div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function renderTruthSocialServiceControl() {
+        const pill = document.getElementById('truthSocialServicePill');
+        const pid = document.getElementById('truthSocialServicePid');
+        const poll = document.getElementById('truthSocialServicePoll');
+        const lastRun = document.getElementById('truthSocialServiceLastRun');
+        const message = document.getElementById('truthSocialServiceMessage');
+        const startBtn = document.getElementById('truthSocialStartBtn');
+        const stopBtn = document.getElementById('truthSocialStopBtn');
+        if (!pill || !pid || !poll || !lastRun || !message || !startBtn || !stopBtn) {
+          return;
+        }
+        const running = Boolean(truthSocialStatus?.running);
+        pill.textContent = running ? 'Running' : 'Stopped';
+        pill.className = 'service-pill ' + (running ? 'running' : 'stopped');
+        pid.textContent = truthSocialStatus?.pid ? 'PID: ' + truthSocialStatus.pid : 'PID: not available';
+        poll.textContent = truthSocialStatus?.config?.pollingIntervalMs
+          ? 'Poll: ' + Math.round(truthSocialStatus.config.pollingIntervalMs / 1000) + 's'
+          : 'Poll: not available';
+        lastRun.textContent = 'Last scrape: ' + fmtLocalTimestamp(truthSocialStatus?.lastRunAt);
+        message.textContent = truthSocialControlMessage
+          || (running ? 'Worker is active and polling.' : 'Worker is stopped.');
+        startBtn.disabled = truthSocialControlInFlight || running;
+        stopBtn.disabled = truthSocialControlInFlight || !running;
+      }
+
+      async function controlTruthSocialWorker(action) {
+        if (truthSocialControlInFlight) {
+          return;
+        }
+        truthSocialControlInFlight = true;
+        truthSocialControlMessage = action === 'start' ? 'Starting worker…' : 'Stopping worker…';
+        renderTruthSocialServiceControl();
+        try {
+          const response = await fetch('/api/truth-social-alerts/' + action, {
+            method: 'POST',
+            cache: 'no-store',
+          });
+          const payload = await response.json().catch(() => ({}));
+          if (!response.ok || !payload?.ok) {
+            throw new Error(payload?.error || ('Truth Social ' + action + ' failed'));
+          }
+          truthSocialStatus = payload.runtime || null;
+          truthSocialControlMessage = payload.message || '';
+          renderSummary(latestSnapshot, historyState);
+          renderTruthSocialUsage();
+        } catch (error) {
+          truthSocialControlMessage = error.message || ('Truth Social ' + action + ' failed');
+        } finally {
+          truthSocialControlInFlight = false;
+          renderTruthSocialServiceControl();
+        }
+      }
+
+      function renderContext(latest) {
+        const headline = document.getElementById('headline');
+        const headlineList = document.getElementById('headlineList');
+        const notesList = document.getElementById('notesList');
+
+        if (!latest) {
+          headline.textContent = 'No context available yet.';
+          headlineList.innerHTML = '';
+          notesList.innerHTML = '';
+          return;
+        }
+
+        if (activeMarket === 'US') {
+          const macroNews = Array.isArray(latest.news?.macro) ? latest.news.macro : [];
+          const notes = [];
+          notes.push('Volatility trend: ' + (latest.macro?.volatilityTrend || 'not available'));
+          notes.push('Pending U.S. events: ' + ((latest.news?.pendingEvents || []).join(' • ') || 'not available'));
+          notes.push('Relevant earnings: ' + (((latest.news?.earnings || []).map((item) => item.title)).join(' • ') || 'not available'));
+          headline.textContent = macroNews[0]?.title || 'No macro headline captured.';
+          headlineList.innerHTML = macroNews.slice(0, 5).map((item) => `
+            <li><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></li>
+          `).join('');
+          notesList.innerHTML = notes.map((item) => `<li>${item}</li>`).join('');
+          return;
+        }
+
+        headline.textContent = latest.headline || 'No headline captured.';
+        const headlines = Array.isArray(latest.headlines) ? latest.headlines.slice(0, 6) : [];
+        headlineList.innerHTML = headlines.map((item) => `
+          <li><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></li>
+        `).join('');
+        notesList.innerHTML = [
+          'India events: ' + ((latest.indiaEvents || []).join(' • ') || 'not available'),
+          'India summary: ' + (latest.indiaSummary || 'not available')
+        ].map((item) => `<li>${item}</li>`).join('');
+      }
+
+      function renderSectors(latest) {
+        const sectorStyle = document.getElementById('sectorStyle');
+        const sectorNotes = document.getElementById('sectorNotes');
+        const sectorTags = document.getElementById('sectorTags');
+
+        if (!latest) {
+          sectorStyle.textContent = '';
+          sectorNotes.innerHTML = '';
+          sectorTags.innerHTML = '';
+          return;
+        }
+
+        if (activeMarket === 'US') {
+          const intelligence = latest.sectorIntelligence || null;
+          if (intelligence) {
+            const aiSummary = intelligence.aiSummary || {};
+            const breadth = intelligence.sectorBreadth || {};
+            const shiftTags = Array.isArray(intelligence.shiftSignals) && intelligence.shiftSignals.length
+              ? intelligence.shiftSignals
+              : Array.isArray(intelligence.currentStateTags) ? intelligence.currentStateTags : [];
+            sectorStyle.textContent = aiSummary.summary || ('Breadth: ' + (breadth.breadthLabel || 'mixed'));
+            sectorNotes.innerHTML = [
+              aiSummary.whatChanged ? 'What changed: ' + aiSummary.whatChanged : null,
+              aiSummary.leadership ? 'Leadership: ' + aiSummary.leadership : null,
+              aiSummary.portfolioImpact ? 'Portfolio impact: ' + aiSummary.portfolioImpact : null,
+              aiSummary.watchNext ? 'Watch next: ' + aiSummary.watchNext : null,
+              `AI infra breadth / avg move: ${fmt(intelligence.capexTakers?.breadthPercent, 0)}% / ${fmtSigned(intelligence.capexTakers?.avgMovePct, 2, '%')}`,
+              `AI spenders breadth / avg move: ${fmt(intelligence.capexSpenders?.breadthPercent, 0)}% / ${fmtSigned(intelligence.capexSpenders?.avgMovePct, 2, '%')}`,
+              `Leaders: ${(intelligence.leaders || []).map((item) => `${item.ticker} ${fmtSigned(item.movePct, 2, '%')}`).join(', ') || 'not available'}`,
+              `Laggards: ${(intelligence.laggards || []).map((item) => `${item.ticker} ${fmtSigned(item.movePct, 2, '%')}`).join(', ') || 'not available'}`
+            ].filter(Boolean).map((item) => `<li>${item}</li>`).join('');
+            sectorTags.innerHTML = [
+              ...shiftTags.map((tag) => `<span class="sector-tag">${tag}</span>`),
+              `<span class="sector-tag">QQQ <span class="${cls(intelligence.benchmarks?.QQQ?.movePct)}">${fmtSigned(intelligence.benchmarks?.QQQ?.movePct, 2, '%')}</span></span>`,
+              `<span class="sector-tag">SMH <span class="${cls(intelligence.benchmarks?.SMH?.movePct)}">${fmtSigned(intelligence.benchmarks?.SMH?.movePct, 2, '%')}</span></span>`,
+            ].join('');
+            return;
+          }
+          const leadership = latest.sectorLeadership || {};
+          sectorStyle.textContent = 'Leadership style: ' + (leadership.leadershipStyle || 'mixed');
+          sectorNotes.innerHTML = [
+            'Leaders: ' + ((leadership.leaders || []).join(', ') || 'not available'),
+            'Laggards: ' + ((leadership.laggards || []).join(', ') || 'not available'),
+            'Breadth: ' + (leadership.breadth || 'not available')
+          ].map((item) => `<li>${item}</li>`).join('');
+          sectorTags.innerHTML = (leadership.sectors || []).slice(0, 11).map((sector) => `
+            <span class="sector-tag">${sector.symbol} <span class="${cls(sector.movePct)}">${fmtSigned(sector.movePct, 2, '%')}</span></span>
+          `).join('');
+          return;
+        }
+
+        const sectors = Array.isArray(latest.sectors) ? latest.sectors : [];
+        const sorted = [...sectors].sort((a, b) => (Number(b.pctChange) || -999) - (Number(a.pctChange) || -999));
+        sectorStyle.textContent = 'Leadership style: ' + (latest.sectorLeadershipStyle || 'mixed');
+        sectorNotes.innerHTML = [
+          'Leaders: ' + (sorted.slice(0, 3).map((row) => `${row.key} ${fmtSigned(row.pctChange, 2, '%')}`).join(', ') || 'not available'),
+          'Laggards: ' + (sorted.slice(-3).reverse().map((row) => `${row.key} ${fmtSigned(row.pctChange, 2, '%')}`).join(', ') || 'not available'),
+          'Breadth: ' + (latest.advanceDecline === null || latest.advanceDecline === undefined ? 'not available' : fmt(latest.advanceDecline, 2))
+        ].map((item) => `<li>${item}</li>`).join('');
+        sectorTags.innerHTML = sectors.map((sector) => `
+          <span class="sector-tag">${sector.key} <span class="${cls(sector.pctChange)}">${fmtSigned(sector.pctChange, 2, '%')}</span></span>
+        `).join('');
+      }
+
+      function renderWatchlist(latest) {
+        const watchlistBody = document.getElementById('watchlistBody');
+        const watchlistMobile = document.getElementById('watchlistMobile');
+        if (!latest) {
+          watchlistBody.innerHTML = '';
+          watchlistMobile.innerHTML = '';
+          return;
+        }
+
+        if (activeMarket === 'US') {
+          const rows = Array.isArray(latest.watchlistAiCandidates) && latest.watchlistAiCandidates.length
+            ? latest.watchlistAiCandidates
+            : Array.isArray(latest.watchlist) ? latest.watchlist : [];
+          document.querySelector('.watchlist .label').textContent = Array.isArray(latest.watchlistAiCandidates) && latest.watchlistAiCandidates.length
+            ? 'Wishlist AI Table'
+            : 'Watchlist Table';
+          document.querySelector('#watchlistSurface thead').innerHTML = `
+            <tr>
+              <th>Ticker</th>
+              <th>Move</th>
+              <th>Action</th>
+              <th>Technicals</th>
+              <th>Fundamentals</th>
+              <th>Sector / Headline</th>
+            </tr>
+          `;
+          watchlistBody.innerHTML = rows.map((row) => `
+            <tr>
+              <td>${row.ticker}</td>
+              <td class="${cls(row.movePct)}">${row.moveBasis === 'regular' ? 'Intraday ' : row.moveBasis + ' '}${fmtSigned(row.movePct, 2, '%')}</td>
+              <td>${row.recommendation || row.strength || 'not available'}</td>
+              <td>${row.technicalSnapshot?.summary || (row.buyBelow ? '$' + fmt(row.buyBelow, 2) + ' / ' + (row.stopLoss ? '$' + fmt(row.stopLoss, 2) : 'n/a') : 'not available')}</td>
+              <td>${row.fundamentalSnapshot?.summary || row.fundingAction || row.note || 'not available'}</td>
+              <td>${row.sectorContext?.summary || 'Sector context unavailable'}${row.newsDigest?.latestHeadline ? '<span class="portfolio-sub">' + row.newsDigest.latestHeadline + '</span>' : ''}</td>
+            </tr>
+          `).join('');
+          watchlistMobile.innerHTML = buildMobileDataList(rows, (row) => ({
+            title: row.ticker || 'Ticker',
+            badge: `<span class="${cls(row.movePct)}">${row.moveBasis === 'regular' ? 'Intraday ' : (row.moveBasis || '') + ' '}${fmtSigned(row.movePct, 2, '%')}</span>`,
+            rows: [
+              ['Action', row.recommendation || row.strength || 'not available'],
+              ['Technicals', row.technicalSnapshot?.summary || 'not available'],
+              ['Fundamentals', row.fundamentalSnapshot?.summary || row.fundingAction || row.note || 'not available'],
+              ['Sector', row.sectorContext?.summary || 'not available'],
+              ['Shift', row.shiftAlignment?.summary || 'not available'],
+              ['Headline', row.newsDigest?.latestHeadline || 'not available'],
+              ['Buy Below', row.buyBelow ? '$' + fmt(row.buyBelow, 2) : 'n/a'],
+              ['Stop', row.stopLoss ? '$' + fmt(row.stopLoss, 2) : 'n/a'],
+              ['Target', row.target1 ? '$' + fmt(row.target1, 2) : 'n/a'],
+              ['Gap Rule', row.gapRule || 'not available']
+            ]
+          }), 'No watchlist rows available.');
+          return;
+        }
+
+        document.querySelector('.watchlist .label').textContent = 'India Detail Table';
+        document.querySelector('#watchlistSurface thead').innerHTML = `
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+            <th>Status</th>
+            <th>Note</th>
+          </tr>
+        `;
+        watchlistBody.innerHTML = `
+          <tr>
+            <td>Bank Nifty</td>
+            <td class="${cls(latest.indices?.bankNiftyPct)}">${fmt(latest.indices?.bankNifty, 2)} / ${fmtSigned(latest.indices?.bankNiftyPct, 2, '%')}</td>
+            <td>${latest.indices?.bankNiftyPct > 0.5 ? 'supportive' : latest.indices?.bankNiftyPct < 0 ? 'weak' : 'flat'}</td>
+            <td>Core banking leadership filter</td>
+          </tr>
+          <tr>
+            <td>Midcap / Smallcap</td>
+            <td class="${cls((Number(latest.indices?.midcapPct) || 0) + (Number(latest.indices?.smallcapPct) || 0))}">${fmtSigned(latest.indices?.midcapPct, 2, '%')} / ${fmtSigned(latest.indices?.smallcapPct, 2, '%')}</td>
+            <td>${latest.indices?.midcapPct > 0 && latest.indices?.smallcapPct > 0 ? 'broad risk-on' : 'mixed'}</td>
+            <td>Broader market participation</td>
+          </tr>
+          <tr>
+            <td>Gold INR / India 10Y</td>
+            <td>${fmt(latest.goldInr10g, 2)} / ${latest.india10Y === null || latest.india10Y === undefined ? 'not available' : fmt(latest.india10Y, 2) + '%'}</td>
+            <td>${latest.goldInrPct < 0.3 && latest.india10YBpChange <= 0 ? 'calm' : 'watch'}</td>
+            <td>Risk sentiment cross-check</td>
+          </tr>
+        `;
+        watchlistMobile.innerHTML = buildMobileDataList([
+          {
+            title: 'Bank Nifty',
+            badge: `<span class="${cls(latest.indices?.bankNiftyPct)}">${fmt(latest.indices?.bankNifty, 2)} / ${fmtSigned(latest.indices?.bankNiftyPct, 2, '%')}</span>`,
+            rows: [
+              ['Status', latest.indices?.bankNiftyPct > 0.5 ? 'supportive' : latest.indices?.bankNiftyPct < 0 ? 'weak' : 'flat'],
+              ['Note', 'Core banking leadership filter']
+            ]
+          },
+          {
+            title: 'Midcap / Smallcap',
+            badge: `<span class="${cls((Number(latest.indices?.midcapPct) || 0) + (Number(latest.indices?.smallcapPct) || 0))}">${fmtSigned(latest.indices?.midcapPct, 2, '%')} / ${fmtSigned(latest.indices?.smallcapPct, 2, '%')}</span>`,
+            rows: [
+              ['Status', latest.indices?.midcapPct > 0 && latest.indices?.smallcapPct > 0 ? 'broad risk-on' : 'mixed'],
+              ['Note', 'Broader market participation']
+            ]
+          },
+          {
+            title: 'Gold INR / India 10Y',
+            badge: `${fmt(latest.goldInr10g, 2)} / ${latest.india10Y === null || latest.india10Y === undefined ? 'not available' : fmt(latest.india10Y, 2) + '%'}`,
+            rows: [
+              ['Status', latest.goldInrPct < 0.3 && latest.india10YBpChange <= 0 ? 'calm' : 'watch'],
+              ['Note', 'Risk sentiment cross-check']
+            ]
+          }
+        ], (item) => item, 'No India detail rows available.');
+      }
+
+      function renderHistory(history) {
+        const historyHead = document.getElementById('historyHead');
+        const historyBody = document.getElementById('historyBody');
+        const historyMobile = document.getElementById('historyMobile');
+        const rows = history.slice(-15).reverse();
+
+        if (activeMarket === 'US') {
+          historyHead.innerHTML = `
+            <tr>
+              <th>Timestamp</th>
+              <th>Session</th>
+              <th>Regime</th>
+              <th>S&P</th>
+              <th>Nasdaq</th>
+              <th>VIX</th>
+              <th>US 10Y</th>
+              <th>DXY</th>
+              <th>Decision</th>
+            </tr>
+          `;
+          historyBody.innerHTML = rows.map((row, index) => `
+            <tr class="${index === 0 ? 'latest-row' : ''}">
+              <td>${row.timestamp || 'not available'}${index === 0 ? '<span class="latest-stamp">Latest</span>' : ''}</td>
+              <td>${row.session || 'not available'}</td>
+              <td>${row.regime || 'not available'}</td>
+              <td>${fmtSigned(row.macro?.spFuturesPct, 2, '%')}</td>
+              <td>${fmtSigned(row.macro?.nasdaqFuturesPct, 2, '%')}</td>
+              <td>${fmt(row.macro?.vix, 2)}</td>
+              <td>${row.macro?.us10y === null || row.macro?.us10y === undefined ? 'not available' : fmt(row.macro?.us10y, 3) + '%'}</td>
+              <td>${fmt(row.macro?.dxy, 3)}</td>
+              <td>${row.decision || 'not available'}</td>
+            </tr>
+          `).join('');
+          historyMobile.innerHTML = buildMobileDataList(rows, (row, index) => ({
+            title: row.timestamp || 'not available',
+            badge: index === 0 ? '<span class="latest-stamp">Latest</span>' : '',
+            rows: [
+              ['Session', row.session || 'not available'],
+              ['Regime', row.regime || 'not available'],
+              ['S&P', fmtSigned(row.macro?.spFuturesPct, 2, '%')],
+              ['Nasdaq', fmtSigned(row.macro?.nasdaqFuturesPct, 2, '%')],
+              ['VIX', fmt(row.macro?.vix, 2)],
+              ['US 10Y', row.macro?.us10y === null || row.macro?.us10y === undefined ? 'not available' : fmt(row.macro?.us10y, 3) + '%'],
+              ['DXY', fmt(row.macro?.dxy, 3)],
+              ['Decision', row.decision || 'not available']
+            ]
+          }), 'No history rows available.');
+          return;
+        }
+
+        historyHead.innerHTML = `
+          <tr>
+            <th>Timestamp</th>
+            <th>Regime</th>
+            <th>GiftNifty (pts)</th>
+            <th>Brent (USD/bbl)</th>
+            <th>USDINR (INR)</th>
+            <th>IndiaVIX (index)</th>
+            <th>A/D (ratio)</th>
+            <th>FII (Rs cr)</th>
+            <th>DII (Rs cr)</th>
+          </tr>
+        `;
+        historyBody.innerHTML = rows.map((row, index) => `
+          <tr class="${index === 0 ? 'latest-row' : ''}">
+            <td>${row.timestamp || 'not available'}${index === 0 ? '<span class="latest-stamp">Latest</span>' : ''}</td>
+            <td>${row.regime || 'not available'}</td>
+            <td>${fmt(row.giftNifty, 2)}</td>
+            <td>${fmt(row.brent, 2)}</td>
+            <td>${fmt(row.usdInr, 2)}</td>
+            <td>${fmt(row.indiaVix, 2)}</td>
+            <td>${fmt(row.advanceDecline, 2)}</td>
+            <td>${fmt(row.fiiNet, 2)}</td>
+            <td>${fmt(row.diiNet, 2)}</td>
+          </tr>
+        `).join('');
+        historyMobile.innerHTML = buildMobileDataList(rows, (row, index) => ({
+          title: row.timestamp || 'not available',
+          badge: index === 0 ? '<span class="latest-stamp">Latest</span>' : '',
+          rows: [
+            ['Regime', row.regime || 'not available'],
+            ['GiftNifty', fmt(row.giftNifty, 2)],
+            ['Brent', fmt(row.brent, 2)],
+            ['USDINR', fmt(row.usdInr, 2)],
+            ['IndiaVIX', fmt(row.indiaVix, 2)],
+            ['A/D', fmt(row.advanceDecline, 2)],
+            ['FII', fmt(row.fiiNet, 2)],
+            ['DII', fmt(row.diiNet, 2)]
+          ]
+        }), 'No history rows available.');
+      }
+
+      function buildMobileDataList(items, mapper, emptyText) {
+        if (!Array.isArray(items) || !items.length) {
+          return `<div class="empty">${emptyText}</div>`;
+        }
+
+        return `<div class="mobile-data-list">${items.map((item, index) => {
+          const mapped = typeof mapper === 'function' ? mapper(item, index) : item;
+          const rows = Array.isArray(mapped.rows) ? mapped.rows : [];
+          return `
+            <article class="mobile-data-item">
+              <div class="mobile-data-title">
+                <span>${mapped.title || 'Item'}</span>
+                ${mapped.badge || ''}
+              </div>
+              <div class="mobile-data-grid">
+                ${rows.map(([label, value]) => `
+                  <div class="mobile-data-row">
+                    <div class="mobile-data-label">${label}</div>
+                    <div>${value}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </article>
+          `;
+        }).join('')}</div>`;
+      }
+
+      function fmtInr(value, digits = 0) {
+        if (value === null || value === undefined || value === '') return 'not available';
+        const num = Number(value);
+        if (!Number.isFinite(num)) return String(value);
+        return `₹${num.toLocaleString('en-IN', {
+          minimumFractionDigits: digits,
+          maximumFractionDigits: digits,
+        })}`;
+      }
+
+      function initializeCollapsibles() {
+        document.querySelectorAll('.grid > .card').forEach((card) => {
+          if (card.dataset.collapsibleReady === 'true') {
+            return;
+          }
+
+          const directLabel = Array.from(card.children).find((node) => node.classList && node.classList.contains('label'));
+          const label = directLabel || document.createElement('div');
+          if (!directLabel) {
+            label.className = 'label';
+            label.textContent = card.dataset.collapsibleTitle || 'Section';
+          }
+
+          const header = document.createElement('div');
+          header.className = 'card-header';
+          header.appendChild(label);
+
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'collapse-btn';
+          button.textContent = 'Hide';
+          button.setAttribute('aria-expanded', 'true');
+          header.appendChild(button);
+
+          const body = document.createElement('div');
+          body.className = 'card-body';
+
+          const remaining = Array.from(card.children).filter((node) => node !== label);
+          remaining.forEach((node) => body.appendChild(node));
+
+          card.appendChild(header);
+          card.appendChild(body);
+          card.dataset.collapsibleReady = 'true';
+
+          button.addEventListener('click', () => {
+            const collapsed = card.classList.toggle('collapsed');
+            button.textContent = collapsed ? 'Show' : 'Hide';
+            button.setAttribute('aria-expanded', String(!collapsed));
+          });
+        });
+      }
+
+      function setMarket(market, options = {}) {
+        activeMarket = market;
+        if (!options.skipPersist) {
+          storeMarketPreference(market);
+        }
+        syncToggleButtons();
+        updateCopyButtonLabel();
+        scheduleRefreshLoop();
+        const tasks = [
+          loadEngineData({ force: true, includeHistory: true }),
+        ];
+        if (market === 'US') {
+          tasks.push(loadWatchlistAiData({ force: true }));
+        }
+        Promise.all(tasks).catch(() => {});
+      }
+
+      function refreshEngineData() {
+        const tasks = [loadEngineData()];
+        if (activeMarket === 'US' && shouldRefreshWatchlistAi()) {
+          tasks.push(loadWatchlistAiData());
+        }
+        Promise.all(tasks).catch(() => {});
+      }
+
+      document.getElementById('toggleInd').addEventListener('click', () => setMarket('IND'));
+      document.getElementById('toggleUs').addEventListener('click', () => setMarket('US'));
+      document.getElementById('layoutModeBtn').addEventListener('click', () => toggleLayoutMode());
+      document.getElementById('resetLayoutBtn').addEventListener('click', () => resetWidgetLayout());
+      document.getElementById('refreshBtn').addEventListener('click', async () => {
+        const tasks = [
+          loadEngineData({ force: true, includeHistory: true }),
+        ];
+        if (activeMarket === 'US') {
+          tasks.push(loadWatchlistAiData({ force: true }));
+        }
+        await Promise.all(tasks);
+      });
+      document.getElementById('collectBtn').addEventListener('click', async () => {
+        const button = document.getElementById('collectBtn');
+        button.disabled = true;
+        button.textContent = 'Collecting…';
+        setCollectingState(true);
+        try {
+          await fetch('/api/collect-now', { method: 'POST' });
+          const tasks = [
+            loadEngineData({ force: true, includeHistory: true }),
+          ];
+          if (activeMarket === 'US') {
+            tasks.push(loadWatchlistAiData({ force: true }));
+          }
+          await Promise.all(tasks);
+        } finally {
+          setCollectingState(false);
+          button.disabled = false;
+          button.textContent = 'Collect';
+        }
+      });
+      document.getElementById('copyBtn').addEventListener('click', () => copySummary());
+      document.getElementById('truthSocialStartBtn').addEventListener('click', () => controlTruthSocialWorker('start'));
+      document.getElementById('truthSocialStopBtn').addEventListener('click', () => controlTruthSocialWorker('stop'));
+
+      async function initializeDashboard() {
+        initializeCollapsibles();
+        initializeWidgetChrome();
+        widgetLayout = await getStoredWidgetLayout();
+        applyWidgetLayout();
+        updateLayoutModeUI();
+        activeMarket = getStoredMarketPreference() || getAutoSelectedMarket();
+        syncToggleButtons();
+        updateCopyButtonLabel();
+        await loadEngineData({ force: true, includeHistory: true });
+        if (activeMarket === 'US') {
+          await loadWatchlistAiData({ force: true });
+        }
+        scheduleRefreshLoop();
+        document.addEventListener('visibilitychange', () => scheduleRefreshLoop());
+        window.matchMedia(MOBILE_LAYOUT_QUERY).addEventListener('change', () => {
+          updateLayoutModeUI();
+          applyWidgetLayout();
+        });
+      }
+
+      initializeDashboard();
+    </script>
+  </body>
+</html>

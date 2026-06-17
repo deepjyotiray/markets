@@ -1,0 +1,35 @@
+{
+  "exports": [
+    {
+      "updatedAt": "2026-06-04 02:49:44 IST",
+      "summary": {
+        "portfolioValue": 11839.53,
+        "investedValue": 11454.07,
+        "totalReturns": 385.46,
+        "oneDayReturn": -332.36
+      },
+      "holdings": [
+        { "ticker": "NVDA", "quantity": 1, "lastPrice": 3450.00, "invested": 3609.58, "currentValue": 3450.00, "totalActualReturn": -159.58, "oneDayReturn": -180.00 }
+      ]
+    },
+    {
+      "updatedAt": "2026-06-04 08:45:15 IST",
+      "summary": {
+        "portfolioValue": 12011.04,
+        "investedValue": 11454.07,
+        "totalReturns": 556.97,
+        "oneDayReturn": -160.85
+      },
+      "holdings": [
+        { "ticker": "NVDA", "quantity": 16.403526116, "lastPrice": 214.59, "invested": 3609.58, "currentValue": 3520.00, "totalActualReturn": -89.58, "oneDayReturn": -100.00 },
+        { "ticker": "GOOGL", "quantity": 7.523625949, "lastPrice": 385.45, "invested": 3110.32, "currentValue": 2900.00, "totalActualReturn": -210.32, "oneDayReturn": -50.00 },
+        { "ticker": "MU", "quantity": 2.192766, "lastPrice": 989.16, "invested": 1425.17, "currentValue": 2169.00, "totalActualReturn": 743.83, "oneDayReturn": 15.00 },
+        { "ticker": "AVGO", "quantity": 2.005015, "lastPrice": 488.77, "invested": 874.82, "currentValue": 980.00, "totalActualReturn": 105.18, "oneDayReturn": -10.00 },
+        { "ticker": "AMZN", "quantity": 3.76825, "lastPrice": 252.11, "invested": 1012.44, "currentValue": 950.00, "totalActualReturn": -62.44, "oneDayReturn": -20.00 },
+        { "ticker": "TSM", "quantity": 1.556758458, "lastPrice": 462.50, "invested": 679.32, "currentValue": 720.00, "totalActualReturn": 40.68, "oneDayReturn": 3.00 },
+        { "ticker": "AMD", "quantity": 1, "lastPrice": 600.00, "invested": 565.31, "currentValue": 600.00, "totalActualReturn": 34.69, "oneDayReturn": 2.00 },
+        { "ticker": "SMCI", "quantity": 3.66007231, "lastPrice": 47.00, "invested": 177.11, "currentValue": 172.04, "totalActualReturn": -5.07, "oneDayReturn": -0.85 }
+      ]
+    }
+  ]
+}

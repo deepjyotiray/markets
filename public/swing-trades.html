@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swing Trade Engine</title>
+    <link rel="stylesheet" href="/app-shell.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg?page=%2Fswing-trades"
+    />
+    <link rel="shortcut icon" href="/favicon.svg?page=%2Fswing-trades" />
+    <script>
+      window.__APP_SHELL__ = {
+        currentPath: '/swing-trades',
+        tabs: [['/', 'Market'], ['/swing-trades', 'Swing'], ['/portfolio-alerts', 'Alerts'], ['/watchlist-stocks', 'Watchlist'], ['/portfolio-earnings', 'Earnings'], ['/portfolios', 'Combined'], ['/portfolios/deep', 'Deep'], ['/portfolios/mom', 'Mom']],
+        actionSelectors: ['.topbar .actions button']
+      };
+    </script>
+    <script defer src="/app-shell.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f5f7f8;
+        --panel: #ffffff;
+        --ink: #162021;
+        --muted: #627071;
+        --line: #d8e0e2;
+        --blue: #0b5d6a;
+        --green: #166a46;
+        --amber: #95620d;
+        --red: #b23b3b;
+        --shadow: 0 14px 32px rgba(22, 32, 33, 0.08);
+        font-family: var(--app-font);
+      }
+      :root[data-app-theme="dark"] {
+        --bg: #101617;
+        --panel: #172022;
+        --ink: #eef5f4;
+        --muted: #9fafb0;
+        --line: #2d3d40;
+        --blue: #62c8d8;
+        --green: #58c78f;
+        --amber: #d4a24a;
+        --red: #ee7777;
+        --shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-app-theme="light"]) {
+          --bg: #101617;
+          --panel: #172022;
+          --ink: #eef5f4;
+          --muted: #9fafb0;
+          --line: #2d3d40;
+          --blue: #62c8d8;
+          --green: #58c78f;
+          --amber: #d4a24a;
+          --red: #ee7777;
+          --shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+        }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); }
+      button, input { font: inherit; }
+      .shell { width: min(1480px, calc(100% - 28px)); margin: 0 auto; padding: 12px 0 28px; }
+      .topbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+      h1 { margin: 0; font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: 0; }
+      .kicker { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+      .meta, .status { color: var(--muted); line-height: 1.45; }
+      .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+      input, .btn { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); min-height: 40px; padding: 9px 11px; }
+      .btn { cursor: pointer; box-shadow: 0 6px 16px rgba(22, 32, 33, 0.05); }
+      .btn.primary { border-color: var(--blue); background: var(--blue); color: white; }
+      .btn:disabled { opacity: 0.55; cursor: wait; }
+      .summary { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; margin: 8px 0; }
+      .tile, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
+      .tile { grid-column: span 3; min-height: 94px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; }
+      .label { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+      .value { font-size: 25px; font-weight: 800; }
+      .panel { margin-top: 8px; overflow: hidden; }
+      .panel-head { display: flex; justify-content: space-between; gap: 8px; padding: 10px 12px; background: color-mix(in srgb, var(--panel) 82%, var(--blue)); border-bottom: 1px solid var(--line); }
+      .panel-title { margin: 0; font-size: 17px; }
+      .table-wrap { overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; min-width: 1120px; }
+      th, td { padding: 9px 11px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
+      th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+      .num { text-align: right; font-variant-numeric: tabular-nums; }
+      .pill { display: inline-flex; align-items: center; min-height: 25px; border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; background: rgba(98,112,113,0.12); }
+      .BUY_TODAY, .BUY_ON_BREAKOUT_CONFIRMATION { color: var(--green); }
+      .BUY_ON_PULLBACK, .HOLD_FOR_NEXT_SESSION { color: var(--amber); }
+      .SELL_NEXT_SESSION, .TRIM_TODAY, .AVOID { color: var(--red); }
+      .sub { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+      @media (max-width: 860px) {
+        .topbar { flex-direction: column; }
+        .actions { justify-content: flex-start; width: 100%; }
+        input { width: 100%; }
+        .tile { grid-column: span 6; }
+      }
+      @media (max-width: 560px) {
+        .tile { grid-column: span 12; }
+        table { min-width: 0; }
+        table thead { display: none; }
+        table, table tbody, table tr, table td { display: block; width: 100%; }
+        table tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+        table td { padding: 7px 0; border-bottom: 0; text-align: left; white-space: normal; }
+        table td.num { text-align: left; }
+        table td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 4px;
+          color: var(--muted);
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="topbar">
+        <div>
+          <div class="kicker">Recommendation only</div>
+          <h1>Swing Trade Engine</h1>
+          <div class="meta">Controlled-aggressive U.S. swing scan for today, tomorrow, and the next session.</div>
+        </div>
+        <div class="actions">
+          <input id="symbols" placeholder="Optional: NVDA,AVGO,MU" />
+          <button class="btn" id="loadBtn">Load</button>
+          <button class="btn primary" id="refreshBtn">Run Scan</button>
+        </div>
+      </div>
+      <div class="status" id="status">Loading...</div>
+      <section class="summary" id="summary"></section>
+      <section id="tables"></section>
+    </main>
+    <script>
+      const statusEl = document.getElementById('status');
+      const summaryEl = document.getElementById('summary');
+      const tablesEl = document.getElementById('tables');
+      const symbolsEl = document.getElementById('symbols');
+      const loadBtn = document.getElementById('loadBtn');
+      const refreshBtn = document.getElementById('refreshBtn');
+      let pollTimer = null;
+
+      const money = (value) => Number.isFinite(Number(value)) ? '$' + Number(value).toFixed(2) : 'n/a';
+      const pct = (value) => Number.isFinite(Number(value)) ? Number(value).toFixed(2) + '%' : 'n/a';
+      const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+
+      function displayName(item) {
+        const symbol = String(item.symbol || '').trim().toUpperCase();
+        const name = String(item.name || item.companyName || item.title || '').trim();
+        return name && name.toUpperCase() !== symbol ? name : '';
+      }
+
+      function row(item) {
+        const name = displayName(item);
+        return `<tr>
+          <td data-label="Ticker"><strong>${esc(item.symbol)}</strong>${name ? `<span class="sub">${esc(name)}</span>` : ''}</td>
+          <td data-label="Action"><span class="pill ${esc(item.action)}">${esc(item.action)}</span><span class="sub">${esc(item.confidence)} confidence</span></td>
+          <td class="num" data-label="Score"><strong>${item.score}</strong><span class="sub">T ${item.components?.technicalScore ?? 0} / N ${item.components?.newsScore ?? 0}</span></td>
+          <td class="num" data-label="Price">${money(item.price)}<span class="sub">${pct(item.movePct)}</span></td>
+          <td data-label="Window">${esc(item.entryWindow)}<span class="sub">${esc(item.timeStop || '')}</span></td>
+          <td class="num" data-label="Entry">${money(item.levels?.entry)}<span class="sub">No chase ${money(item.levels?.noChaseAbove)}</span></td>
+          <td class="num" data-label="Stop">${money(item.levels?.stop)}<span class="sub">R/R ${item.levels?.riskReward ?? 'n/a'}</span></td>
+          <td class="num" data-label="Targets">${money(item.levels?.target1)}<span class="sub">${money(item.levels?.target2)}</span></td>
+          <td class="num" data-label="Size">${item.position?.shares ?? 0}<span class="sub">${money(item.position?.notionalUsd)}</span></td>
+          <td data-label="Technicals">RSI ${item.technical?.rsi14 ?? 'n/a'}<span class="sub">Vol ${item.technical?.volumeRatio ?? 'n/a'}x · ${esc(item.technical?.maAlignment || '')}</span></td>
+          <td data-label="News">${esc(item.newsDigest?.sentiment || 'unclear')}<span class="sub">${esc(item.newsDigest?.latestHeadline || '')}</span></td>
+          <td data-label="Data">${esc((item.dataQuality?.warnings || []).join(', ') || item.dataQuality?.candleSource || 'ok')}</td>
+        </tr>`;
+      }
+
+      function panel(title, rows) {
+        return `<section class="panel">
+          <div class="panel-head"><h2 class="panel-title">${esc(title)}</h2><span class="meta">${rows.length} rows</span></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Ticker</th><th>Action</th><th class="num">Score</th><th class="num">Price</th><th>Window</th><th class="num">Entry</th><th class="num">Stop</th><th class="num">Targets</th><th class="num">Size</th><th>Technicals</th><th>News</th><th>Data</th></tr></thead>
+            <tbody>${rows.length ? rows.map(row).join('') : '<tr><td colspan="12">No rows.</td></tr>'}</tbody>
+          </table></div>
+        </section>`;
+      }
+
+      function render(payload) {
+        summaryEl.innerHTML = [
+          ['Scanned', payload.universe?.scanned ?? 0, payload.universe?.name || 'Universe'],
+          ['Top buys', payload.topBuys?.length ?? 0, 'Actionable buy candidates'],
+          ['Risk/trade', pct((payload.risk?.riskPerTradePct || 0) * 100), 'Recommendation sizing cap'],
+          ['Benchmarks', 'SPY ' + pct(payload.benchmarkMoves?.SPY), 'QQQ ' + pct(payload.benchmarkMoves?.QQQ) + ' · SMH ' + pct(payload.benchmarkMoves?.SMH)],
+        ].map(([label, value, note]) => `<article class="tile"><div class="label">${esc(label)}</div><div class="value">${esc(value)}</div><div class="sub">${esc(note)}</div></article>`).join('');
+        tablesEl.innerHTML = [
+          panel('Top Buy Candidates', payload.topBuys || []),
+          panel('Sell Or Trim Candidates', payload.sellOrTrim || []),
+          panel('Watch For Next Session', payload.watch || []),
+          panel('Avoid / Blocked', payload.avoid || []),
+        ].join('');
+        statusEl.textContent = `Generated ${payload.generatedAt || 'unknown'} · ${payload.disclaimer || ''}`;
+      }
+
+      async function pollReport(params, attempts = 20, freshSince = '') {
+        window.clearTimeout(pollTimer);
+        const pollParams = new URLSearchParams(params);
+        pollParams.set('cacheOnly', '1');
+        if (freshSince) pollParams.set('freshSince', freshSince);
+        const response = await fetch('/api/swing-trades/report?' + pollParams.toString(), { cache: 'no-store' });
+        const payload = await response.json();
+        if (response.ok && payload.ok !== false) {
+          render(payload);
+          loadBtn.disabled = false;
+          refreshBtn.disabled = false;
+          return;
+        }
+        if (attempts <= 0) {
+          throw new Error(payload.error || 'Swing scan is still running.');
+        }
+        statusEl.textContent = 'Swing scan running in background...';
+        pollTimer = window.setTimeout(() => pollReport(params, attempts - 1, freshSince).catch((error) => {
+          statusEl.textContent = 'Swing scan failed: ' + error.message;
+          loadBtn.disabled = false;
+          refreshBtn.disabled = false;
+        }), 3000);
+      }
+
+      async function load(force = false) {
+        loadBtn.disabled = true;
+        refreshBtn.disabled = true;
+        statusEl.textContent = force ? 'Starting fresh scan...' : 'Loading cached scan...';
+        let pollingStarted = false;
+        try {
+          const symbols = symbolsEl.value.trim();
+          const params = new URLSearchParams();
+          if (symbols) params.set('symbols', symbols);
+          if (force) {
+            params.set('limit', '6');
+            params.set('maxScanSymbols', '12');
+          }
+          if (!force) params.set('cacheOnly', '1');
+          const qs = '?' + params.toString();
+          const response = force
+            ? await fetch('/api/swing-trades/run' + qs, { method: 'POST', cache: 'no-store' })
+            : await fetch('/api/swing-trades/report' + qs, { cache: 'no-store' });
+          const payload = await response.json();
+          if (force && response.status === 202) {
+            statusEl.textContent = payload.message || 'Swing scan started in background...';
+            pollingStarted = true;
+            pollReport(params, 20, payload.run?.startedAt || '').catch((error) => {
+              statusEl.textContent = 'Swing scan failed: ' + error.message;
+              loadBtn.disabled = false;
+              refreshBtn.disabled = false;
+            });
+            return;
+          }
+          if (!response.ok || payload.ok === false) throw new Error(payload.error || 'Request failed');
+          render(payload);
+        } catch (error) {
+          statusEl.textContent = 'Swing scan failed: ' + error.message;
+        } finally {
+          if (!pollingStarted) {
+            loadBtn.disabled = false;
+            refreshBtn.disabled = false;
+          }
+        }
+      }
+
+      loadBtn.addEventListener('click', () => load(false));
+      refreshBtn.addEventListener('click', () => load(true));
+      load(false);
+    </script>
+  </body>
+</html>

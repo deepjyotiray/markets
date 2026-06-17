@@ -1,0 +1,16 @@
+{
+  "dayKey": "2026-06-12",
+  "totalCalls": 1,
+  "tools": {
+    "networth_holdings": {
+      "calls": 1,
+      "lastSuccessAt": 1781249112365,
+      "blockedUntil": 1781249703471,
+      "lastRateLimitAt": 1781249701471
+    },
+    "__global__": {
+      "blockedUntil": 1781249703471,
+      "lastRateLimitAt": 1781249701471
+    }
+  }
+}

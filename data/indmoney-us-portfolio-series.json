@@ -1,0 +1,659 @@
+[
+  {
+    "timestamp": "2026-06-04T18:30:00.000Z",
+    "currentValue": 11969.73,
+    "invested": 11969.73,
+    "pnl": 0,
+    "pnlPct": 0,
+    "holdingsCount": 8,
+    "source": "synthetic_us_stock_baseline"
+  },
+  {
+    "timestamp": "2026-06-04T19:30:00.000Z",
+    "currentValue": 11879.88,
+    "invested": 11969.73,
+    "pnl": -89.85,
+    "pnlPct": -0.75,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-04T20:30:00.000Z",
+    "currentValue": 12239.62,
+    "invested": 12390.19,
+    "pnl": -150.57,
+    "pnlPct": -1.22,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-04T21:30:00.000Z",
+    "currentValue": 12239.01,
+    "invested": 12390.19,
+    "pnl": -151.18,
+    "pnlPct": -1.22,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-04T22:30:00.000Z",
+    "currentValue": 12206.15,
+    "invested": 12390.19,
+    "pnl": -184.04,
+    "pnlPct": -1.49,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T07:30:00.000Z",
+    "currentValue": 12149.7,
+    "invested": 12390.19,
+    "pnl": -240.49,
+    "pnlPct": -1.94,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T08:30:00.000Z",
+    "currentValue": 12131.73,
+    "invested": 12390.19,
+    "pnl": -258.46,
+    "pnlPct": -2.09,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T09:30:00.000Z",
+    "currentValue": 12103.1,
+    "invested": 12390.19,
+    "pnl": -287.09,
+    "pnlPct": -2.32,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T10:30:00.000Z",
+    "currentValue": 12147.02,
+    "invested": 12390.19,
+    "pnl": -243.17,
+    "pnlPct": -1.96,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T11:30:00.000Z",
+    "currentValue": 12101.23,
+    "invested": 12390.19,
+    "pnl": -288.96,
+    "pnlPct": -2.33,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T12:30:00.000Z",
+    "currentValue": 12029.11,
+    "invested": 12390.19,
+    "pnl": -361.08,
+    "pnlPct": -2.91,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T13:30:00.000Z",
+    "currentValue": 11876.06,
+    "invested": 12390.19,
+    "pnl": -514.13,
+    "pnlPct": -4.15,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T14:30:00.000Z",
+    "currentValue": 11802.4,
+    "invested": 12390.19,
+    "pnl": -587.79,
+    "pnlPct": -4.74,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T15:30:00.000Z",
+    "currentValue": 11735.1,
+    "invested": 12390.19,
+    "pnl": -655.09,
+    "pnlPct": -5.29,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T16:30:00.000Z",
+    "currentValue": 11708.04,
+    "invested": 12390.19,
+    "pnl": -682.15,
+    "pnlPct": -5.51,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T17:30:00.000Z",
+    "currentValue": 11580.96,
+    "invested": 12390.19,
+    "pnl": -809.23,
+    "pnlPct": -6.53,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T18:30:00.000Z",
+    "currentValue": 11558.89,
+    "invested": 12390.19,
+    "pnl": -831.3,
+    "pnlPct": -6.71,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T19:30:00.000Z",
+    "currentValue": 11490.81,
+    "invested": 12390.19,
+    "pnl": -899.38,
+    "pnlPct": -7.26,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T20:30:00.000Z",
+    "currentValue": 11461.53,
+    "invested": 12390.19,
+    "pnl": -928.66,
+    "pnlPct": -7.5,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T21:30:00.000Z",
+    "currentValue": 11509.84,
+    "invested": 12390.19,
+    "pnl": -880.35,
+    "pnlPct": -7.11,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-05T22:30:00.000Z",
+    "currentValue": 11477.93,
+    "invested": 12390.19,
+    "pnl": -912.26,
+    "pnlPct": -7.36,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T07:30:00.000Z",
+    "currentValue": 11403.5,
+    "invested": 12390.19,
+    "pnl": -986.69,
+    "pnlPct": -7.96,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T08:30:00.000Z",
+    "currentValue": 11641.92,
+    "invested": 12390.19,
+    "pnl": -748.27,
+    "pnlPct": -6.04,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T09:30:00.000Z",
+    "currentValue": 11619.14,
+    "invested": 12390.19,
+    "pnl": -771.05,
+    "pnlPct": -6.22,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T10:30:00.000Z",
+    "currentValue": 11631.05,
+    "invested": 12390.19,
+    "pnl": -759.14,
+    "pnlPct": -6.13,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T11:30:00.000Z",
+    "currentValue": 11768.42,
+    "invested": 12390.19,
+    "pnl": -621.77,
+    "pnlPct": -5.02,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T12:30:00.000Z",
+    "currentValue": 11809.81,
+    "invested": 12390.19,
+    "pnl": -580.38,
+    "pnlPct": -4.68,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T13:30:00.000Z",
+    "currentValue": 11721.86,
+    "invested": 12390.19,
+    "pnl": -668.33,
+    "pnlPct": -5.39,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T14:30:00.000Z",
+    "currentValue": 11775.13,
+    "invested": 12390.19,
+    "pnl": -615.06,
+    "pnlPct": -4.96,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T15:30:00.000Z",
+    "currentValue": 11777.83,
+    "invested": 12390.19,
+    "pnl": -612.36,
+    "pnlPct": -4.94,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T16:30:00.000Z",
+    "currentValue": 11805.58,
+    "invested": 12390.19,
+    "pnl": -584.61,
+    "pnlPct": -4.72,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T17:30:00.000Z",
+    "currentValue": 11810.13,
+    "invested": 12390.19,
+    "pnl": -580.06,
+    "pnlPct": -4.68,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T18:30:00.000Z",
+    "currentValue": 11725.9,
+    "invested": 12390.19,
+    "pnl": -664.29,
+    "pnlPct": -5.36,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T19:30:00.000Z",
+    "currentValue": 11781.31,
+    "invested": 12390.19,
+    "pnl": -608.88,
+    "pnlPct": -4.91,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T20:30:00.000Z",
+    "currentValue": 11763.49,
+    "invested": 12390.19,
+    "pnl": -626.7,
+    "pnlPct": -5.06,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T21:30:00.000Z",
+    "currentValue": 11777.3,
+    "invested": 12390.19,
+    "pnl": -612.89,
+    "pnlPct": -4.95,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-08T22:30:00.000Z",
+    "currentValue": 11762.31,
+    "invested": 12390.19,
+    "pnl": -627.88,
+    "pnlPct": -5.07,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T07:30:00.000Z",
+    "currentValue": 11774.83,
+    "invested": 12390.19,
+    "pnl": -615.36,
+    "pnlPct": -4.97,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T08:30:00.000Z",
+    "currentValue": 11947.85,
+    "invested": 12390.19,
+    "pnl": -442.34,
+    "pnlPct": -3.57,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T09:30:00.000Z",
+    "currentValue": 11953.2,
+    "invested": 12390.19,
+    "pnl": -436.99,
+    "pnlPct": -3.53,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T10:30:00.000Z",
+    "currentValue": 11934.93,
+    "invested": 12390.19,
+    "pnl": -455.26,
+    "pnlPct": -3.67,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T11:30:00.000Z",
+    "currentValue": 11960.62,
+    "invested": 12390.19,
+    "pnl": -429.57,
+    "pnlPct": -3.47,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T12:30:00.000Z",
+    "currentValue": 11932.75,
+    "invested": 12390.19,
+    "pnl": -457.44,
+    "pnlPct": -3.69,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T13:30:00.000Z",
+    "currentValue": 11788.21,
+    "invested": 12390.19,
+    "pnl": -601.98,
+    "pnlPct": -4.86,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T14:30:00.000Z",
+    "currentValue": 11463.2,
+    "invested": 12390.19,
+    "pnl": -926.99,
+    "pnlPct": -7.48,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T15:30:00.000Z",
+    "currentValue": 11305.67,
+    "invested": 12390.19,
+    "pnl": -1084.52,
+    "pnlPct": -8.75,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T16:30:00.000Z",
+    "currentValue": 11469.94,
+    "invested": 12390.19,
+    "pnl": -920.25,
+    "pnlPct": -7.43,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T17:30:00.000Z",
+    "currentValue": 11589.17,
+    "invested": 12390.19,
+    "pnl": -801.02,
+    "pnlPct": -6.46,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T18:30:00.000Z",
+    "currentValue": 11574.77,
+    "invested": 12390.19,
+    "pnl": -815.42,
+    "pnlPct": -6.58,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T19:30:00.000Z",
+    "currentValue": 11699.56,
+    "invested": 12390.19,
+    "pnl": -690.63,
+    "pnlPct": -5.57,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T20:30:00.000Z",
+    "currentValue": 11686.35,
+    "invested": 12390.19,
+    "pnl": -703.84,
+    "pnlPct": -5.68,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T21:30:00.000Z",
+    "currentValue": 11602.53,
+    "invested": 12390.19,
+    "pnl": -787.66,
+    "pnlPct": -6.36,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-09T22:30:00.000Z",
+    "currentValue": 11574.74,
+    "invested": 12390.19,
+    "pnl": -815.45,
+    "pnlPct": -6.58,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T07:30:00.000Z",
+    "currentValue": 11594.4,
+    "invested": 12390.19,
+    "pnl": -795.79,
+    "pnlPct": -6.42,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T08:30:00.000Z",
+    "currentValue": 11479.56,
+    "invested": 12390.19,
+    "pnl": -910.63,
+    "pnlPct": -7.35,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T09:30:00.000Z",
+    "currentValue": 11447.59,
+    "invested": 12390.19,
+    "pnl": -942.6,
+    "pnlPct": -7.61,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T10:30:00.000Z",
+    "currentValue": 11432.25,
+    "invested": 12390.19,
+    "pnl": -957.94,
+    "pnlPct": -7.73,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T11:30:00.000Z",
+    "currentValue": 11389.42,
+    "invested": 12390.19,
+    "pnl": -1000.77,
+    "pnlPct": -8.08,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T12:30:00.000Z",
+    "currentValue": 11423.7,
+    "invested": 12390.19,
+    "pnl": -966.49,
+    "pnlPct": -7.8,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T13:30:00.000Z",
+    "currentValue": 11614.87,
+    "invested": 12390.19,
+    "pnl": -775.32,
+    "pnlPct": -6.26,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T14:30:00.000Z",
+    "currentValue": 11376.36,
+    "invested": 12390.19,
+    "pnl": -1013.83,
+    "pnlPct": -8.18,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T15:30:00.000Z",
+    "currentValue": 11333.95,
+    "invested": 12390.19,
+    "pnl": -1056.24,
+    "pnlPct": -8.52,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T16:30:00.000Z",
+    "currentValue": 11296.37,
+    "invested": 12390.19,
+    "pnl": -1093.82,
+    "pnlPct": -8.83,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T17:30:00.000Z",
+    "currentValue": 11307.7,
+    "invested": 12390.19,
+    "pnl": -1082.49,
+    "pnlPct": -8.74,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T18:30:00.000Z",
+    "currentValue": 11218.13,
+    "invested": 12390.19,
+    "pnl": -1172.06,
+    "pnlPct": -9.46,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T19:30:00.000Z",
+    "currentValue": 11204.9,
+    "invested": 12390.19,
+    "pnl": -1185.29,
+    "pnlPct": -9.57,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T20:30:00.000Z",
+    "currentValue": 11166.59,
+    "invested": 12390.19,
+    "pnl": -1223.6,
+    "pnlPct": -9.88,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T21:30:00.000Z",
+    "currentValue": 11155.77,
+    "invested": 12390.19,
+    "pnl": -1234.42,
+    "pnlPct": -9.96,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-10T22:30:00.000Z",
+    "currentValue": 11098.26,
+    "invested": 12390.19,
+    "pnl": -1291.93,
+    "pnlPct": -10.43,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-11T07:30:00.000Z",
+    "currentValue": 11106.14,
+    "invested": 12390.19,
+    "pnl": -1284.05,
+    "pnlPct": -10.36,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-11T08:30:00.000Z",
+    "currentValue": 11415.94,
+    "invested": 12390.19,
+    "pnl": -974.25,
+    "pnlPct": -7.86,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-11T09:30:00.000Z",
+    "currentValue": 11378.92,
+    "invested": 12390.19,
+    "pnl": -1011.27,
+    "pnlPct": -8.16,
+    "holdingsCount": 8,
+    "source": "historical_us_stock_candles"
+  },
+  {
+    "timestamp": "2026-06-11T10:30:00.000Z",
+    "currentValue": 11425.87,
+    "invested": 1144972.76,
+    "pnl": -1133546.88,
+    "pnlPct": -99,
+    "holdingsCount": 8,
+    "source": "live_us_stock_quotes"
+  }
+]

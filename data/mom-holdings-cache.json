@@ -1,0 +1,103 @@
+{
+  "payload": {
+    "holdings": [
+      {
+        "investment_code": "112778",
+        "investment": "Alphabet Inc. Class A Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 34990.00391567231,
+        "market_value": 35316.91602516174,
+        "holding_percent": 18.081371858608566,
+        "total_pnl": 326.91210948943626,
+        "pnl_per": 0.9343014372828055,
+        "xirr": 0,
+        "total_units": 1,
+        "unit_price": 35316.91602516174,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      },
+      {
+        "investment_code": "115382",
+        "investment": "NVIDIA Corporation Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 19895.464117515563,
+        "market_value": 19625.13511617738,
+        "holding_percent": 10.047575092859917,
+        "total_pnl": -270.32900133818475,
+        "pnl_per": -1.3587468969884073,
+        "xirr": 0,
+        "total_units": 1,
+        "unit_price": 19625.13511617738,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      },
+      {
+        "investment_code": "117015",
+        "investment": "Microsoft Corporation Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 37528.185489349366,
+        "market_value": 37264.19441115414,
+        "holding_percent": 19.07832936713718,
+        "total_pnl": -263.9910781952276,
+        "pnl_per": -0.7034474882089603,
+        "xirr": 0,
+        "total_units": 1,
+        "unit_price": 37264.19441115414,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      },
+      {
+        "investment_code": "115129",
+        "investment": "Meta Platforms, Inc. Class A Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 43310.413857192994,
+        "market_value": 44195.03778186247,
+        "holding_percent": 22.626746680536375,
+        "total_pnl": 884.623924669475,
+        "pnl_per": 2.0425201375039657,
+        "xirr": 0,
+        "total_units": 0.778192983,
+        "unit_price": 56791.873927578796,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      },
+      {
+        "investment_code": "120138",
+        "investment": "Broadcom Inc. Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 37201.27337985993,
+        "market_value": 35644.300426144386,
+        "holding_percent": 18.248984429611582,
+        "total_pnl": -1556.9729537155436,
+        "pnl_per": -4.185267901497316,
+        "xirr": 0,
+        "total_units": 1,
+        "unit_price": 35644.300426144386,
+        "broker": "2",
+        "market_cap": "Large Cap"
+      },
+      {
+        "investment_code": "120723",
+        "investment": "Amazon.com, Inc. Common Stock",
+        "asset_type": "US_STOCK",
+        "assetclass_l2": "Global Equity",
+        "invested_amount": 23334.314573336793,
+        "market_value": 23276.52067565918,
+        "holding_percent": 11.91699257124637,
+        "total_pnl": -57.79389767761313,
+        "pnl_per": -0.24767771727759236,
+        "xirr": 0,
+        "total_units": 1,
+        "unit_price": 23276.52067565918,
+        "broker": "2",
+        "market_cap": "Mega Cap"
+      }
+    ]
+  },
+  "fetchedAt": 1781673558041
+}

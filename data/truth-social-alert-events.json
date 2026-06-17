@@ -1,0 +1,4272 @@
+[
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:05.891Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:12.958Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:19.958Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:27.008Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:34.041Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:41.108Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:48.175Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:50:55.258Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:02.375Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:09.460Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:16.608Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:23.691Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:30.824Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:37.908Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:45.042Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:52.191Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:51:59.375Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:06.608Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:13.826Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:21.008Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:28.259Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:35.526Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:42.826Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:50.142Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:52:57.543Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:05.077Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:12.826Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:20.426Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:27.976Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:35.476Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:42.976Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:50.725Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:53:58.609Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:06.292Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:13.809Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:21.058Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:28.308Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:35.575Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:42.826Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:50.092Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:54:57.341Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:04.608Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:11.908Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:19.158Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:26.425Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:33.708Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:40.975Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:48.292Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:55:55.592Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:02.925Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:10.292Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:17.593Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:24.942Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:32.308Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:39.658Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:47.008Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:56:54.392Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:01.842Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:09.258Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:16.675Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:24.075Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:31.475Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:38.892Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:46.308Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:57:53.725Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:01.242Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:08.692Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:16.226Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:23.726Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:31.226Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:38.742Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:46.292Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:58:53.860Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:01.476Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:09.093Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:16.809Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:24.626Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:32.426Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:40.240Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:48.076Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T11:59:55.960Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:03.727Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:11.811Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:19.862Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:27.776Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:35.693Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:43.728Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:51.426Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:00:58.992Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:06.575Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:14.125Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:21.692Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:29.243Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:36.809Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:44.392Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:51.959Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:01:59.542Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:07.159Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:14.742Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:22.359Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:29.959Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:37.559Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:45.209Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:02:52.826Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:00.459Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:08.159Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:15.809Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:23.459Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:31.159Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:38.792Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:46.509Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:03:54.243Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:02.043Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:09.809Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:17.593Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:25.360Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:33.093Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:40.909Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:48.703Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:04:56.543Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:04.476Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:12.393Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:20.276Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:28.310Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:36.377Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:44.460Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:05:52.571Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:00.728Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:08.876Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:17.011Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:25.161Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:33.277Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:41.578Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:49.659Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:06:57.492Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:05.359Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:13.209Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:21.010Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:28.826Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:36.660Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:44.543Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:07:52.392Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:00.292Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:08.176Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:16.043Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:23.943Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:31.810Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:39.760Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:47.693Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:08:55.610Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:03.543Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:11.527Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:19.443Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:27.427Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:35.410Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:43.426Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:51.376Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:09:59.327Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:07.360Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:15.393Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:23.393Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:31.493Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:39.577Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:47.644Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:10:55.744Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:03.944Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:12.310Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:20.494Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:28.711Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:37.027Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:45.328Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:11:53.912Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:02.411Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:10.864Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:19.528Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:27.977Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:36.378Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:44.844Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:12:53.227Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:01.376Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:09.443Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:17.510Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:25.543Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:33.610Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:41.694Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:49.776Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:13:57.843Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:05.960Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:14.043Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:22.126Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:30.243Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:38.343Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:46.493Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:14:54.610Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:02.810Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:10.993Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:19.127Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:27.293Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:35.427Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:43.627Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:15:51.844Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:00.043Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:08.243Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:16.528Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:24.777Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:33.010Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:41.277Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:49.560Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:16:57.894Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:06.294Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:14.711Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:23.160Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:31.611Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:40.112Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:48.774Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:17:57.595Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:06.379Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:15.362Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:24.245Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:32.946Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:41.628Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:50.378Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:18:58.810Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:07.194Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:15.544Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:23.878Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:32.244Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:40.594Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:48.928Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:19:57.310Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:05.693Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:14.093Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:22.444Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:30.877Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:39.277Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:47.677Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:20:56.094Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:04.644Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:13.311Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:21.761Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:30.211Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:38.677Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:47.227Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:21:55.727Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:04.244Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:12.761Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:21.277Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:29.861Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:38.411Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:46.995Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:22:55.594Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:04.179Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:12.895Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:21.512Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:30.145Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:38.811Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:47.478Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:23:56.261Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:05.129Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:14.121Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:23.216Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:32.313Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:41.498Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:50.630Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:24:59.879Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:25:08.995Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:25:17.727Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:25:26.344Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:25:34.945Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:25:43.578Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:25:52.212Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:00.845Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:09.561Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:18.177Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:26.811Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:35.478Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:44.128Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:26:52.911Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:01.578Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:10.311Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:18.961Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:27.661Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:36.361Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:45.061Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:27:53.811Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:02.562Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:11.328Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:20.095Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:28.895Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:37.745Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:46.561Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:28:55.445Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:04.311Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:13.228Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:22.162Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:31.097Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:40.145Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:49.145Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:29:58.229Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:30:07.362Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:30:16.614Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:30:25.946Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:30:35.212Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:30:44.563Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:30:54.063Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:03.397Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:12.814Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:22.213Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:31.396Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:40.311Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:49.328Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:31:58.245Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:32:07.179Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:32:16.095Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:32:25.029Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:32:33.978Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:32:42.895Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:32:51.861Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:00.811Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:09.812Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:18.878Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:27.879Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:36.878Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:45.878Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:33:54.861Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:03.945Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:13.029Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:22.045Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:31.095Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:40.162Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:49.245Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:34:58.345Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:35:07.529Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:35:16.680Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:35:25.846Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:35:34.995Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:35:44.179Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:35:53.412Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:02.696Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:12.096Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:21.513Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:30.914Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:40.363Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:50.012Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:36:59.513Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:37:09.247Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:37:19.030Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:37:28.730Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:37:38.413Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:37:48.179Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:37:57.479Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:38:06.762Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:38:16.156Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:38:25.918Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:38:35.206Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:38:44.386Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:38:53.672Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T12:39:02.853Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-16T16:06:46.276Z",
+    "dedupeId": "116760641102604510",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760641102604510",
+    "model": "gpt-5-mini",
+    "durationMs": 2996,
+    "usage": {
+      "inputTokens": 243,
+      "outputTokens": 109,
+      "totalTokens": 352
+    },
+    "rawUsage": {
+      "input_tokens": 243,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 109,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 352
+    },
+    "recordedAt": "2026-06-16T16:06:49.272Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116760641102604510",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760641102604510",
+    "publishedAt": "2026-06-16T16:06:33.381Z",
+    "impactScore": 2.7,
+    "predictedDirection": "strong up",
+    "confidence": "medium",
+    "baselineGold": 4358.89990234375,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:06:50.121Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116760641102604510",
+    "originalId": "116760641102604510",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760641102604510",
+    "publishedAt": "2026-06-16T16:06:33.381Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:06:50.122Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-16T16:07:09.050Z",
+    "dedupeId": "116760642672400305",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760642672400305",
+    "model": "gpt-5-mini",
+    "durationMs": 2681,
+    "usage": {
+      "inputTokens": 243,
+      "outputTokens": 98,
+      "totalTokens": 341
+    },
+    "rawUsage": {
+      "input_tokens": 243,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 98,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 341
+    },
+    "recordedAt": "2026-06-16T16:07:11.731Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116760642672400305",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760642672400305",
+    "publishedAt": "2026-06-16T16:06:57.335Z",
+    "impactScore": 2.6,
+    "predictedDirection": "strong down",
+    "confidence": "high",
+    "baselineGold": 4360,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:07:11.806Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116760642672400305",
+    "originalId": "116760642672400305",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760642672400305",
+    "publishedAt": "2026-06-16T16:06:57.335Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:07:11.807Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-16T16:12:18.992Z",
+    "dedupeId": "116760662558632411",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760662558632411",
+    "model": "gpt-5-mini",
+    "durationMs": 2435,
+    "usage": {
+      "inputTokens": 254,
+      "outputTokens": 110,
+      "totalTokens": 364
+    },
+    "rawUsage": {
+      "input_tokens": 254,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 110,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 364
+    },
+    "recordedAt": "2026-06-16T16:12:21.427Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116760662558632411",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760662558632411",
+    "publishedAt": "2026-06-16T16:12:00.779Z",
+    "impactScore": 10,
+    "predictedDirection": "strong up",
+    "confidence": "medium",
+    "baselineGold": 4359.60009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:12:21.513Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116760662558632411",
+    "originalId": "116760662558632411",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760662558632411",
+    "publishedAt": "2026-06-16T16:12:00.779Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:12:21.514Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-16T16:12:39.869Z",
+    "dedupeId": "116760664101169055",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760664101169055",
+    "model": "gpt-5-mini",
+    "durationMs": 2193,
+    "usage": {
+      "inputTokens": 236,
+      "outputTokens": 100,
+      "totalTokens": 336
+    },
+    "rawUsage": {
+      "input_tokens": 236,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 100,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 336
+    },
+    "recordedAt": "2026-06-16T16:12:42.062Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116760664101169055",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760664101169055",
+    "publishedAt": "2026-06-16T16:12:24.312Z",
+    "impactScore": 10,
+    "predictedDirection": "strong down",
+    "confidence": "medium",
+    "baselineGold": 4358.5,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:12:42.142Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116760664101169055",
+    "originalId": "116760664101169055",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116760664101169055",
+    "publishedAt": "2026-06-16T16:12:24.312Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-16T16:12:42.143Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:27:00.528Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:27:17.745Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:27:35.328Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:27:53.895Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:28:12.412Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:28:30.812Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:28:49.279Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:29:07.779Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:29:26.295Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:29:44.845Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:30:03.429Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:30:22.245Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:30:40.929Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:30:59.763Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:31:18.729Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:31:37.697Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:31:56.829Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:32:16.179Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:32:35.545Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:32:55.063Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:33:13.795Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:33:32.413Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:33:51.062Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:34:09.729Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:34:28.413Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:34:47.062Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:35:05.746Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:35:24.512Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:35:43.285Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:36:02.046Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:36:20.996Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:36:39.913Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:36:59.164Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:37:18.430Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:37:37.813Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Failed to fetch",
+    "recordedAt": "2026-06-16T16:37:56.997Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "497:502: execution error: Can’t make name of «class CrTb» id \"2041692580\" of window id \"2041692462\" of application \"Google Chrome\" into type Unicode text. (-1700)",
+    "recordedAt": "2026-06-16T16:57:32.789Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "250:258: syntax error: Expected end of line but found identifier. (-2741)",
+    "recordedAt": "2026-06-16T16:57:38.728Z"
+  },
+  {
+    "type": "error",
+    "dryRun": false,
+    "error": "Chrome Truth Social statuses returned HTTP 503",
+    "recordedAt": "2026-06-16T17:57:58.224Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:19:35.842Z",
+    "dedupeId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "model": "gpt-5-mini",
+    "durationMs": 3122,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 85,
+      "totalTokens": 290
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 85,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 290
+    },
+    "recordedAt": "2026-06-17T05:19:38.964Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "publishedAt": "2026-06-17T04:07:56.945Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "medium",
+    "baselineGold": 4344.60009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:40.059Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763477734116382",
+    "originalId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "publishedAt": "2026-06-17T04:07:56.945Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:40.061Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:19:43.902Z",
+    "dedupeId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "model": "gpt-5-mini",
+    "durationMs": 4006,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 108,
+      "totalTokens": 313
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 108,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 313
+    },
+    "recordedAt": "2026-06-17T05:19:47.908Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "publishedAt": "2026-06-17T04:08:06.580Z",
+    "impactScore": 2.6,
+    "predictedDirection": "strong down",
+    "confidence": "medium",
+    "baselineGold": 4344.60009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:48.002Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763478365639550",
+    "originalId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "publishedAt": "2026-06-17T04:08:06.580Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:48.003Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:19:52.539Z",
+    "dedupeId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "model": "gpt-5-mini",
+    "durationMs": 2028,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 83,
+      "totalTokens": 288
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 83,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 288
+    },
+    "recordedAt": "2026-06-17T05:19:54.567Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:19:51.441Z",
+    "dedupeId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "model": "gpt-5-mini",
+    "durationMs": 3368,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 95,
+      "totalTokens": 300
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 95,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 300
+    },
+    "recordedAt": "2026-06-17T05:19:54.809Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "publishedAt": "2026-06-17T04:08:18.471Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "medium",
+    "baselineGold": 4343.7998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:54.863Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763479144593174",
+    "originalId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "publishedAt": "2026-06-17T04:08:18.471Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:54.864Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:19:58.139Z",
+    "dedupeId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "model": "gpt-5-mini",
+    "durationMs": 1668,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 93,
+      "totalTokens": 298
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 93,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 298
+    },
+    "recordedAt": "2026-06-17T05:19:59.807Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "publishedAt": "2026-06-17T04:08:34.624Z",
+    "impactScore": 2.6,
+    "predictedDirection": "strong down",
+    "confidence": "low",
+    "baselineGold": 4344.39990234375,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:59.882Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763480203183309",
+    "originalId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "publishedAt": "2026-06-17T04:08:34.624Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:19:59.884Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:02.474Z",
+    "dedupeId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "model": "gpt-5-mini",
+    "durationMs": 1646,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 84,
+      "totalTokens": 289
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 84,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 289
+    },
+    "recordedAt": "2026-06-17T05:20:04.120Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "publishedAt": "2026-06-17T04:08:45.397Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:04.202Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763480909156179",
+    "originalId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "publishedAt": "2026-06-17T04:08:45.397Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:04.207Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:07.734Z",
+    "dedupeId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "model": "gpt-5-mini",
+    "durationMs": 1866,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 89,
+      "totalTokens": 294
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 89,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 294
+    },
+    "recordedAt": "2026-06-17T05:20:09.600Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "publishedAt": "2026-06-17T04:08:58.505Z",
+    "impactScore": 0.9,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:09.678Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763481768244058",
+    "originalId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "publishedAt": "2026-06-17T04:08:58.505Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:09.679Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:12.776Z",
+    "dedupeId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "model": "gpt-5-mini",
+    "durationMs": 1744,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 86,
+      "totalTokens": 291
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 86,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 291
+    },
+    "recordedAt": "2026-06-17T05:20:14.520Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "publishedAt": "2026-06-17T04:09:06.627Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:14.616Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763482300489516",
+    "originalId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "publishedAt": "2026-06-17T04:09:06.627Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:14.617Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "publishedAt": "2026-06-17T04:07:56.945Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "medium",
+    "baselineGold": 4344.39990234375,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:15.657Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763477734116382",
+    "originalId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "publishedAt": "2026-06-17T04:07:56.945Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:15.659Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:17.051Z",
+    "dedupeId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "model": "gpt-5-mini",
+    "durationMs": 2196,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 87,
+      "totalTokens": 292
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 87,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 292
+    },
+    "recordedAt": "2026-06-17T05:20:19.247Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "publishedAt": "2026-06-17T04:09:17.397Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:19.327Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763483006366937",
+    "originalId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "publishedAt": "2026-06-17T04:09:17.397Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:19.328Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:19.296Z",
+    "dedupeId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "model": "gpt-5-mini",
+    "durationMs": 1539,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 81,
+      "totalTokens": 286
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 81,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 286
+    },
+    "recordedAt": "2026-06-17T05:20:20.836Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:22.614Z",
+    "dedupeId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "model": "gpt-5-mini",
+    "durationMs": 2245,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 84,
+      "totalTokens": 289
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 84,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 289
+    },
+    "recordedAt": "2026-06-17T05:20:24.859Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "publishedAt": "2026-06-17T04:09:30.040Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:24.945Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763483835179194",
+    "originalId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "publishedAt": "2026-06-17T04:09:30.040Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:24.946Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:28.385Z",
+    "dedupeId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "model": "gpt-5-mini",
+    "durationMs": 1657,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 89,
+      "totalTokens": 294
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 89,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 294
+    },
+    "recordedAt": "2026-06-17T05:20:30.042Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "publishedAt": "2026-06-17T04:09:39.698Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "medium",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:30.112Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763484468215021",
+    "originalId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "publishedAt": "2026-06-17T04:09:39.698Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:30.114Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:32.912Z",
+    "dedupeId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "model": "gpt-5-mini",
+    "durationMs": 1701,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 81,
+      "totalTokens": 286
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 81,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 286
+    },
+    "recordedAt": "2026-06-17T05:20:34.613Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "publishedAt": "2026-06-17T04:09:48.729Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:34.669Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763485060058769",
+    "originalId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "publishedAt": "2026-06-17T04:09:48.729Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:34.670Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:35.352Z",
+    "dedupeId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "model": "gpt-5-mini",
+    "durationMs": 1871,
+    "usage": {
+      "inputTokens": 219,
+      "outputTokens": 107,
+      "totalTokens": 326
+    },
+    "rawUsage": {
+      "input_tokens": 219,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 107,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 326
+    },
+    "recordedAt": "2026-06-17T05:20:37.223Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "publishedAt": "2026-06-17T04:42:19.311Z",
+    "impactScore": 6.3,
+    "predictedDirection": "strong down",
+    "confidence": "high",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:37.301Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763612893094366",
+    "originalId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "publishedAt": "2026-06-17T04:42:19.311Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:37.303Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:38.114Z",
+    "dedupeId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "model": "gpt-5-mini",
+    "durationMs": 1765,
+    "usage": {
+      "inputTokens": 234,
+      "outputTokens": 93,
+      "totalTokens": 327
+    },
+    "rawUsage": {
+      "input_tokens": 234,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 93,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 327
+    },
+    "recordedAt": "2026-06-17T05:20:39.879Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "publishedAt": "2026-06-17T05:02:15.657Z",
+    "impactScore": 1.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:39.958Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763691297203565",
+    "originalId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "publishedAt": "2026-06-17T05:02:15.657Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:39.960Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "publishedAt": "2026-06-17T04:08:06.580Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:40.525Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763478365639550",
+    "originalId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "publishedAt": "2026-06-17T04:08:06.580Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:40.526Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:43.556Z",
+    "dedupeId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "model": "gpt-5-mini",
+    "durationMs": 1864,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 88,
+      "totalTokens": 293
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 88,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 293
+    },
+    "recordedAt": "2026-06-17T05:20:45.420Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "publishedAt": "2026-06-17T04:08:18.471Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "medium",
+    "baselineGold": 4344.10009765625,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:46.133Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763479144593174",
+    "originalId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "publishedAt": "2026-06-17T04:08:18.471Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:46.134Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:49.002Z",
+    "dedupeId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "model": "gpt-5-mini",
+    "durationMs": 1804,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 82,
+      "totalTokens": 287
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 82,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 287
+    },
+    "recordedAt": "2026-06-17T05:20:50.806Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "publishedAt": "2026-06-17T04:08:34.624Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4343.2998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:50.912Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763480203183309",
+    "originalId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "publishedAt": "2026-06-17T04:08:34.624Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:50.913Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:54.290Z",
+    "dedupeId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "model": "gpt-5-mini",
+    "durationMs": 1675,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 82,
+      "totalTokens": 287
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 82,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 287
+    },
+    "recordedAt": "2026-06-17T05:20:55.965Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "publishedAt": "2026-06-17T04:08:45.397Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4343.2998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:56.013Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763480909156179",
+    "originalId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "publishedAt": "2026-06-17T04:08:45.397Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:20:56.015Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:20:58.753Z",
+    "dedupeId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "model": "gpt-5-mini",
+    "durationMs": 2208,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 81,
+      "totalTokens": 286
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 81,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 286
+    },
+    "recordedAt": "2026-06-17T05:21:00.961Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "publishedAt": "2026-06-17T04:08:58.505Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4343.2998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:01.007Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763481768244058",
+    "originalId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "publishedAt": "2026-06-17T04:08:58.505Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:01.008Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:04.091Z",
+    "dedupeId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "model": "gpt-5-mini",
+    "durationMs": 2718,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 83,
+      "totalTokens": 288
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 83,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 288
+    },
+    "recordedAt": "2026-06-17T05:21:06.809Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "publishedAt": "2026-06-17T04:09:06.627Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4342.7998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:06.899Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763482300489516",
+    "originalId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "publishedAt": "2026-06-17T04:09:06.627Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:06.900Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:10.136Z",
+    "dedupeId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "model": "gpt-5-mini",
+    "durationMs": 1641,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 86,
+      "totalTokens": 291
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 86,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 291
+    },
+    "recordedAt": "2026-06-17T05:21:11.777Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "publishedAt": "2026-06-17T04:09:17.397Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4342.7998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:11.858Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763483006366937",
+    "originalId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "publishedAt": "2026-06-17T04:09:17.397Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:11.859Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:14.319Z",
+    "dedupeId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "model": "gpt-5-mini",
+    "durationMs": 1770,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 91,
+      "totalTokens": 296
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 91,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 296
+    },
+    "recordedAt": "2026-06-17T05:21:16.089Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "publishedAt": "2026-06-17T04:09:30.040Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4342.7998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:16.155Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763483835179194",
+    "originalId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "publishedAt": "2026-06-17T04:09:30.040Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:16.157Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:20.564Z",
+    "dedupeId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "model": "gpt-5-mini",
+    "durationMs": 1747,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 85,
+      "totalTokens": 290
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 85,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 290
+    },
+    "recordedAt": "2026-06-17T05:21:22.311Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "publishedAt": "2026-06-17T04:09:39.698Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "low",
+    "baselineGold": 4342.7998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:22.371Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763484468215021",
+    "originalId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "publishedAt": "2026-06-17T04:09:39.698Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:22.373Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:26.207Z",
+    "dedupeId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "model": "gpt-5-mini",
+    "durationMs": 1893,
+    "usage": {
+      "inputTokens": 205,
+      "outputTokens": 87,
+      "totalTokens": 292
+    },
+    "rawUsage": {
+      "input_tokens": 205,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 87,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 292
+    },
+    "recordedAt": "2026-06-17T05:21:28.100Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "publishedAt": "2026-06-17T04:09:48.729Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "medium",
+    "baselineGold": 4342.7998046875,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:28.170Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763485060058769",
+    "originalId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "publishedAt": "2026-06-17T04:09:48.729Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:28.171Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:28.969Z",
+    "dedupeId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "model": "gpt-5-mini",
+    "durationMs": 2088,
+    "usage": {
+      "inputTokens": 219,
+      "outputTokens": 106,
+      "totalTokens": 325
+    },
+    "rawUsage": {
+      "input_tokens": 219,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 106,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 325
+    },
+    "recordedAt": "2026-06-17T05:21:31.057Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "publishedAt": "2026-06-17T04:42:19.311Z",
+    "impactScore": 10,
+    "predictedDirection": "strong up",
+    "confidence": "high",
+    "baselineGold": 4343.2001953125,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:31.101Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763612893094366",
+    "originalId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "publishedAt": "2026-06-17T04:42:19.311Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:31.102Z"
+  },
+  {
+    "type": "openai_usage",
+    "status": "ok",
+    "requestedAt": "2026-06-17T05:21:31.667Z",
+    "dedupeId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "model": "gpt-5-mini",
+    "durationMs": 1624,
+    "usage": {
+      "inputTokens": 234,
+      "outputTokens": 92,
+      "totalTokens": 326
+    },
+    "rawUsage": {
+      "input_tokens": 234,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 92,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 326
+    },
+    "recordedAt": "2026-06-17T05:21:33.291Z"
+  },
+  {
+    "type": "gold_prediction",
+    "dryRun": false,
+    "dedupeId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "publishedAt": "2026-06-17T05:02:15.657Z",
+    "impactScore": 0.1,
+    "predictedDirection": "flat",
+    "confidence": "high",
+    "baselineGold": 4343.2001953125,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:33.349Z"
+  },
+  {
+    "type": "delivery",
+    "dryRun": false,
+    "dedupeId": "116763691297203565",
+    "originalId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "publishedAt": "2026-06-17T05:02:15.657Z",
+    "isRetruth": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:21:33.350Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763477734116382",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763477734116382",
+    "baselineGold": 4344.39990234375,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:24:42.583Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763478365639550",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763478365639550",
+    "baselineGold": 4344.10009765625,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:24:48.087Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763479144593174",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763479144593174",
+    "baselineGold": 4344.10009765625,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:24:54.961Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763480203183309",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480203183309",
+    "baselineGold": 4343.2998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:24:59.983Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763480909156179",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763480909156179",
+    "baselineGold": 4343.2998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:04.273Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763481768244058",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763481768244058",
+    "baselineGold": 4343.2998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:09.771Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763482300489516",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763482300489516",
+    "baselineGold": 4342.7998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:14.706Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763483006366937",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483006366937",
+    "baselineGold": 4342.7998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:19.376Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763483835179194",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763483835179194",
+    "baselineGold": 4342.7998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:25.048Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763484468215021",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763484468215021",
+    "baselineGold": 4342.7998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:30.159Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763485060058769",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763485060058769",
+    "baselineGold": 4342.7998046875,
+    "followupGold": 4351.60009765625,
+    "direction": "strong up",
+    "predictedDirection": "flat",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:34.755Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763612893094366",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763612893094366",
+    "baselineGold": 4343.2001953125,
+    "followupGold": 4344.7998046875,
+    "direction": "up",
+    "predictedDirection": "strong up",
+    "correct": false,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:37.345Z"
+  },
+  {
+    "type": "gold_prediction_outcome_5m",
+    "dryRun": false,
+    "dedupeId": "116763691297203565",
+    "originalUrl": "https://truthsocial.com/@realDonaldTrump/116763691297203565",
+    "baselineGold": 4343.2001953125,
+    "followupGold": 4342.2001953125,
+    "direction": "flat",
+    "predictedDirection": "flat",
+    "correct": true,
+    "recipients": [
+      "+919594614752",
+      "+917206703790"
+    ],
+    "recordedAt": "2026-06-17T05:25:40.048Z"
+  }
+]

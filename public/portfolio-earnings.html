@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Earnings</title>
+    <link rel="stylesheet" href="/app-shell.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg?page=%2Fportfolio-earnings"
+    />
+    <link rel="shortcut icon" href="/favicon.svg?page=%2Fportfolio-earnings" />
+    <script>
+      window.__APP_SHELL__ = {
+        currentPath: '/portfolio-earnings',
+        tabs: [['/', 'Market'], ['/swing-trades', 'Swing'], ['/portfolio-alerts', 'Alerts'], ['/watchlist-stocks', 'Watchlist'], ['/portfolio-earnings', 'Earnings'], ['/portfolios', 'Combined'], ['/portfolios/deep', 'Deep'], ['/portfolios/mom', 'Mom']],
+        actionSelectors: ['.hero-actions']
+      };
+    </script>
+    <script defer src="/app-shell.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --page: #f2efe6;
+        --page-strong: #e6e0d2;
+        --surface: rgba(255, 251, 245, 0.95);
+        --surface-strong: #fffdf8;
+        --ink: #182125;
+        --muted: #687178;
+        --line: rgba(24, 33, 37, 0.11);
+        --accent: #0f5f57;
+        --accent-soft: rgba(15, 95, 87, 0.1);
+        --good: #196c45;
+        --warn: #996618;
+        --bad: #b54747;
+        --shadow: 0 18px 44px rgba(24, 33, 37, 0.08);
+      }
+
+      :root[data-theme="dark"] {
+        --page: #101518;
+        --page-strong: #11181c;
+        --surface: rgba(19, 26, 30, 0.95);
+        --surface-strong: #1a2328;
+        --ink: #edf2f4;
+        --muted: #99a6ae;
+        --line: rgba(237, 242, 244, 0.12);
+        --accent: #7bd7c1;
+        --accent-soft: rgba(123, 215, 193, 0.14);
+        --good: #7fd4a3;
+        --warn: #e4c06f;
+        --bad: #ff8e8e;
+        --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --page: #101518;
+          --page-strong: #11181c;
+          --surface: rgba(19, 26, 30, 0.95);
+          --surface-strong: #1a2328;
+          --ink: #edf2f4;
+          --muted: #99a6ae;
+          --line: rgba(237, 242, 244, 0.12);
+          --accent: #7bd7c1;
+          --accent-soft: rgba(123, 215, 193, 0.14);
+          --good: #7fd4a3;
+          --warn: #e4c06f;
+          --bad: #ff8e8e;
+          --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(15, 95, 87, 0.12), transparent 28%),
+          radial-gradient(circle at top right, rgba(153, 102, 24, 0.08), transparent 24%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 24%),
+          linear-gradient(180deg, var(--page), var(--page-strong));
+        font-family: var(--app-font);
+      }
+
+      a { color: inherit; }
+      button { font: inherit; }
+
+      .shell {
+        width: min(1440px, calc(100% - 24px));
+        margin: 0 auto;
+        padding: 14px 0 32px;
+      }
+
+      .hero,
+      .hero-meta,
+      .decision-grid,
+      .list-grid,
+      .sources-grid,
+      .panel-head,
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+      }
+
+      .hero,
+      .panel-head {
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .hero {
+        margin-bottom: 12px;
+      }
+
+      .eyebrow,
+      .label {
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1, h2, h3, p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(32px, 5vw, 60px);
+        line-height: 0.95;
+        margin-top: 8px;
+      }
+
+      .subtle {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .hero-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .pill,
+      .tile,
+      .panel,
+      .flag,
+      .source-card,
+      .verdict-card {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .pill {
+        border-radius: 999px;
+        padding: 9px 13px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .pill.ok { color: var(--good); }
+      .pill.warn { color: var(--warn); }
+      .pill.bad { color: var(--bad); }
+
+      .decision-grid,
+      .list-grid,
+      .sources-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .verdict-card,
+      .tile,
+      .panel,
+      .flag,
+      .source-card {
+        border-radius: 18px;
+      }
+
+      .verdict-card {
+        padding: 18px;
+        margin-bottom: 10px;
+        background:
+          linear-gradient(135deg, color-mix(in srgb, var(--accent) 11%, var(--surface-strong)), var(--surface));
+      }
+
+      .verdict-copy {
+        display: grid;
+        gap: 10px;
+      }
+
+      .decision-grid {
+        margin-bottom: 10px;
+      }
+
+      .tile {
+        grid-column: span 3;
+        padding: 16px;
+        min-height: 138px;
+        display: grid;
+        gap: 10px;
+        align-content: start;
+      }
+
+      .tile .value {
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .panel {
+        padding: 14px;
+        margin-top: 10px;
+      }
+
+      .panel-head {
+        margin-bottom: 12px;
+      }
+
+      .panel-title {
+        font-size: 20px;
+      }
+
+      .panel-sub {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .decision-box {
+        grid-column: span 5;
+        padding: 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+      }
+
+      .decision-box dl {
+        margin: 10px 0 0;
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 10px 12px;
+      }
+
+      .decision-box dt {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .decision-box dd {
+        margin: 0;
+        line-height: 1.45;
+      }
+
+      .flag {
+        grid-column: span 7;
+        padding: 16px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .flag ul,
+      .notes ul,
+      .holding-notes ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .list-grid > * {
+        grid-column: span 6;
+      }
+
+      .holding-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1080px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      th, td {
+        padding: 12px 10px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .ticker {
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .tone-good { color: var(--good); }
+      .tone-warn { color: var(--warn); }
+      .tone-bad { color: var(--bad); }
+
+      .notes {
+        display: grid;
+        gap: 10px;
+      }
+
+      .source-card {
+        grid-column: span 4;
+        padding: 14px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .source-card a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .source-card a:hover {
+        text-decoration: underline;
+      }
+
+      .loading,
+      .empty {
+        padding: 28px;
+        border: 1px dashed var(--line);
+        border-radius: 18px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 1080px) {
+        .tile { grid-column: span 6; }
+        .decision-box,
+        .flag,
+        .list-grid > *,
+        .source-card {
+          grid-column: span 12;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .shell { width: min(100%, calc(100% - 16px)); }
+        .hero,
+        .panel-head {
+          flex-direction: column;
+        }
+        .tile { grid-column: span 12; }
+        .decision-box dl {
+          grid-template-columns: 1fr;
+        }
+        .holding-table {
+          min-width: 0;
+        }
+        .holding-table thead {
+          display: none;
+        }
+        .holding-table,
+        .holding-table tbody,
+        .holding-table tr,
+        .holding-table td {
+          display: block;
+          width: 100%;
+        }
+        .holding-table tr {
+          padding: 12px 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .holding-table td {
+          padding: 7px 0;
+          border-bottom: 0;
+          white-space: normal;
+        }
+        .holding-table td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 4px;
+          color: var(--muted);
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Post-Earnings Portfolio</div>
+          <h1>Earnings Decision Desk</h1>
+          <p class="subtle">A PM-style read of your current U.S. holdings through the latest official earnings releases and guidance, using your latest earnings portfolio snapshot as the position source of truth.</p>
+        </div>
+        <div class="hero-actions">
+          <span class="pill" id="asOfPill">As of loading...</span>
+          <span class="pill" id="sourcePill">Sources loading...</span>
+        </div>
+      </section>
+
+      <section id="app">
+        <div class="loading">Loading portfolio earnings packet...</div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        function usd(value) {
+          var amount = Number(value);
+          if (!Number.isFinite(amount)) return '$-';
+          return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 2
+          }).format(amount);
+        }
+
+        function pct(value) {
+          var amount = Number(value);
+          if (!Number.isFinite(amount)) return '-';
+          return (amount > 0 ? '+' : '') + amount.toFixed(2) + '%';
+        }
+
+        function escapeHtml(value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) {
+            return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char];
+          });
+        }
+
+        function actionTone(action) {
+          if (/hold/.test(action || '')) return 'tone-good';
+          if (/watch|re_underwrite|mixed/.test(action || '')) return 'tone-warn';
+          return 'tone-bad';
+        }
+
+        function epsTone(status) {
+          if (status === 'trigger_identified') return 'tone-bad';
+          if (status === 'no_material_trigger_identified') return 'tone-good';
+          return 'tone-warn';
+        }
+
+        function renderTiles(payload) {
+          return [
+            ['Portfolio Value', usd(payload.portfolio.valueUsd), 'Latest earnings portfolio snapshot, updated ' + escapeHtml(payload.updatedAt || 'not provided')],
+            ['Top 4 Concentration', pct(payload.portfolio.top4WeightPct), 'Top four holdings drive most of the P/L path.'],
+            ['AI Infra Weight', pct(payload.portfolio.infraWeightPct), 'NVDA, MU, AVGO, TSM, AMD, and SMCI combined.'],
+            ['EPS Quality Flags', String(payload.portfolio.epsQualityFlagCount), 'Names where headline EPS needs a clean operating read.']
+          ].map(function (item) {
+            return '<article class="tile"><div class="label">' + item[0] + '</div><div class="value">' + item[1] + '</div><div class="subtle">' + item[2] + '</div></article>';
+          }).join('');
+        }
+
+        function renderDecision(payload) {
+          return '' +
+            '<section class="decision-grid">' +
+              '<article class="decision-box">' +
+                '<div class="label">PM Bottom Line</div>' +
+                '<h2 class="panel-title">What changed after the prints</h2>' +
+                '<dl>' +
+                  '<dt>Thesis change</dt><dd>' + escapeHtml(payload.portfolioView.thesisChange.replace(/_/g, ' ')) + '</dd>' +
+                  '<dt>Likely estimate direction</dt><dd>Positive for AI infrastructure and memory; mixed for cloud/platform names after cleaning out below-the-line gains.</dd>' +
+                  '<dt>Stock / valuation skew</dt><dd>Risk is concentration and clean-EPS quality, not a broad thesis break.</dd>' +
+                  '<dt>Action discipline</dt><dd>' + escapeHtml(payload.portfolioView.action) + '</dd>' +
+                '</dl>' +
+              '</article>' +
+              '<article class="flag">' +
+                '<div class="label">EPS Quality Screen</div>' +
+                '<h2 class="panel-title">Headline EPS is not equally clean across the book</h2>' +
+                (payload.epsQualityFlags.length
+                  ? '<ul>' + payload.epsQualityFlags.map(function (item) {
+                      return '<li><strong>' + escapeHtml(item.ticker) + '</strong> (' + pct(item.weightPct) + ' weight): ' + escapeHtml(item.note) + '</li>';
+                    }).join('') + '</ul>'
+                  : '<p class="subtle">No material EPS-quality trigger identified from the loaded sources.</p>') +
+              '</article>' +
+            '</section>';
+        }
+
+        function renderCatalysts(payload) {
+          if (!payload.upcomingCatalysts.length) {
+            return '<div class="notes"><p class="subtle">No dated upcoming catalysts were captured from the source pack beyond ordinary reporting cadence.</p></div>';
+          }
+          return '<div class="notes"><ul>' + payload.upcomingCatalysts.map(function (item) {
+            return '<li><strong>' + escapeHtml(item.ticker) + '</strong> (' + pct(item.weightPct) + ' weight): ' + escapeHtml(item.label) + ' on ' + escapeHtml(item.date) + '. ' + escapeHtml(item.note || '') + '</li>';
+          }).join('') + '</ul></div>';
+        }
+
+        function renderLimitations(payload) {
+          return '<div class="notes"><ul>' + payload.limitations.map(function (item) {
+            return '<li>' + escapeHtml(item) + '</li>';
+          }).join('') + '</ul></div>';
+        }
+
+        function renderTable(payload) {
+          return '<div class="table-wrap"><table class="holding-table"><thead><tr>' +
+            '<th>Holding</th><th>Weight</th><th>P/L</th><th>Latest print</th><th>EPS quality</th><th>PM read</th><th>Next check</th>' +
+            '</tr></thead><tbody>' +
+            payload.rows.map(function (row) {
+              return '<tr>' +
+                '<td data-label="Holding"><div class="ticker">' + escapeHtml(row.ticker) + '</div><div class="subtle">' + escapeHtml(row.name) + '</div><div class="subtle">' + escapeHtml(row.theme) + '</div></td>' +
+                '<td data-label="Weight"><strong>' + pct(row.weightPct) + '</strong><div class="subtle">' + usd(row.currentValue) + '</div></td>' +
+                '<td data-label="P/L" class="' + actionTone(row.totalReturnPct > 0 ? 'hold' : row.totalReturnPct < 0 ? 'trim' : 'watch') + '"><strong>' + pct(row.totalReturnPct) + '</strong><div class="subtle">' + usd(row.totalReturn) + '</div></td>' +
+                '<td data-label="Latest print"><strong>' + escapeHtml(row.reportedPeriod) + '</strong><div class="subtle">' + escapeHtml(row.reportedAt || 'not provided') + '</div><div class="holding-notes"><ul>' + row.highlights.slice(0, 2).map(function (item) { return '<li>' + escapeHtml(item) + '</li>'; }).join('') + '</ul></div></td>' +
+                '<td data-label="EPS quality" class="' + epsTone(row.epsQuality.status) + '"><strong>' + escapeHtml(row.epsQuality.status.replace(/_/g, ' ')) + '</strong><div class="subtle">' + escapeHtml(row.epsQuality.note) + '</div></td>' +
+                '<td data-label="PM read" class="' + actionTone(row.action) + '"><strong>' + escapeHtml(row.action.replace(/_/g, ' ')) + '</strong><div class="subtle">' + escapeHtml(row.verdict) + '</div></td>' +
+                '<td data-label="Next check"><strong>' + escapeHtml(row.nextCatalyst.label) + '</strong><div class="subtle">' + escapeHtml(row.nextCatalyst.date || row.nextCatalyst.status || 'not provided') + '</div><div class="subtle">' + escapeHtml(row.nextCatalyst.note || '') + '</div></td>' +
+              '</tr>';
+            }).join('') +
+            '</tbody></table></div>';
+        }
+
+        function renderSources(payload) {
+          var cards = [];
+          payload.rows.forEach(function (row) {
+            (row.sources || []).forEach(function (source) {
+              cards.push(
+                '<article class="source-card">' +
+                  '<div class="label">' + escapeHtml(row.ticker) + '</div>' +
+                  '<strong>' + escapeHtml(source.label) + '</strong>' +
+                  '<div class="subtle">' + escapeHtml(source.date || 'date not provided') + '</div>' +
+                  '<a href="' + escapeHtml(source.url) + '" target="_blank" rel="noreferrer">Open source</a>' +
+                '</article>'
+              );
+            });
+          });
+          return cards.join('');
+        }
+
+        function render(payload) {
+          document.getElementById('asOfPill').textContent = 'As of ' + payload.asOfDate;
+          document.getElementById('sourcePill').textContent = 'Estimate set: ' + payload.estimateSet;
+          document.getElementById('sourcePill').className = 'pill warn';
+          document.getElementById('app').innerHTML = '' +
+            '<section class="verdict-card"><div class="verdict-copy">' +
+              '<div class="label">Verdict</div>' +
+              '<h2>' + escapeHtml(payload.portfolioView.verdict) + '</h2>' +
+              '<p class="subtle">' + escapeHtml(payload.sourcePosture) + '</p>' +
+            '</div></section>' +
+            '<section class="decision-grid">' + renderTiles(payload) + '</section>' +
+            renderDecision(payload) +
+            '<section class="panel"><div class="panel-head"><div><div class="label">Position Grid</div><h2 class="panel-title">Holding-by-holding post-print read</h2></div><p class="panel-sub">Weights and P/L come from your latest earnings portfolio snapshot. Earnings fields come from official IR materials.</p></div>' +
+            renderTable(payload) + '</section>' +
+            '<section class="list-grid">' +
+              '<section class="panel"><div class="panel-head"><div><div class="label">Catalysts</div><h2 class="panel-title">What can still change the book soon</h2></div></div>' + renderCatalysts(payload) + '</section>' +
+              '<section class="panel"><div class="panel-head"><div><div class="label">Limits</div><h2 class="panel-title">Evidence posture and open gaps</h2></div></div>' + renderLimitations(payload) + '</section>' +
+            '</section>' +
+            '<section class="panel"><div class="panel-head"><div><div class="label">Evidence Ledger</div><h2 class="panel-title">Primary sources used</h2></div></div><section class="sources-grid">' + renderSources(payload) + '</section></section>';
+        }
+
+        fetch('/api/portfolio-earnings', { cache: 'no-store', credentials: 'same-origin' })
+          .then(function (response) {
+            return response.json().then(function (payload) {
+              if (!response.ok || !payload || payload.ok === false) {
+                throw new Error(payload && payload.error ? payload.error : 'Request failed');
+              }
+              return payload;
+            });
+          })
+          .then(render)
+          .catch(function (error) {
+            document.getElementById('app').innerHTML = '<div class="empty">Portfolio earnings page failed to load: ' + escapeHtml(error.message) + '</div>';
+          });
+      }());
+    </script>
+  </body>
+</html>

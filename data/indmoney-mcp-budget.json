@@ -1,0 +1,52 @@
+{
+  "dayKey": "2026-06-17",
+  "totalCalls": 62,
+  "tools": {
+    "networth": {
+      "calls": 12,
+      "lastSuccessAt": 1781674590908,
+      "blockedUntil": 1781677147255,
+      "lastRateLimitAt": 1781674622255
+    },
+    "us-quote:ALMU": {
+      "calls": 1,
+      "lastSuccessAt": 1781673627122,
+      "blockedUntil": 0
+    },
+    "us-quote:AVGO": {
+      "calls": 1,
+      "lastSuccessAt": 1781673627122,
+      "blockedUntil": 0
+    },
+    "us-quote:AMZN": {
+      "calls": 1,
+      "lastSuccessAt": 1781673627122,
+      "blockedUntil": 0
+    },
+    "us-quote:GOOGL": {
+      "calls": 1,
+      "lastSuccessAt": 1781673627122,
+      "blockedUntil": 0
+    },
+    "us-quote:SPY": {
+      "calls": 1,
+      "lastSuccessAt": 1781673627122,
+      "blockedUntil": 0
+    },
+    "us-quote:TSM": {
+      "calls": 1,
+      "lastSuccessAt": 1781673661990,
+      "blockedUntil": 0
+    },
+    "networth_holdings": {
+      "calls": 44,
+      "lastSuccessAt": 1781674607060,
+      "blockedUntil": 0,
+      "lastRateLimitAt": 1781674597059
+    },
+    "__global__": {
+      "blockedUntil": 1781677147255,
+      "lastRateLimitAt": 1781674622255
+    }
+  }
+}

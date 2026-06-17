@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Market Alerts</title>
+    <link rel="stylesheet" href="/app-shell.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg?page=%2Fportfolio-alerts"
+    />
+    <link rel="shortcut icon" href="/favicon.svg?page=%2Fportfolio-alerts" />
+    <script>
+      window.__APP_SHELL__ = {
+        currentPath: '/portfolio-alerts',
+        tabs: [['/', 'Market'], ['/swing-trades', 'Swing'], ['/portfolio-alerts', 'Alerts'], ['/watchlist-stocks', 'Watchlist'], ['/portfolio-earnings', 'Earnings'], ['/portfolios', 'Combined'], ['/portfolios/deep', 'Deep'], ['/portfolios/mom', 'Mom']],
+        actionSelectors: ['.topbar .actions']
+      };
+    </script>
+    <script defer src="/app-shell.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f7f4;
+        --panel: #ffffff;
+        --panel-2: #f0f4f6;
+        --ink: #182020;
+        --muted: #657071;
+        --line: #d8e0df;
+        --blue: #0b5966;
+        --green: #176a4d;
+        --amber: #9a6a12;
+        --red: #b13b3b;
+        --violet: #5b4c9a;
+        --shadow: 0 18px 42px rgba(24, 32, 32, 0.08);
+        --font: var(--app-font);
+      }
+
+      :root[data-theme="dark"] {
+        --bg: #101716;
+        --panel: #17211f;
+        --panel-2: #1f2b29;
+        --ink: #edf5f2;
+        --muted: #a5b4af;
+        --line: #31413e;
+        --blue: #62c7d8;
+        --green: #55c998;
+        --amber: #d6a445;
+        --red: #ef7777;
+        --violet: #b0a4ff;
+        --shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #101716;
+          --panel: #17211f;
+          --panel-2: #1f2b29;
+          --ink: #edf5f2;
+          --muted: #a5b4af;
+          --line: #31413e;
+          --blue: #62c7d8;
+          --green: #55c998;
+          --amber: #d6a445;
+          --red: #ef7777;
+          --violet: #b0a4ff;
+          --shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+        }
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        background: var(--bg);
+        font-family: var(--font);
+      }
+
+      button, input, select { font: inherit; }
+
+      .shell {
+        width: min(1500px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 12px 0 28px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .kicker {
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 52px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .meta {
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--ink);
+        min-height: 40px;
+        padding: 9px 13px;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(24, 32, 32, 0.05);
+      }
+
+      .btn.primary {
+        border-color: var(--blue);
+        background: var(--blue);
+        color: white;
+      }
+
+      .btn:disabled {
+        opacity: 0.55;
+        cursor: wait;
+      }
+
+      .status {
+        margin: 6px 0 8px;
+        min-height: 22px;
+        color: var(--muted);
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .tile,
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .tile {
+        grid-column: span 3;
+        min-height: 100px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .panel {
+        margin-top: 8px;
+        overflow: hidden;
+      }
+
+      .panel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+        background: var(--panel-2);
+      }
+
+      .panel-title {
+        margin: 0;
+        font-size: 17px;
+      }
+
+      .table-wrap { overflow-x: auto; }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 960px;
+      }
+
+      th, td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+        font-size: 14px;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--panel-2);
+      }
+
+      tr:last-child td { border-bottom: 0; }
+
+      .ticker {
+        font-weight: 900;
+        font-size: 16px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        border-radius: 999px;
+        padding: 4px 9px;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+        color: white;
+        background: var(--muted);
+      }
+
+      .pill.hold, .pill.watch { background: var(--blue); }
+      .pill.add, .pill.buy, .pill.cash { background: var(--green); }
+      .pill.trim, .pill.protect { background: var(--amber); }
+      .pill.exit, .pill.avoid { background: var(--red); }
+      .pill.wait { background: var(--violet); }
+
+      .score-stack {
+        display: grid;
+        gap: 6px;
+        min-width: 150px;
+      }
+
+      .bar {
+        height: 7px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: var(--panel-2);
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--blue);
+      }
+
+      .bar.exit > span { background: var(--red); }
+      .bar.opportunity > span { background: var(--green); }
+
+      .levels {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px 12px;
+        min-width: 210px;
+      }
+
+      .level {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .level strong {
+        color: var(--ink);
+        display: block;
+        font-size: 13px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .alert-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: var(--panel);
+        min-height: 112px;
+      }
+
+      .alert-card h3 {
+        margin: 4px 0 6px;
+        font-size: 16px;
+      }
+
+      .empty {
+        padding: 16px 12px;
+        color: var(--muted);
+      }
+
+      .error {
+        color: var(--red);
+        font-weight: 700;
+      }
+
+      @media (max-width: 980px) {
+        .topbar { flex-direction: column; }
+        .actions { justify-content: flex-start; }
+        .tile { grid-column: span 6; }
+        .cards { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 640px) {
+        .shell { width: min(100% - 18px, 1500px); padding-top: 10px; }
+        h1 { font-size: 32px; line-height: 1.05; }
+        .meta { font-size: 14px; }
+        .tile { grid-column: span 12; }
+        .btn, .theme-select { width: 100%; }
+        .actions { width: 100%; }
+        th, td { padding: 10px 9px; font-size: 13px; }
+        .ticker { font-size: 15px; }
+        table { min-width: 0; }
+        table thead { display: none; }
+        table, table tbody, table tr, table td { display: block; width: 100%; }
+        table tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+        table td { padding: 7px 0; border-bottom: 0; white-space: normal; }
+        table td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 4px;
+          color: var(--muted);
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div class="actions">
+          <button id="loadBtn" class="btn">Load</button>
+          <button id="runBtn" class="btn primary">Refresh</button>
+        </div>
+      </section>
+
+      <div id="status" class="status">Ready.</div>
+      <section id="summary" class="summary-grid"></section>
+      <section id="alerts"></section>
+      <section id="watchlist"></section>
+    </main>
+
+    <script>
+      const fmtUsd = (value) => {
+        const numeric = Number(value);
+        return Number.isFinite(numeric) ? numeric.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }) : 'n/a';
+      };
+      const fmtPct = (value) => {
+        const numeric = Number(value);
+        return Number.isFinite(numeric) ? `${numeric.toFixed(0)}%` : 'n/a';
+      };
+      const cleanDecision = (value) => String(value || 'n/a').replaceAll('_', ' ');
+      const pillClass = (decision) => {
+        const text = String(decision || '').toLowerCase();
+        if (text.includes('exit')) return 'exit';
+        if (text.includes('trim')) return 'trim';
+        if (text.includes('protect')) return 'protect';
+        if (text.includes('starter')) return 'buy';
+        if (text.includes('add')) return 'add';
+        if (text.includes('wait')) return 'wait';
+        if (text.includes('avoid') || text.includes('do_not')) return 'avoid';
+        if (text.includes('watch')) return 'watch';
+        if (text.includes('deploy')) return 'cash';
+        return 'hold';
+      };
+
+      const statusEl = document.getElementById('status');
+      const summaryEl = document.getElementById('summary');
+      const alertsEl = document.getElementById('alerts');
+      const watchlistEl = document.getElementById('watchlist');
+      const runBtn = document.getElementById('runBtn');
+      const loadBtn = document.getElementById('loadBtn');
+
+      function setStatus(text, isError = false) {
+        statusEl.textContent = text;
+        statusEl.className = isError ? 'status error' : 'status';
+      }
+
+      function tile(label, value, note) {
+        return `
+          <article class="tile">
+            <div class="label">${label}</div>
+            <div class="value">${value}</div>
+            <div class="note">${note || ''}</div>
+          </article>
+        `;
+      }
+
+      function renderSummary(report) {
+        summaryEl.innerHTML = [
+          tile('Market Regime', cleanDecision(report.marketRegime), `Threshold: ${report.thresholds?.[report.marketRegime] || 'n/a'}`),
+          tile('Cash Decision', cleanDecision(report.cash?.decision), report.cash?.reason || ''),
+          tile('Risk-Off Threshold', report.thresholds?.risk_off ?? 'n/a', 'Minimum score for risk-off entries'),
+          tile('Risk-On Threshold', report.thresholds?.risk_on ?? 'n/a', 'Minimum score for risk-on entries'),
+        ].join('');
+      }
+
+      function renderScore(label, value, type = '') {
+        const score = Math.max(0, Math.min(100, Number(value) || 0));
+        return `
+          <div>
+            <div class="note">${label}: <strong>${score}</strong></div>
+            <div class="bar ${type}"><span style="width:${score}%"></span></div>
+          </div>
+        `;
+      }
+
+      function renderLevels(levels = {}) {
+        return `
+          <div class="levels">
+            <div class="level">Trim<strong>${fmtUsd(levels.trimLevel)}</strong></div>
+            <div class="level">Stop<strong>${fmtUsd(levels.stopLevel)}</strong></div>
+            <div class="level">Add/Reclaim<strong>${fmtUsd(levels.addReclaimLevel)}</strong></div>
+            <div class="level">Target 1<strong>${fmtUsd(levels.target1)}</strong></div>
+            <div class="level">R/R<strong>${levels.riskReward ?? 'n/a'}</strong></div>
+            <div class="level">Confidence<strong>${fmtPct(levels.confidence)}</strong></div>
+          </div>
+        `;
+      }
+
+      function renderEntryLine(levels = {}) {
+        const entryType = levels.entryType || 'n/a';
+        const entryLevel = levels.addReclaimLevel ?? levels.resistance ?? levels.target1;
+        return `${entryType} @ ${fmtUsd(entryLevel)}`;
+      }
+
+      function renderRows(items = [], type = 'holding') {
+        if (!items.length) {
+          return '<div class="empty">No rows available.</div>';
+        }
+        return `
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th>Decision</th>
+                  <th>Scores</th>
+                  <th>Dynamic Levels</th>
+                  <th>Entry / Sizing</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${items.map((item) => `
+                  <tr>
+                    <td data-label="Ticker">
+                      <div class="ticker">${item.ticker}</div>
+                      <div class="note">${cleanDecision(item.aiThesisScore?.category)}</div>
+                    </td>
+                    <td data-label="Decision"><span class="pill ${pillClass(item.decision)}">${cleanDecision(item.decision)}</span></td>
+                    <td data-label="Scores">
+                      <div class="score-stack">
+                        ${renderScore('Thesis', item.aiThesisScore?.total)}
+                        ${renderScore('Opportunity', item.opportunityScore, 'opportunity')}
+                        ${type === 'holding' ? renderScore('Exit pressure', item.exitPressureScore, 'exit') : ''}
+                      </div>
+                    </td>
+                    <td data-label="Dynamic Levels">${renderLevels(item.dynamicLevels)}</td>
+                    <td data-label="Entry / Sizing">
+                      <div class="note">${renderEntryLine(item.dynamicLevels)}</div>
+                      <strong>${fmtUsd(item.positionSizing?.suggestedUsd)}</strong>
+                      <div class="note">Reserve ${fmtUsd(item.positionSizing?.reserveUsd)}</div>
+                    </td>
+                    <td data-label="Explanation">
+                      <div>${item.explanation || 'No explanation available.'}</div>
+                      ${(item.blockingReasons || []).length ? `<div class="note">Blocked: ${item.blockingReasons.join('; ')}</div>` : ''}
+                    </td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      function panel(id, title, subtitle, body) {
+        return `
+          <section class="panel" id="${id}">
+            <div class="panel-head">
+              <h2 class="panel-title">${title}</h2>
+              <div class="note">${subtitle || ''}</div>
+            </div>
+            ${body}
+          </section>
+        `;
+      }
+
+      function renderAlerts(report) {
+        const strongest = report.ranked?.strongestOpportunities || [];
+        const cards = [
+          ...(strongest.slice(0, 6).map((item) => ({ kind: 'Opportunity', item }))),
+        ];
+        alertsEl.innerHTML = panel('alertCards', 'Action Board', 'Ranked by dynamic decision engine', cards.length ? `
+          <div class="cards">
+            ${cards.map(({ kind, item }) => `
+              <article class="alert-card">
+                <span class="pill ${pillClass(item.decision)}">${kind}</span>
+                <h3>${item.ticker} · ${cleanDecision(item.decision)}</h3>
+                <div class="note">Thesis ${item.aiThesisScore?.total ?? 'n/a'} · Opportunity ${item.opportunityScore ?? 'n/a'} · Exit ${item.exitPressureScore ?? 'n/a'}</div>
+                <div class="note">${renderEntryLine(item.dynamicLevels)} · Stop ${fmtUsd(item.dynamicLevels?.stopLevel)}</div>
+              </article>
+            `).join('')}
+          </div>
+        ` : '<div class="empty">No action cards yet.</div>');
+      }
+
+      function render(report) {
+        if (!report) {
+          summaryEl.innerHTML = '';
+          alertsEl.innerHTML = '<section class="panel"><div class="empty">No decision report loaded. Click Refresh Decisions.</div></section>';
+          watchlistEl.innerHTML = '';
+          return;
+        }
+        renderSummary(report);
+        renderAlerts(report);
+        watchlistEl.innerHTML = panel('watchlistPanel', 'Market Watchlist', 'Starter entries, pullback waits, avoids, and no-chase calls', renderRows(report.watchlist || [], 'watchlist'));
+      }
+
+      async function loadLastReport() {
+        setStatus('Loading last report...');
+        const response = await fetch('/api/portfolio-alerts/status', { cache: 'no-store' });
+        const payload = await response.json();
+        if (!response.ok || !payload.ok) {
+          throw new Error(payload.error || 'Status request failed');
+        }
+        const report = payload.runtime?.lastDecisionReport || null;
+        render(report);
+        setStatus(report ? `Loaded last report from ${payload.runtime.lastRunAt || 'runtime memory'}.` : 'No last report in memory. Click Refresh Decisions.');
+      }
+
+      async function refreshDecisions() {
+        runBtn.disabled = true;
+        loadBtn.disabled = true;
+        setStatus('Refreshing decisions. Market data fetches may take a few seconds...');
+        try {
+          const response = await fetch('/api/portfolio-alerts/run', { method: 'POST', cache: 'no-store' });
+          const payload = await response.json();
+          if (!response.ok || !payload.ok) {
+            throw new Error(payload.error || 'Refresh failed');
+          }
+          render(payload.decisionReport);
+          setStatus(`Refreshed. Session ${payload.session}; delivered ${payload.deliveredCount} dry-run/live alert(s).`);
+        } finally {
+          runBtn.disabled = false;
+          loadBtn.disabled = false;
+        }
+      }
+
+      loadBtn.addEventListener('click', () => loadLastReport().catch((error) => setStatus(error.message, true)));
+      runBtn.addEventListener('click', () => refreshDecisions().catch((error) => setStatus(error.message, true)));
+      loadLastReport().catch((error) => setStatus(error.message, true));
+    </script>
+  </body>
+</html>
